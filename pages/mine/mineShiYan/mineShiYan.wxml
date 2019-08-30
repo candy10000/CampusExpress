@@ -1,0 +1,98 @@
+<view  bindtouchstart="touchStart" bindtouchmove="touchMove"> 
+<view style="margin-top: 160rpx; position:relative;"></view>
+<view class="topBar">
+  <view class="tab {{current == 0 ? 'actived': 'default'}}" bindtap="shiyanContent">
+    <view class="topTitle">
+      <text>我的拾言</text>
+    </view>
+  </view>
+  <view class="tab {{current == 1 ? 'actived': 'default'}}" bindtap="commentContent">
+    <view class="topTitle">
+      <text>我的评论</text>
+    </view>
+  </view>
+</view>
+
+<view wx:if='{{current == 0}}'>
+  <view wx:for="{{json}}"  wx:for-item="item1" wx:for-index='idx1' class='card' bindtap='comment' data-id='{{item1.cardInfo.cardId}}' data-liked='{{item1.cardInfo.liked}}'> 
+    <view class='initiatorInfo'> 
+          <image src='{{weburl}}{{item1.customerInfo.userPic}}' class='initiatorPic'></image> 
+          <view class='nickname'>{{item1.customerInfo.nickName}}</view> 
+          <text class='title'>{{item1.customerInfo.userTitle}}</text> 
+    </view> 
+    <view class='desc'>  
+     <text selectable='true'>{{item1.cardInfo.textMsg}}</text>
+    </view> 
+    <record-player wx:if="{{item1.audioInfo.length > 0}}" second="{{item1.record_time}}" src="{{item1.audioInfo[1]}}" bind:sendInnerAudioContext="getInnerAudioContext"></record-player>
+    <view class='imgAndVedio'>
+    <view wx:for="{{item1.pictureInfo}}" wx:for-item="imgurl" wx:for-index="idx2"> 
+    <!-- <image  src='{{imgurl}}' class="{{(item1.pictureInfo.length+item1.videoInfo.length==1)?'inlineBig':'inlineSmall'}}" data-cardIndex='{{idx1}}' data-imgIndex='{{idx2}}' catchtap='previewImg'></image>   -->
+
+     <image wx:if='{{(item1.pictureInfo.length+item1.videoInfo.length==3)&&(idx2==0)}}' mode='{{imgurl.imgMode}}' src='{{imgurl.pic}}' class="roundCor inlineBig2" data-cardIndex='{{idx1}}' data-imgIndex='{{idx2}}' catchtap='previewImg'></image>
+      <image wx:elif='{{(item1.pictureInfo.length+item1.videoInfo.length==3)&&(idx2==1||idx2==2)}}' mode='{{imgurl.imgMode}}' src='{{imgurl.pic}}' class="roundCor inlineSmall" style='margin-top:16rpx;' data-cardIndex='{{idx1}}' data-imgIndex='{{idx2}}' catchtap='previewImg'></image>
+      <image wx:else mode='{{imgurl.imgMode}}' src='{{imgurl.pic}}' class="roundCor {{(item1.pictureInfo.length+item1.videoInfo.length==1)?'inlineBig':'inlineSmall'}}" data-cardIndex='{{idx1}}' data-imgIndex='{{idx2}}' catchtap='previewImg'></image>
+    </view> 
+ 
+  <view wx:for="{{item1.videoInfo}}" wx:for-item="videourl"> 
+    <view  class="{{(item1.pictureInfo.length+item1.videoInfo.length==1)?'inlineBig':'inlineSmall'}}" catchtap='playVideo'  data-id='{{videourl.realPath}}' > 
+        <video wx:if="{{play_id==videourl.realPath}}" id='myVideo'  src='{{videourl.realPath}}' autoplay="true" bindended="cover_video"></video> 
+        <view wx:else style="background:url('{{videourl.picPath}}'); background-size:100% 100%">
+          <i class="fa fa-play"  aria-hidden="true"> </i> 
+        </view> 
+    </view>
+  </view> 
+ 
+  </view> 
+  <view class='bottom'> 
+  <view class='deleteButton' catchtap='removeShiYan' data-id='{{item1.cardInfo.cardId}}'><i class="fa fa-trash-o font-42" aria-hidden="true"></i></view> 
+  
+    <view class='num likesNum' catchtap='addLikeNum2' data-id='{{idx1}}'><i class="fa {{item1.cardInfo.liked? 'fa-heart red' : 'fa-heart-o opacity_3'}} font-42 likeIcon" aria-hidden="true"></i><text class="opacity_3">{{item1.cardInfo.likesNum != 0 ? item1.cardInfo.likesNum : ''}}</text> </view>
+    <view class='num opacity_3 commentNum' catchtap='comment' data-id='{{item1.cardInfo.cardId}}'> 
+    <i class="fa fa-comment-o font-42 chatIcon" aria-hidden="true"></i> 
+    {{item1.cardInfo.commentNum != 0 ? item1.cardInfo.commentNum : ' '}} 
+  </view> 
+    <view class='num opacity_3 shareNum' carchtap='share' data-id='{{item1.cardInfo.cardId}}'><i class="fa fa-external-link font-42 shareIcon" aria-hidden="true"></i>{{item1.cardInfo.shareNum != 0 ? item1.cardInfo.shareNum : ' '}}</view>
+ 
+  </view> 
+  </view>
+
+  <view wx:if="{{json.length==0}}" class='hiddnArea'>
+    <view class="hiddenFont" bindtap='fabushiyan'>你还没发布过拾言，点击发布</view>
+  </view>
+</view>
+ 
+<!-- 评论和回复内容 -->
+<view wx:elif='{{current == 1}}'>
+  <view  wx:for='{{json4}}' wx:for-item='item1' wx:for-index='idx' class='card' data-id='{{item1.cardId}}' data-liked='{{item1.liked}}' bindtap='comment'>
+    <view class='initiatorInfo2'>
+    </view>
+    <view wx:if='{{item1.flag == "comment"}}' class='commentLikeNum'>
+            <i catchtap='addCommentLikeNum' class='fa {{item1.commentLiked? "fa-heart red" : "fa-heart-o opacity_3"}} font-42' data-commentId='{{item1.commentId}}' data-index='{{idx}}'></i>
+            <text class='opacity_3'>{{item1.likesNum}}</text>
+    </view>
+    <view class='desc2'>
+      <view>
+        {{item1.flag == 'comment' ? '评论' : '回复'}} <text class='commentTo'>{{item1.beReplyName}}:</text>
+        <!-- <view class="commentInfo"> -->
+          <text selectable='true' class="commentInfo">{{item1.textMsg}}</text>
+        <!-- </view> -->
+      </view>
+      
+      <!-- <image wx:if='{{item1.picMsg != ""}}' class='inlineBig' mode='widthFix' src='{{item1.picMsg}}'></image> -->
+      <view class='imgArea'>
+        <view wx:for='{{item1.compressPath}}' wx:for-index="idx2">
+          <image class="roundCor commentImg" src="{{item}}" catchtap="previewCommentPic" data-imgIndex="{{idx2}}" data-commentIndex="{{idx}}"></image>
+        </view>
+      </view>
+    </view>
+    <view class='bottom'>
+    <view catchtap='{{item1.flag == "comment" ? "removeComment" : "removeReply"}}' class='deleteButton' data-id='{{item1.flag == "comment" ? item1.commentId : item1.replyId}}'>
+      <i class='fa fa-trash-o font-42'></i>
+    </view>
+    </view>
+  </view>
+</view>
+
+<view style='height:135rpx'></view> 
+</view>
+

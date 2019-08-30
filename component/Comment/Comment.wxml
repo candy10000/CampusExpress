@@ -1,0 +1,38 @@
+<!--component/Comment/Comment.wxml-->
+<!-- 回复框 -->
+
+<view class="comment-bottom {{isCommentBoxUp ? 'comment-box-up': ''}}">
+  <view class='chooseImg' bindtap='imgBoxTrigger'>
+    <i class="fa fa-picture-o font-52" ></i>
+  </view>
+  <view class='record' bindtap='recordBoxTrigger'><i class="fa {{isSendPicAndText ? 'fa-paper-plane' : 'fa-microphone'}} font-52"></i>
+  </view>
+  <view class='textarea'>
+    <textarea wx:if='{{showTextArea}}' cursor-spacing="{{cursorSpacing}}rpx" placeholder='评论...' maxlength='150' fixed='true' show-confirm-bar='{{false}}' auto-focus bindblur='TextTrigger' bindinput='refreshText' bindlinechange='textLineChange' value="{{text}}"></textarea>
+    <view class='textview' wx:else bindtap="TextTrigger">{{text == '' ? '评论...': text}}</view>
+  </view>
+</view>
+<!-- 相册 -->
+<view class="puctureArea {{isImgBoxUp ? 'puctureAreaUp': ''}} {{isImgBoxShow ? 'show': ''}}" >
+  <!--已选择的图片-->
+  <view class="select-pic" wx:for="{{imgBox}}" wx:key="{{item}}">
+    <image class='pic' src='{{item}}' data-idx="{{index}}" bindtap='previewImg' mode='aspectFill'></image>
+    <image class='delete-pic' src='img/close.png' data-idx="{{index}}" bindtap='deleteImg'></image>
+  </view>
+  <!--添加图片按钮--> 
+  <view class="select-pic" bindtap="choosePic" hidden="{{imgBox.length >= imgCount}}">
+    <image class='add-pic' src='img/plus.png'></image>
+  </view>
+  <!--占位的view-->
+  <view class="empty-pic" hidden="{{imgBox.length >= imgCount-1}}">
+</view>
+</view>
+<!-- 录音 -->
+<view class="recordArea {{isRecordBoxUp ? 'recordAreaUp': ''}} {{isRecordBoxShow ? 'show': ''}}" >
+  <text class='remove_btn' bindtap="removeRecord">取消</text>
+  <view>
+    <view class='time'>{{tempSecond}}S</view>
+    <view class='button'><i class="fa {{recordAction}}"  aria-hidden="true" bindtap='startRecording'></i></view>
+  </view>
+  <text  class='save_btn' bindtap="saveRecord">发送</text>
+</view>

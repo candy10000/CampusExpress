@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "giftsGetted": "/pages/giftmall/giftsGetted/giftsGetted",
+    "giftmall": "/pages/giftmall/giftmall"
+  }
+}

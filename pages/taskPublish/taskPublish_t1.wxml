@@ -1,0 +1,120 @@
+<!-- pages/taskPublish/taskPublish.wxml -->
+<form bindsubmit="bindFormSubmit">
+  <view class='box'>
+    <view class='font1'>描述</view>
+    <view>
+      <textarea name="desc" value="{{textDesc}}" class="inputBox1" placeholder="简略描述你的任务需求，限500字" auto-focus />
+    </view>
+  </view>
+  <view class='box'>
+    <view class='font2'>标签</view>
+    <view>
+      <picker name="label" mode="multiSelector" bindchange="bindPickerChange1" bindcolumnchange="bindPickColChange1" value="{{index1}}" range="{{tagArray}}">
+        <view class='inputBox2'>
+          {{tagArray[1] [tagMultiIndex[1]] }}
+          <text class='iconfont icon-sort-down'></text>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='tips1'>
+    <text>标签表示你的任务类型</text>
+  </view>
+  <view class='box'>
+    <view class='font2'>任务地点</view>
+    <!-- <view> -->
+    <!-- <view class='inputBox3'>{{placeArray[1] [placeMultiIndex[1]]}}</view> -->
+    <!-- <picker class='myplacepicker' name="tplace" mode="multiSelector" bindchange="bindPickerChange2" bindcolumnchange="bindPickColChange2" value="{{index2}}" range="{{placeArray}}">
+      <view class='iconfont icon-sort-down taskplace_sortdown'></view>
+    </picker> -->
+    <picker class='myplacepicker' name="tplace" mode="multiSelector" bindchange="bindPickerChange2" bindcolumnchange="bindPickColChange2" value="{{index2}}" range="{{placeArray}}">
+      <view>
+        <view class='inputBox3'>
+          {{placeArray[1] [placeMultiIndex[1]]}}
+          <text class='iconfont icon-sort-down' style="float: right;"></text>
+        </view>
+      </view>
+    </picker>
+    <input class='tplaceInput' name="tplaceDetail" wx:if="{{tplaceInput}}" placeholder="输入地点"></input>
+    <!-- </view> -->
+  </view>
+  <view class='tips2'>
+    <text>TA应该先去哪里帮助你呢?</text>
+  </view>
+  <view class='tips3'>
+    <text>或许是某个食堂、快递点、超市</text>
+  </view>
+  <view class='box'>
+    <view class='font2'>我的地点</view>
+    <!-- <view> -->
+      <picker class='myplacepicker' mode="multiSelector" name="place" bindchange="bindPickerChange3" bindcolumnchange="bindPickColChange3" value="{{index3}}" range="{{minePlaceArray}}">
+        <view>
+          <view class='inputBox4'>
+            {{minePlaceArray[1] [minePlaceMultiIndex[1]] }}->{{minePlaceArray[2] [minePlaceMultiIndex[2]]}}
+            <text class='iconfont icon-sort-down'></text>
+          </view>
+        </view>
+        <!-- <view class='iconfont icon-sort-down myplace_sort_down'></view> -->
+      </picker>
+      <input class='tplaceInput' name="minePlaceDetail" wx:if="{{tplaceInput2}}" placeholder="详细信息"></input>
+    <!-- </view> -->
+  </view>
+  <view class='tips2'>
+    <text>你在哪里呢？</text>
+  </view>
+  <view class='tips3'>
+    <text>或许在某个宿舍、教室、图书馆</text>
+  </view>
+  <view class='box'>
+    <view class='font2'>赏金</view>
+    <picker name="reward" bindchange="bindPickerChange4" value="{{index4}}" range="{{rewardArray}}">
+      <view class='inputBox5'>
+        {{rewardArray[index4]}}
+        <text class='iconfont icon-sort-down'></text>
+      </view>
+    </picker>
+    <input class='PlaceDetail3' name="rewardDetail" wx:if="{{rewardInput}}" value="{{reward}}"></input>
+  </view>
+  <view class='tips1'>
+    <text>一点心意表达感谢</text>
+  </view>
+  <view class='box'>
+    <view class='font2'>联系</view>
+    <picker name="tel1" class='inputBox5' bindchange="bindPickerChange5" value="{{index5}}" range="{{telArray}}">
+      <view>
+        {{telArray[index5]}}
+        <text class='iconfont icon-sort-down'></text>
+      </view>
+    </picker>
+    <input name="telDetail" class='PlaceDetail2' placeholder="输入联系方式" value="{{contactInfo}}"></input>
+  </view>
+  <view class='tips1'>
+    <text>联系号码仅会在TA给你任务之后向对方显示</text>
+  </view>
+  <view class='box'>
+    <view class='font2'>时限</view>
+    <picker name="deadline" class='inputBox6' bindchange="bindPickerChange6" value="{{index6}}" range="{{timeLimArray}}">
+      <view>
+        {{timeLimArray[index6]}}
+        <text class='iconfont icon-sort-down'></text>
+      </view>
+    </picker>
+  </view>
+  <view class='tips1'>
+    <text>你希望任务在多久之内被拾起，超出时限后任务将自动停止寻找拾友</text>
+  </view>
+  <view class='box'>
+    <view class='font2'>数量</view>
+    <picker name="halpLimit" class='inputBox6' bindchange="bindPickerChange7" value="{{index7}}" range="{{amountArray}}">
+      <view>
+        {{amountArray[index7]}}
+        <text class='iconfont icon-sort-down'></text>
+      </view>
+    </picker>
+  </view>
+  <view class='tips1'><text>你最多需要几个人来完成此任务</text>
+  </view>
+  <button form-type="submit" class='default'>
+    <text class='iconfont icon-xuanzhong xuanzhong'></text>发布</button>
+</form>
+<view style='height:50rpx;'></view>

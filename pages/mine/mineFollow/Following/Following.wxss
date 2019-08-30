@@ -1,0 +1,103 @@
+/* pages/mine/mineFollow/Following/Following.wxss */
+@import '/utils/icon-list.wxss';
+.myList{
+  height: 180rpx;
+  width: 700rpx;
+  background-color: white;
+  margin-left: 24rpx;
+  border-radius: 8rpx;
+}
+.orderPic{
+  width: 50rpx;
+  color: #3F51B5;
+  font-size: 46rpx;
+  font-weight: 900;
+  margin-left: 68rpx;
+  margin-top: 66rpx;
+  float: left
+}
+.title{
+  width: 250rpx;
+  font-size: 26rpx;
+  margin-left: 70rpx;
+  margin-top: 70rpx;
+  float: left;
+}
+.desc{
+  width: 220rpx;
+  font-size: 26rpx;
+  margin-left: 0rpx;
+  margin-top: 50rpx;
+  color: #888888;
+  float: left;
+}
+.businessList{
+  margin-top: 24rpx;
+}
+.img{
+  height: 90rpx;
+  width: 90rpx;
+  margin-left: 24rpx;
+  margin-top: 40rpx;
+  float: left;
+  border: 2rpx solid rgba(187, 187, 187, 1);
+  border-radius: 100rpx;
+}
+.profile{
+  width: 350rpx;
+  height: 100%;
+  font-size: 30rpx;
+  margin-left: 55rpx;
+  padding-top:  38rpx;
+  float: left;
+  box-sizing: border-box
+}
+.profile .name{
+  display: block;
+  width: 100%;
+  height: 35rpx;
+  line-height: 35rpx;
+  overflow: hidden;
+  margin-bottom: 30rpx;
+}
+
+.profile .about{
+  display: block;
+  width: 100%;
+  max-height: 35rpx;
+  line-height: 35rpx;
+  overflow: hidden;
+  color: #888888;
+}
+
+.following-view{
+  height: 100%;
+  float: left;
+  margin-left: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.following-view .following{
+  width: 140rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  font-size: 30rpx;
+  text-align: center;
+  border-radius: 70rpx;
+  background-color: #DBD9D9;
+  color: #FFFFFF;
+
+}
+
+.following-view .unfollow{
+  width: 140rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  font-size: 30rpx;
+  text-align: center;
+  border-radius: 70rpx;
+  background-color: #3F51B5;
+  color: #FFFFFF;
+
+}

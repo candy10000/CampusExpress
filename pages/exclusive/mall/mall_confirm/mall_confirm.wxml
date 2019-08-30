@@ -1,0 +1,83 @@
+<view class='warning'>
+  <i class=" img_warning fa fa-exclamation-circle fa-rotate-180"></i>
+  <!-- <image class='img_warning' src='https://xcx.gaoxiao114.cn/images/warning.png'></image> -->
+  <span class='conrirmtext'>请确认信息后付款</span>
+  <span class='totalprice'>总计：{{buynum}}项{{totalnum}}件，共{{totalprice}}元(优惠{{pricefree}}元)</span>
+  
+  
+</view>
+<!-- 显示区 -->
+<view hidden='{{showhidden}}'>
+  <!-- 删除按钮 -->
+  <view class='del_view' bindtap='deleteclick'>
+    <i class="fa fa-times-circle del_btn"  hidden='{{delhidden}}' />
+    <!-- <image class='del_btn' src='https://xcx.gaoxiao114.cn/images/del_btn.png' bindtap='deleteclick' hidden='{{delhidden}}'></image> -->
+  </view>
+  <swiper id="myswiper" class='swiperinfo' bindchange='onSlideChange' circular='true' indicator-dots='true'  current='{{currentid}}'>
+    <swiper-item wx:for="{{orders}}" wx:key="{{currentid}}" class='eachinfo'>
+      <input type='text' class='eachtext' value='{{item.recipients}}' disabled='disabled'></input>
+      <input type='text' class='eachtext' value='{{item.customerTelephone}}' disabled='disabled'></input>
+      
+      <input type='text' class='eachtext' value='{{item.customerPlace}}' disabled='disabled'></input>
+
+      <input type='text' class='eachtext' value='{{item.goodsName}} ' disabled='disabled'></input>
+      <input type='text' class='eachtext' value='*{{item.num}} ' disabled='disabled'></input>
+
+      
+      
+      <!-- <image class='left' src='https://xcx.gaoxiao114.cn/images/turn_left.png'></image>
+      <image class='right' src='https://xcx.gaoxiao114.cn/images/turn_right.png'></image> -->
+
+      <!-- <image class='del_btn' src='https://xcx.gaoxiao114.cn/images/del_btn.png'></image> -->
+    </swiper-item>
+  </swiper>
+</view>
+
+<view hidden='{{updatehidden}}'>
+  <swiper class='swiperinfo1' bindchange='onSlideChange' circular='true' indicator-dots='true'  current='{{currentid}}'>
+    <swiper-item wx:for="{{orders}}" wx:key="{{currentid}}" class='eachinfo'>
+      <!-- <image class='left_' src='https://xcx.gaoxiao114.cn/images/turn_left.png'></image>
+      <image class='right_' src='https://xcx.gaoxiao114.cn/images/turn_right.png'></image> -->
+      <input class='ups upusername' value='{{item.recipients}}' name='uprecipients' bindinput='update_recipients'></input>
+      <input class='ups upphonenum' value='{{item.customerTelephone}}' name='upphonenum' bindinput='update_customerTelephone'></input>
+   
+      <view style='display: flex;flex-direction: row;justify-content: center;'>
+      <picker class='ups destinationpicker'  name="updestination" mode="multiSelector" value="{{multiArray[1][multiIndex[1]]}}" range="{{multiArray}}" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange">
+        <input class='ups updestination' type='text' value='{{item.destination}}' disabled='disabled'></input>
+        <image src='https://xcx.gaoxiao114.cn/images/003.png' class="body_img_4"></image>
+      </picker>
+      <input class='ups uproomnum' value='{{item.roomnum}}' name='uproomnum' bindinput='update_roomnum'></input></view>
+
+      <view class='ups upphonenum'  name='upphonenum' style='border:0'>{{item.goodsName}}</view>
+      
+      <view class='goods_num'>
+          <i class="fa fa-minus-circle btn_sub_num" bindtap='subGoodsNum'/>
+          <!-- <image src='../../../pic/subtract.png' class='btn_sub_num' bindtap='subGoodsNum'></image> -->
+          <view class='goods_numtext'>{{item.num}}</view>
+          <i class="fa fa-plus-circle btn_add_num" bindtap='addGoodsNum'/>
+          <!-- <image src='../../../pic/add.png' class='btn_add_num' bindtap='addGoodsNum'></image> -->
+      </view>
+
+      
+      
+
+    </swiper-item>
+    
+  </swiper>
+</view>
+
+<view class='buttons'>
+  <view class='button btn_confirm' bindtap='orderPay' hidden='{{btn_pay}}'>
+    <i class="fa fa-check " />
+    <text>支付</text>
+  </view>
+  <view bindtap='tomodify' class='button btn_modify' hidden='{{btn_modify}}'>
+    <i class="fa fa-pencil"/>
+    <text>修改</text>
+  </view>
+  <view bindtap='toconfirm' class='button1 btn_modify' hidden='{{btn_confirm}}'>
+    <i class="fa fa-pencil"/>
+    <text>确认修改</text>
+  </view>
+</view>
+<view style='height:260rpx'></view>

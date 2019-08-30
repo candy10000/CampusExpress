@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "taskHelpMe": "HelpMe/HelpMe",
+    "taskHelp": "ICanHelp/ICanHelp"
+  }
+}

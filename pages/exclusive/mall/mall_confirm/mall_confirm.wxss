@@ -1,0 +1,279 @@
+/* pages/exclusive/mall/mall_confirm/mall_confirm.wxss */
+page{
+  background-color:#3F51B5;
+}
+.warning{
+  width: 100%;
+  height: 500rpx;
+  padding: 30rpx 0;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  box-sizing: border-box;
+}
+.img_warning{
+  font-size: 240rpx;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+.conrirmtext{
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 40rpx;
+  margin-top: 25rpx;
+}
+.totalprice{
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 32rpx;
+  margin-top: 25rpx;
+  margin-bottom: 25rpx;
+}
+.del_view{
+  z-index: 100;
+  position: absolute;
+  right: 50rpx;
+  top: 530rpx;
+  /* width: 100%;
+  height: 65rpx; */
+}
+.swiperinfo{
+  margin: 0 50rpx;
+  border-top: 2px dashed #fff;
+  border-bottom: 2px dashed #fff;
+  padding: 30rpx 0rpx;
+  /* float: left; */
+  width: 650rpx;
+  height: 400rpx;
+  color:#fff;
+}
+.swiperinfo1{
+  margin: 0 50rpx;
+  border-top: 2px dashed #fff;
+  border-bottom: 2px dashed #fff;
+  padding: 30rpx 0rpx;
+  /* float: left; */
+  width: 650rpx;
+  height: 550rpx;
+  color:#fff;
+}
+.eachinfo{
+    border: none;
+    display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+.left,.right{
+  width: 48rpx;
+  height: 48rpx;
+  margin-top: -22%;
+}
+.left{
+  float: left;
+  /* margin-left: 25rpx; */
+}
+.right{
+  float: right;
+  /* margin-right: 25rpx; */
+}
+.left_,.right_{
+  width: 48rpx;
+  height: 48rpx;
+}
+.left_{
+  float: left;
+  margin-top: 30.5%;
+  margin-left: 25rpx;
+}
+.right_{
+  float: right;
+  margin-top: 30.5%;
+  margin-right: 25rpx;
+}
+.swiperinfo .eachtext{
+  
+  width: 100%;
+  height: 14%;
+  font-size: .87rem;
+  text-align: center;
+  /* color: #101010; */
+  /* background-color: #E64340; */
+}
+.del_btn{
+  float: right;
+  /* height: 50rpx;
+  width: 50rpx; */
+  font-size: 50rpx;
+  color: #fff;
+  /* margin-right: 12rpx;
+  margin-top: 12rpx; */
+  /* background-color: #35AD1A; */
+}
+.ups{
+  display: inline-block;
+  height: 12%;
+  margin-top: 15rpx;
+  /* margin-bottom: 2rpx; */
+  padding-left: 3rpx;
+  padding-right: 3rpx;
+  /* background-color: white; */
+  border: 1px solid #c1c1c1;
+  color: #fff;
+  text-align: center;
+}
+.upusername{
+  width: 26%;
+}
+.upphonenum{
+  width: 300rpx;
+ 
+}
+.companypicker,.destinationpicker,.datepicker{
+  width: 18%;
+  margin-top: 15rpx;
+  border: 0;
+  padding-top: 0;
+  padding-left: 10rpx;
+}
+
+.upcompany,.updestination,.update{
+  float: left;
+  border: 0;
+  width: 70%;
+  margin: 0;
+}
+.body_img_4{
+  float: left;
+  height:20rpx;
+  width:20rpx;
+  margin-top: 15rpx;
+}
+.upcode,.uproomnum{
+  width: 16%;
+}
+radio-group{
+  float: left;
+  width: 80%;
+  margin-top: -12rpx;
+  margin-bottom: 2rpx;
+  margin-left: 27%;
+  font-size: .87rem;
+  line-height: 40rpx;
+}
+.radio{
+  margin-top:15rpx;
+  transform:scale(0.8);
+}
+.uptext{
+  float: left;
+  margin-left: 10rpx;
+  padding-top: 10rpx;
+  width: 16%;
+}
+
+
+.buttons{
+  margin-top: 28rpx; 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.button{
+  height: 66rpx;
+  width: 170rpx;
+  border-radius: 8rpx;
+  margin-top: 20rpx;
+  background-color: #fff;
+  color: #3F51B5;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  
+}
+.button1{
+  height: 66rpx;
+  width: 224rpx;
+  border-radius: 8rpx;
+  margin-top: 20rpx;
+  background-color: #fff;
+  color: #3F51B5;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  
+}
+
+.button  text,.button1 text{
+  margin-left: 20rpx;
+  color: #3F51B5;
+  font-size: 28rpx;
+}
+.button i,.button1 i{
+  color: #3F51B5;
+  font-size: 48rpx;
+}
+
+
+
+
+.goods_num{
+  height: 80rpx;
+  margin-top: 70rpx; 
+}
+ 
+.btn_add_num{
+ 
+  margin-left: 5rpx;
+ 
+  padding-top: 27rpx;
+ 
+  height: 30rpx;
+ 
+  width: 30rpx;
+ 
+  
+ 
+}
+ 
+.goods_numtext{
+ 
+  width: 90rpx;
+ 
+ 
+  position: relative;
+ 
+  top:-4rpx;
+ 
+  display: inline-block;
+ 
+  text-align: center;
+ 
+  font-size: 32rpx;
+  
+  border:1px solid #fff;
+  margin: 0 15rpx;
+ 
+}
+ 
+.btn_sub_num{
+ 
+  margin-top: 25rpx;
+ 
+  margin-left: 18rpx;
+ 
+  height: 34rpx;
+ 
+  width: 34rpx;
+ 
+}

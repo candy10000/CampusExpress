@@ -1,0 +1,127 @@
+/* pages/mine/talkWithUs/talkWithUs.wxss */
+@import '/utils/icon-filterList.wxss';
+
+page{
+  margin-top: 10rpx;
+  background-color: #3F51B5;
+}
+.box{
+  display: flex;
+  padding-left: 5rpx;
+}
+
+.iconstyle-filter{
+  color: #3f51b5;
+  /* margin-top: -35rpx; */
+  /* margin-left: 65rpx; */
+  font-size: 40rpx;
+  position: absolute;
+  top: 5rpx;
+  right: -47rpx;
+}
+
+.iconstyle-filter{
+  color: #3f51b5;
+  /* margin-top: -35rpx; */
+  /* margin-left: 65rpx; */
+  font-size: 40rpx;
+  position: absolute;
+  top: 5rpx;
+  right: -47rpx;
+}
+
+.png1{
+  
+  margin-top: 20rpx;
+  margin-left: 50rpx;
+    width:100rpx; 
+    height:100rpx; 
+}
+.customer{
+    margin-top: 30rpx;
+    margin-left: 70rpx;
+    width:230rpx; 
+    height:60rpx; 
+    color:  #3F51B5;
+
+}
+.tips1{
+  margin-left: 215rpx;
+  width: 474rpx;
+  color: #FFFFFF;
+  opacity: 0.7;
+  font-size: 30rpx;
+}
+.png2{
+  margin-top: 50rpx;
+  margin-left: 50rpx;
+    width:100rpx; 
+    height:100rpx; 
+}
+.question{
+    margin-left: 70rpx;
+    margin-top: 60rpx;
+    width:230rpx; 
+    height:60rpx; 
+    color:  #3F51B5;
+}
+.tips2{
+  margin-left: 215rpx;
+  width: 474rpx;
+  color: #FFFFFF;
+  opacity: 0.7;
+  font-size: 30rpx;
+}
+.png3{
+  margin-top: 40rpx;
+  margin-left: 30rpx;
+    width:120rpx; 
+    height:120rpx; 
+}
+.inputBox1{
+  margin-top: -120rpx;
+  margin-left:220rpx; 
+  background-color: white;
+  height: 230rpx;
+  width: 480rpx;
+  padding: 12rpx;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  color: #888888;
+}
+.tips3{
+  margin-top:10rpx;
+  margin-left: 215rpx;
+  width: 474rpx;
+  color: #FFFFFF;
+  opacity: 0.7;
+  font-size: 30rpx;
+}
+.send{
+    margin-top:30rpx;
+    margin-left: 320rpx;
+    width:230rpx;
+    height:60rpx; 
+    color:  #3F51B5;
+}
+.png4{
+  margin-top: -200rpx;
+    width:1000rpx;
+}
+.png5{
+  margin-top: -180rpx;
+  margin-left: 50rpx;
+    width:100rpx; 
+    height:100rpx; 
+}
+.tips4{
+  margin-top:-200rpx; 
+  margin-left: 215rpx;
+  width: 474rpx;
+  color: #FFFFFF;
+  font-size: 35rpx;
+}
+
+
+

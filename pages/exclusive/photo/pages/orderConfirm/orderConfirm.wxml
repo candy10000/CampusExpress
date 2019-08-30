@@ -1,0 +1,41 @@
+<view class="wrapper" style="width:{{width}}px">
+  <view id="top">
+    <!-- <image src="../images/warn.png"></image> -->
+      <i class=" img_warning fa fa-exclamation-circle fa-rotate-180"></i>
+    <view id="top-warn-msg"> 请确认信息后付款</view>
+    <view id="top-total-msg">总计：{{photoOrder.photoTotalprice}}￥ </view>
+  </view>
+
+  <view id="middle"  hidden='{{showhidden}}'>
+    <view>{{ photoOrder.photoUsername}} </view>
+    <view>{{photoOrder.photoTelephone}}</view>
+    <view>联系：{{photoOrder.photoContact}}</view>
+    <view>摄影师：{{photoCameramanName}}</view>
+    <view>内容：{{photoOrder.photoContent}}</view>
+  </view>
+
+   <view id="middle"  hidden='{{updatehidden}}'>
+    <view> <text decode="{{true}}">名&emsp;字：</text><input class="ups" value="{{ photoOrder.photoUsername}}" name='upPhotoUsername' bindinput='update_photoUsername'></input> </view>
+    <view>手机号：<input class="ups" value="{{photoOrder.photoTelephone}}" name='upPhotoTelephone' bindinput='update_photoTelephone'></input></view>
+    <view> <text decode="{{true}}">联&emsp;系：</text><input  class="ups" value="{{photoOrder.photoContact}}" name='upPhotoContact' bindinput='update_photoContact'></input>  </view>
+    <view>摄影师：{{photoCameramanName}}</view>
+    <view>内容：{{photoOrder.photoContent}}</view>
+  </view>
+
+  <view id="bottom"> 
+      <view class='button btn_confirm' bindtap='orderPay' hidden='{{btn_pay}}'>
+    <i class="fa fa-check " />
+    <text>支付</text>
+  </view>
+  <view bindtap='tomodify' class='button btn_modify' hidden='{{btn_modify}}'>
+    <i class="fa fa-pencil"/>
+    <text>修改</text>
+  </view>
+  <view bindtap='toconfirm' class='button1 btn_modify' hidden='{{btn_confirm}}'>
+    <i class="fa fa-pencil"/>
+    <text>确认修改</text>
+  </view>
+  </view>
+ 
+
+</view>

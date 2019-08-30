@@ -1,0 +1,33 @@
+<!--pages/task/taskInfo/taskInfo.wxml-->
+<view class='font-32'>快来参与我分享的任务吧</view>
+<view class = "tasklist" wx:if="{{taskInfo != null}}">
+  <!-- <block wx:for='{{taskList}}' wx:key='taskId'> -->
+  <!-- <view class = "tasklist"> -->
+  <view class=' left-gap'></view>
+  <view class='right-gap'></view>
+    <view class='initiatorInfo'>
+      <image src='{{taskInfo.initiatorPic}}' class='initiatorPic' catchtap='toOtgerInfo' data-id='{{taskInfo.openId}}'></image>
+      <text class='nickname'>{{taskInfo.nickName}}</text>
+      <view wx:if="{{taskInfo.gender=='1'}}" class='iconfont icon-male icon-gender-male'></view>
+      <view wx:elif="{{taskInfo.gender=='0'}}" class='iconfont icon-female icon-gender-female'></view>
+      <text class='title'>{{taskInfo.userTitle}}</text>
+    </view>
+  <view class='taskInfo'>
+    <view class='decs'>
+      <text class='decs'>{{taskInfo.decs}}</text>
+      <!-- <text>{{taskInfo.decs}}</text> -->
+    </view>
+    <view class='tplace'><text> 任务地点：{{taskInfo.tPlace}}</text></view>
+    <view wx:if="{{taskInfo.taskType==1}}" class='place'><text> TA的地点：{{taskInfo.place}}</text></view>
+    <view wx:elif="{{taskInfo.taskType==2}}" class='place'><text> 我的地点：{{taskInfo.place}}</text></view>
+    <view class='lable'><text> 标签：{{taskInfo.label}}</text></view>
+    <view class='reward'><text> 酬劳：{{taskInfo.reward/100}}￥</text></view>
+    <view class='initime'><text> {{taskInfo.iniTime}}</text></view>
+    
+  </view>
+  <view class='pickup'>
+    <text id="{{taskInfo.taskId}}" data-reward="{{taskInfo.reward}}" bindtap='pickup2' wx:if="{{taskInfo.taskType==2}}">给TA任务</text>
+    <text id="{{taskInfo.taskId}}" data-reward="{{taskInfo.reward}}" bindtap='pickup1' wx:elif="{{taskInfo.taskType==1}}">拾起任务</text>
+</view>
+</view>
+    

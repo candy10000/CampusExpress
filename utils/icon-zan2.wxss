@@ -1,0 +1,21 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1561868910010'); /* IE9 */
+  src: url('iconfont.eot?t=1561868910010#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPkAAsAAAAAB/QAAAOXAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqDdIMlATYCJAMICwYABCAFhG0HOxvWBsgOJcHMwABgAEBEPPy33//2uXeezfuijomESCKyOqFBKR4aybJ69RL46T3rFZqUK85JK7qYdFOll07P1J/5K333f46ZLsXzD2SOmUV7Axy3DiwiLxLwwO6ADoyPbhi7iaAhniaQjRlNdLikqgmUEjApENc5qxGUGanUkBjqQrViZYK4DTL1YqH4OYBb/OfjHySEEhQqJYCU89eKLZD38y0MkczwzdBFEUCbTg1jHSVWgERcrtSeJYm8KySy55WaAttKDH6+9fkodbN/eARRBRDfAkZk6jXRMP1ScwqQXHv3QwDPBt1IZa++UqmavK+kZfN20ccXKXuuhGx9VjU4cN0+lJNdQXzz6hBm/+Xw5rXPi5nFicHrgzeH7T9OXNuC1h8Pd95l/WbR8Mxb7jVrUF60TlTOXB/MrF0b6Fx7YDBaMyOQ2bsxYM0RyRQwYy1jkrcGbDiQxNrIBwes2YPyvRdBLUMX7QsaZgp++bKF9WHuPB+wdUvE4ueB4T/haElpampnKlsWHZp5ePHBGQdS/YZ66+eL1wdGiIorjY8/HdTVh3FPt8CGTdrTvw7i1fjQr6q6oaudYbua1H0Lc3ekDs2sL4/xzyaGqoui47VfD2/WRai+4S56j6qY98xq9GNH1Yr3qvyhaPivhBPBJ+J3+kZrmz5nnUDVcbL4z2N7EyfXjUh9CVY+LG5hb0Bge6X/wroGzYCewCbRcE2nauuq/KYhBXOgID9Q18UX+KmWfTnTKKUpB2Q7Dqp+VXdp/KpFm8jSaoO+KBrqIA+wl48kaz/wdwy+2WTt1WX9VzJSgC85nU4uTrrpQf02dcHvonWsSj4DyIrk0iqDhYcgew0FWcZ/qrHLh6H6XpCoQ92kyVCoGYVS3QwyYVegomkzVNXtg2xZ6fqmbgKJSCpgyVwJQofjUGjzGEod7iMT9j1U9PkOVR0hgexq+O/YNBccKhSIkRILNk3EnJl3sUhBkUhsIFavwyikGRzXQgQP58DxMXH5QClxEWGKOZ5x1gRKWcwKvBOXSOcRh4PHboG3ETON6afUnREby1Z9UoyZdwJyiIAwoggLzGQijGPGc2FpfQoVvr8BYeXlYCQ0VPQoWxACD653LF6MuA7IUq6rU8WtPMdjHKsEFMXCWAKeE1YiqQkH9PIwd/UwG8KMitE/wO2WIVapxXblxizPd77dBsiAqAh4oAQ6b3hNnJGf1M9N8vJO3mR0AQAA') format('woff2'),
+  url('iconfont.woff?t=1561868910010') format('woff'),
+  url('iconfont.ttf?t=1561868910010') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1561868910010#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-tubiaozhizuomoban:before {
+  content: "\e6db";
+}
+

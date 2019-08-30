@@ -1,0 +1,87 @@
+@import '/utils/icon-list.wxss';
+page{
+  height: 100%;
+  background: #3F51B5;
+}
+.top{
+background: white;
+height: 85rpx;
+width: 400rpx;
+margin-left: 24rpx;
+border-radius: 225rpx;
+overflow:hidden; 
+z-index: 100; 
+border-bottom: 4rpx solid #f0f0f2;
+position: relative;
+}
+.schoolSelect{
+  font-size: 16px;
+  font-family: "PingFangSC-regular";
+  text-align: center;
+  height: 85rpx;
+  line-height: 85rpx;
+  width: 340rpx;
+  display: inline-block;
+
+}
+.top_img_3{
+margin-left:1%; 
+height: 30rpx;
+width: 30rpx;
+margin-top: 5rpx;
+}
+.myList{
+  height: 180rpx;
+  width: 700rpx;
+  margin-left: 24rpx;
+  border-radius: 8rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.orderPic{
+  width: 50rpx;
+  color: #3F51B5;
+  font-size: 46rpx;
+  font-weight: 900;
+  margin-left: 68rpx;
+  margin-top: 66rpx;
+  float: left
+}
+.title{
+  width: 250rpx;
+  font-size: 14px;
+  margin-left: 46rpx;
+}
+.desc{
+  width: 220rpx;
+  font-size: 14px;
+  margin-left: 24rpx;
+  color: #888888;
+}
+.businessList{
+  margin-top: 24rpx;
+}
+.img{
+  height: 90rpx;
+  width: 90rpx;
+  border: 2rpx solid rgba(187, 187, 187, 1);
+  border-radius: 100rpx;
+}
+
+.font-20{
+  color: #3F51B5;
+  font-size: 20px;
+  margin-right: 18rpx;
+}
+
+.font-22{
+  line-height: 85rpx;
+  height: 85rpx;
+  width: 60rpx;
+  text-align: left;
+  font-size: 22px;
+  color:#888888
+}

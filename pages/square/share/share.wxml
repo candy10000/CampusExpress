@@ -1,0 +1,46 @@
+<!--pages/square/share/share.wxml-->
+<canvas canvas-id='screenshot' style="height: {{share.height}}px; width: 100%; position:fixed;left:9000px" ></canvas>
+<view id='share-content' bindtap='share'>
+  <view id='share-card' class='card'>
+    <view class='initiatorInfo'>
+      <image id='userPic' src='{{weburl}}{{json.customerInfo.userPic}}' class='initiatorPic'></image>
+      <view id='nickname' class='nickname'>{{json.customerInfo.nickName}}</view>
+      <text id='userTitle' class='title'>{{json.customerInfo.userTitle}}</text>
+    </view>
+    
+    <view id='desc' class='desc'>
+      {{json.cardInfo.textMsg}}
+    </view>
+    <view class='imgAndVedio'>
+      
+      <view id="vedio-bg" wx:if="{{json.audioInfo.length > 0}}" class='voiceArea' style='display:{{show_voiceArea}}' data-index="{{idx1}}">
+      <i id="vedio-fa" class="fa fa-play"  aria-hidden="true"></i>
+      <view id='vedio-second' class='voice_content'>{{json.record_time}}</view>
+</view>
+
+      <image wx:if="{{idx2 % 2 == 0}}" id="{{picsrc.substring(picsrc.lastIndexOf('/',picsrc.length-1),picsrc.lastIndexOf('.',picsrc.length-1))}}" wx:for="{{json.pictureInfo}}" wx:for-index='idx2' wx:for-item="picsrc" src='{{weburl}}{{picsrc}}' class="line-img" data-imgsrc='{{weburl}}{{picsrc}}' mode='widthFix'></image>
+
+      <!-- <view wx:for="{{json.vidoInfo}}" wx:for-index='idx2' wx:for-item="vdosrc">
+        <video  src='{{vdosrc}}' class="inlineBig"></video>
+      </view> -->
+    </view>
+  </view>
+  <!-- logo 和 二维码 --->
+  <view id='foot' class='foot'>
+    <view class='logo-view'>
+      <image id='foot-logo-text' class='logo-text' src='images/logo_text.png' mode='widthFix'></image>
+      <image id='foot-logo' class='logo' src='images/logo.png'></image>
+    </view>
+    <view class='QR-view'>
+      <view class='QR-text'>
+        <view id='QR-text-1' class='QR-text-top'>微信扫描</view>
+        <view id='QR-text-2' class='QR-text-bottom'>查看拾言</view>
+      </view>
+      <image id='QR-image' class='QR-image' src='{{qrcode}}'></image>
+    </view>
+  </view>
+</view>
+
+<view class='hidden-view' style="display:{{hidden ? 'none' : 'flex'}}" bindtap='share'>
+  <view class='hidden-text'>点击保存到相册，分享给朋友</view>
+</view>

@@ -1,0 +1,7 @@
+<!--component/RecordPlayer/RecordPlayer.wxml-->
+<wxs module="filter" src="RecordPlayer.wxs"></wxs>
+<view class='voiceArea' catchtap='trigger'>
+  <i class="fa {{rpIsSpeak ? 'fa-pause' : 'fa-play'}}"  aria-hidden="true"></i>
+  <view class='voice_content'>{{rpTempSecond === 0? second : filter.parseInt(rpTempSecond)}}s</view>
+  <view class='loading' style='width: {{rpTempSecond/second*100}}%'></view>
+</view>

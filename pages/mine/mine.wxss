@@ -1,0 +1,277 @@
+/* pages/mine/mine.wxss */
+/* pages/mine/mine.wxss */
+@import '/utils/icon-male.wxss';
+@import '/utils/icon-female.wxss';
+@import '/utils/icon-edit.wxss';
+page{
+  background-color: #3f51b5;
+   /* background-color: white; */
+   height: 100%;
+   width: 100%;
+}
+
+.EditBoard{
+  
+  background-color:white;
+  height: 755rpx;
+  width: 700rpx;
+  margin: auto;
+  border-radius: 10rpx;
+}
+.user_1{
+  display: flex;
+
+}
+.nickname{
+  font-size: 40rpx;
+  font-family: PingFangSC-regular;
+  margin-left: 32rpx;
+  margin-top: 80rpx;
+  
+
+}
+.gender{
+  position: absolute;
+  top: 126rpx;
+  right: 66rpx;
+}
+.male{
+  font-size: 1.2rem;
+  color:  #0080FF;
+ 
+}
+.female{
+  font-size: 1.2rem;
+  color: #FF4081;
+  /* top:150rpx;
+  position: absolute;
+  left:640rpx; */
+}
+.headimg{
+  height: 160rpx;
+  width: 160rpx;
+  margin-left: 32rpx;
+  margin-top: 32rpx;
+  border-radius: 100%;
+  border: 1rpx solid rgba(187, 187, 187, 1);
+}
+.fans{
+  color: #009688;
+  font-size: 30rpx;
+  text-align: left;
+  font-weight: 500;
+  margin-left: 220rpx;
+  margin-top: -35rpx;
+}
+.authorityPic{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 100%;
+}
+.authority_Text{
+  margin-left: 20rpx;
+}
+.sign{
+  margin-top: 20rpx;
+  text-align: center;
+  color: #3F51B5;
+  font-size: 28rpx;
+}
+.edit{
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  top: 10rpx;
+  left: 630rpx;
+}
+.editStyle{
+  height: 40rpx;
+  width: 60rpx;
+  font-size: 50rpx;
+  margin-left: 10rpx;
+  margin-top: 20rpx;
+  color: #3F51B5;
+ 
+}
+.editText{
+  margin-top:12rpx;
+  margin-left: 6rpx;
+  font-size: 28rpx;
+  color: #3F51B5;
+}
+.label{
+  margin-top: 20rpx;
+  text-align: center;
+  color: #3F51B5;
+  font-size: 30rpx;
+}
+.titleList{
+  margin-top:50rpx;
+  display: flex;
+  margin-left: 40rpx;
+}
+.titleLeft{
+  height: 82rpx;
+  width: 41rpx;
+  margin-right: 5rpx;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  background-color: #009688;
+}
+.titleRight{
+  height: 82rpx;
+  width: 41rpx;
+  margin-left: 5rpx;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background-color: #009688;
+}
+.progressBar{
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+  width: 123rpx;
+  height: 82rpx;
+  background-color: #009688;
+  display: flex;
+  flex-direction: column;
+
+}
+.titleText{
+  color: #009688;
+  font-size: 30rpx;
+  text-align: center;
+  margin-top: -43rpx;
+  display: flex;
+  justify-content: center;
+}
+.divider1{
+  width: 100%;
+  margin-top: 110rpx;
+  border-top: 8rpx dashed #3F51B5;
+}
+.gift2{
+  margin-top: 0;
+  height: 190rpx;
+  box-sizing: border-box;
+  padding: 24rpx 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom:24rpx; 
+
+}
+.giftSwiper{
+  width: 440rpx;
+  height: 160rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+.giftSwiperItem{
+  width:110rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.giftPic{
+  height: 100rpx;
+  width: 100rpx;
+
+}
+.giftName{
+  color: #3F51B5;
+  font-size: 28rpx;
+
+}
+.giftNum{
+  color: #3F51B5;
+  font-size: 28rpx;
+
+}
+.bule{
+  background-color: #3f51b5;
+  margin-top: 40rpx;
+}
+.myTask0{
+  width: 700rpx;
+  height: 120rpx;
+  border-bottom: 5rpx solid #3F51B5;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  background-color: white;
+}
+.myTask1{
+  width: 700rpx;
+  height: 120rpx;
+  border-bottom: 5rpx solid #3F51B5;
+  background-color: white;
+}
+.myTask2{
+  width: 700rpx;
+  height: 120rpx;
+  border-bottom: 5rpx solid #3F51B5;
+  background-color: white;
+}
+.myTask3{
+  width: 700rpx;
+  height: 120rpx;
+  border-bottom: 5rpx solid #3F51B5;
+  background-color: white;
+}
+.myTask4{
+  width: 700rpx;
+  height: 120rpx;
+  border-bottom: 5rpx solid #3F51B5;
+  background-color: white;
+}
+.myTask5{
+  width: 700rpx;
+  height: 120rpx;
+  border-bottom: 5rpx solid #3F51B5;
+  background-color: white;
+}
+.myTask6{
+  width: 700rpx;
+  height: 120rpx;
+  background-color: white;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+.arrayItem{
+  padding-top: 35rpx;
+  padding-left: 62rpx;
+  display: flex;
+}
+.iconlist{
+  color: #3F51B5;
+  padding-top: 3rpx;
+  margin-right: 54rpx;
+  font-size: 48rpx;
+  height: 48rpx;
+  width: 48rpx;
+}
+.arrayText{
+  font-size: 36rpx;
+  color: #3F51B5;
+}
+.dot{
+  margin-left: 20rpx;
+  margin-top: 12rpx;
+  height: 25rpx;
+  width: 25rpx;
+  border-radius: 100%;
+  background-color: #E3CF03;
+}
+.chevron-right{
+  width: 60rpx;
+  height: 142rpx;
+  line-height: 142rpx;
+  text-align: center;
+  font-size: 40rpx;
+  color: rgba(0, 0, 0, 0.24);
+
+
+}
+/* pages/mine/mine.wxss */

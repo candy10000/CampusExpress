@@ -1,0 +1,18 @@
+<view>
+  <view class='on_off_switch'>
+    拾言通知开关
+    <switch class='switch'></switch>
+  </view>
+  <view class='message_list' wx:for="{{messageShowInfo}}" wx:key="id" data-hi="{{item}}" bindtap="goDetail">
+    <image class='img' src='{{item.executorName == "系统通知" ? "images/system.jpg" : weburl + item.executorPicUrl}}' catchtap='toOtgerInfo' data-id="{{item.executorHomePage}}"></image>
+    <view class='{{item.messageType=="评论称赞"?"zanprofile":"profile"}}'>
+      <text class='name'>{{item.executorName}}</text>
+      <text class='detail'>{{item.messageDetail}}</text>
+      <text class='about' wx:if="{{item.about}}">{{item.about}}</text>
+    </view>
+    <view style="display: flex;justify-content: flex-end;">
+      <view class='{{item.icon}}'></view>
+    </view>
+  </view>
+  <view class="" style="height:300rpx;"></view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "giftmall": "../../../giftmall/giftmall",
+    "modal-input": "/component/Modal-Input/Modal-Input"
+  }
+}

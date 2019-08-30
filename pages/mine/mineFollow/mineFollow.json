@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "following": "Following/Following",
+    "followers": "Followers/Followers"
+  }
+}

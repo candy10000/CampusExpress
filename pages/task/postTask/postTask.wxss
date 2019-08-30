@@ -1,0 +1,27 @@
+/* pages/task/postTask/postTask.wxss */
+
+.container {
+    display: block;
+    align-items: center;
+    height: 100%;
+}
+
+.help {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    color: rgba(63, 81, 181, 1);
+    font-size: 16px;
+    font-family: PingFangSC-regular;
+}
+
+.line {
+    border: 2px solid rgba(63, 81, 181, 1);
+    width: 97%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-style: dashed;
+}

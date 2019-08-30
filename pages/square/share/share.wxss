@@ -1,0 +1,162 @@
+/* pages/square/share/share.wxss */
+
+page {
+  background: #3f51b5;
+}
+
+.card{
+  min-height: 200rpx;
+  width: 702rpx;
+  background-color: white;
+  margin-top: 24rpx;
+  margin-left: 24rpx;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+
+.initiatorInfo{
+  height: 128rpx;
+  width: 100%;
+  /* padding: 0.2rem; */
+}
+.initiatorPic{
+  height: 90rpx;
+  width: 90rpx;
+  border: 3rpx solid #bbbbbb;
+  border-radius: 100%;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  float: left;
+}
+.nickname{
+  font-size: 34rpx;
+  margin-left: 20rpx;
+  margin-top: 40rpx;
+  float: left;
+}
+.title{
+  color: #469771;
+  font-size: 30rpx;
+  font-weight: 500;
+  margin-right: 46rpx;
+  margin-top: 40rpx;
+  float: right;
+}
+.desc
+{
+  margin-left: 44rpx;
+  margin-right: 44rpx;
+  font-size: 30rpx;
+}
+.bottom{
+  width: 100%;
+  height: 100rpx;
+  
+}
+.num{
+  font-size: 30rpx;
+  float: right;
+  margin-right: 42rpx;
+  margin-top: 30rpx;
+  color: #000000;
+  opacity: 0.3;
+}
+.imgAndVedio{
+  margin: 35rpx;
+}
+.inlineSmall{
+  float: left;
+  margin-left: 24rpx;
+  height: 240rpx;
+  width: 240rpx;
+  margin-top: 24rpx;
+  z-index: 0;
+  
+}
+.inlineBig{
+    float: left;
+    margin-left: 24rpx;
+    height: 504rpx;
+    width: 504rpx;
+    margin-top: 24rpx;
+    z-index: 0;
+  }
+
+.hidden-view{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.hidden-text{
+  width: 600rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 40rpx;
+  background: #F0F0F2;
+  color: rgba(0, 0, 0, 0.24);
+  border-radius: 300rpx;
+  text-align: center
+}
+/* 1999single */
+.voiceArea{
+  color: #3f51b5;
+  min-width: 100rpx;
+  margin-bottom: 24rpx ;
+  padding: 14rpx 34rpx;
+  box-shadow: 0rpx 4rpx 15rpx 0rpx rgba(0, 0, 0, 0.24);
+  border-radius: 50rpx;
+  display: inline-block;
+}
+.voice_content{
+  display: inline-block;
+  margin-left: 40rpx ;
+  margin-right: 40rpx ;
+}
+.line-img {
+  width: 100%;
+  margin-bottom: 35rpx;
+  display: block;
+}
+.foot, .QR-view {
+  display: flex;
+  align-items: center;
+}
+.foot {
+  justify-content: space-between;
+  padding: 50rpx 70rpx;
+}
+.logo-text, .logo, .QR-image {
+  vertical-align: middle;
+}
+.logo-text {
+  width: 200rpx;
+}
+.logo {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 15rpx;
+  margin-bottom: 15rpx;
+}
+.QR-image, .QR-text {
+  width: 140rpx;
+  height: 140rpx;
+}
+.QR-text {
+  position: relative;
+  color: white;
+  font-size: 26rpx;
+}
+.QR-text-top {
+  top: 5rpx;
+  position: absolute;
+}
+.QR-text-bottom {
+  bottom: 5rpx;
+  position: absolute;
+}

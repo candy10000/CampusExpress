@@ -1,0 +1,37 @@
+<!-- pages/mine/mineAcount/translateAcount.wxml -->
+<view class='gift' style="">
+  <!-- 加个纵向滚动条 -->
+  <scroll-view scroll-y="true" class="scroll-view">
+    <checkbox-group bindchange="checkboxChange">
+      <view wx:for="{{giftList}}" class='gift_item'>
+        <view class='gift_pic_info'>
+          <view class='pic_view'>
+            <checkbox class='checkbox' value="{{item.sendNum}},{{item.id}}"></checkbox>
+          </view>
+        </view>
+        <view class='gift_detail'>
+          <view class='from'>
+            来自：{{item.nickName}}
+            <view class='num'>{{item.sendNum}}</view>
+          </view>
+          <view class='message'>
+            <view class='message_text' wx:if="{{item.message!=''}}">{{item.message}}</view>
+            <view class='message_text' wx:else>留下惊喜，悄无声息</view>
+          </view>
+        </view>
+      </view>
+    </checkbox-group>
+  </scroll-view>
+  <view class='translate_view'>
+    <view class='icon'>
+      <i class="fa fa-chevron-left " style="font-size: 20px;" catchtap='translate'></i>
+    </view>
+    <view class='total'>
+      <wxs module="filters" src="./translateAccount.wxs"></wxs>
+      <view class='total_num'><i class='fa fa-database money-icon'></i>{{filters.toFix(trans_balance)}}</view>
+    </view>
+    <view class='button'>
+      <view class='button_text' bindtap="Transform">转化为余额</view>
+    </view>
+  </view>
+</view>

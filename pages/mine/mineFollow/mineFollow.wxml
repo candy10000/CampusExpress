@@ -1,0 +1,11 @@
+<!--pages/mine/mineFollow/mineFollow.wxml-->
+<view style='margin-top:180rpx;'></view>
+
+<view class='topBar'>
+  <view class='forHelpBar {{current==0?"selected":"default"}}' bindtap='select1'><view class='text'>我关注的</view></view>
+  <view class='helpBar {{current==1?"selected":"default"}}' bindtap='select2'><view class='text'>关注我的</view></view>
+  <view class='showNum' >{{num}}</view>
+</view>
+
+<following name = 'following' id="following" bind:myEvent="okEvent" wx:if="{{current==0}}" />
+<followers name = 'followers' id="followers" bind:myEvent="okEvent" wx:else/>

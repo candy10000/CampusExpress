@@ -1,0 +1,22 @@
+<!--pages/works/works.wxml-->
+
+  <view class="info" >
+    <view id="title">{{photographDetail.cameramanName}}</view>
+    <image id="img" src="{{'https://xcx.gaoxiao114.cn:8888'+photographDetail.cameramanPhoto}}" alt="Loading"></image>
+    <view class="p">
+      <p id="left"> ￥{{photographDetail.charge}} </p>
+      <p id="right">{{photographDetail.detail}}</p>
+    </view>
+    <button class='btn1' bindtap="showOrderForm"  data-id="{{photographDetail.id}}" data-name="{{photographDetail.cameramanName}}" >
+          <view>立即约拍</view>
+        </button>
+    <view id="workstitle">作品集</view>
+      <view class="works" wx:for="{{works}}" data-id="{{index}}" wx:key="{{index}}">
+        <block>  
+          <image src="{{item}}" alt="无法加载" title=""></image>     
+        </block> 
+      </view>
+  </view>
+  
+  <orderForm id='orderForm' title='order' content='' btn_no='取消' btn_ok='支付' bind:error="_error" bind:success="_success">
+  </orderForm>

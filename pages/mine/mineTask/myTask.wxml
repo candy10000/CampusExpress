@@ -1,0 +1,10 @@
+<!--pages/mine/mineTask/myTask.wxml-->
+<view style='margin-top:160rpx;'></view>
+
+<view class='topBar'>
+  <view class='forHelpBar {{current==0?"selected":"default"}}' bindtap='select1'><view class='text'>找TA帮我</view></view>
+  <view class='helpBar {{current==1?"selected":"default"}}' bindtap='select2'><view class='text'>我要帮TA</view></view>
+</view>
+
+<taskHelpMe name = 'taskHelpMe' wx:if="{{current==0}}" />
+<taskHelp name = 'taskHelp' wx:else/>

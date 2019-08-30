@@ -1,0 +1,38 @@
+<view class="box">
+  <image class ="png1" src="image/1.png" mode="aspectFit" bindtap='click'></image>
+  <button open-type="feedback"  class = "customer" size="mini" >在线客服</button>
+</view>
+<view  class="tips1">
+  <text>客服偶尔会处于忙线状态，如无及时回复请谅解，客服上线时间在10~22点</text>
+</view>  
+<view class="box">
+  <image class = "png2" src="image/2.png" mode="aspectFit"></image>
+  <button  class="question" size ="mini" bindtap='goquestion'>常见问题</button>
+</view>  
+<view  class='tips2'>
+  <text>点击查看常见问题的解决方案</text>
+</view>
+
+<view class="box2">
+  <image class = "png3"  src = "image/3.png" mode="aspectFit"></image>
+  <textarea class="inputBox1" placeholder="请输入想为我们反馈的内容" bindinput='bindEquipmentId' auto-focus />
+  <view  class='tips3'>
+    <text>我们充分尊重你的每一个意见，高质量意见有惊喜哦</text>
+  </view>
+    <button bindtap="bindtest" class = "send" size = "mini">发送</button>
+</view>
+
+<image class = "png4" src = "image/4.png" mode="aspectFit"></image>
+
+<view class="box">
+  <image class = "png5" src = "image/5.png" mode="aspectFit"></image>
+</view>
+<view  class='tips4'>
+  <text>加入我们：**********\n</text>
+  <text>产品合作：**********\n</text>
+  <text>商务交流：**********</text>
+</view>
+
+
+
+ 

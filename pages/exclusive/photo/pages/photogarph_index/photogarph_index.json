@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "reserveForm": "../../component/reserve_form/reserve_form"
+  },
+  "navigationBarBackgroundColor": "#3F51B5",
+  "navigationBarTitleText": "摄影约拍",
+  "backgroundTextStyle": "light",
+  "navigationBarTextStyle": "white"
+}

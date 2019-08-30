@@ -1,0 +1,47 @@
+<view catchtap='hide' class='acountPage'>
+    <view class='balance'>
+        <modal title="客官充点钱" cancel-text="哼不要!" confirm-text="求求你点我" hidden="{{mHidden}}" bindconfirm="changeModal" bindcancel="modalCancel">
+            <input bindinput='ipsd' type='text'></input>
+        </modal>
+        <view class='balanceValue'>
+            <text class="money fa fa-database"></text>
+            <text class='valueText'>{{customerData.balance/100}}</text>
+            <view class='option'>
+                <view style="display:flex">
+                    <view class='opBtn withdraw'>提现</view>
+                    <view class='opBtn charge' bindtap='change'>充值</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='gift'>
+        <scroll-view scroll-y="true" style="height:720rpx">
+            <view wx:for="{{giftList}}" class='gift_item' catchtap='translate' data-giftid='{{item.giftId}}'>
+                <view class='gift_pic_info'>
+                    <view class='pic_view'>
+                        <image class='pic' src='{{weburl}}{{item.icon}}'></image>
+                    </view>
+                    <view class='gift_name'>{{item.giftsName}}</view>
+                </view>
+                <view class='gift_detail'>
+                    <view class='from'>
+                        来自：{{item.nickName }}
+                        <view class='num' wx:if="{{item.sendNum==item.total}}">
+                            {{item.sendNum}}
+                        </view>
+                        <view class='num' wx:else>{{item.sendNum}}/{{item.total}}</view>
+                    </view>
+                    <view class='message'>
+                        <view class='message_text' wx:if="{{item.message!=''}}">
+                            {{item.message}}
+                        </view>
+                        <view class='message_text' wx:else>留下惊喜，悄无声息</view>
+                        <text class='fa fa-angle-right itemicon'></text>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="gift_text">点击每种礼物的箭头按钮，之后可以选择你想要转化成金币的礼物记录，可获得的金币是礼物原价的72%</view>
+</view>
+<gifttranslate class="gifttranslate" name='gifttranslate' giftId="{{selectedGiftId}}" wx:if="{{isSelectGift}}" bind:translate="translate" />

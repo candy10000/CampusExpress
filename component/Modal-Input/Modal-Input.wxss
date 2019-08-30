@@ -1,0 +1,6 @@
+/* component/Modal-Input/Modal-Input.wxss */
+.refuse-input {
+  border: rgb(216, 218, 224) 2rpx solid;
+  border-radius: 5rpx;
+  height: 80rpx;
+}

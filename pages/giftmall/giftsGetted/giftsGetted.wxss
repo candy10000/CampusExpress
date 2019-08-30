@@ -1,0 +1,235 @@
+/* pages/giftmall/giftsGetted/giftsGetted.wxss */
+
+.giftsGetted {
+  width: 600rpx;
+  height: 920rpx;
+  line-height: 40rpx;
+  border-radius: 8px;
+  /* text-align: center; */
+  box-shadow: 0 0 80rpx 0 rgba(0, 0, 0, 0.24);
+  background-color: white;
+  padding: 24rpx;
+  box-sizing: border-box;
+}
+
+.giftItem {
+  color: rgba(63, 81, 181, 1);
+  font-size: 28rpx;
+  height: 164rpx;
+  width: 600rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+
+.img {
+  width: 220rpx;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+}
+
+.giftPic {
+  height: 100rpx;
+  width: 100rpx;
+}
+
+.gift_desc {
+  position: absolute;
+  width: 395rpx;
+  left: 138rpx;
+  /* height: 120rpx; */
+  font-size: 32rpx;
+  border-radius: 8rpx;
+  background-color: rgba(255, 255, 255, 1);
+  text-align: left;
+  box-shadow: -10rpx 0rpx 40rpx 0rpx rgba(0, 0, 0, 0.24);
+  z-index: 10;
+  padding: 5rpx 5rpx 5rpx 5rpx;
+}
+
+.gift_desc_triangle {
+  position: absolute;
+  left: -14rpx;
+  top: 33rpx;
+  font-size: 62rpx;
+  color: rgba(75, 71, 71, 0.205);
+  transform: rotate(90deg);
+}
+
+.bubbleTail {
+  position: absolute;
+  left: -38rpx;
+  top: 40rpx;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent;
+  border-left-width: 12px;
+  border-left-color: currentColor;
+  color: rgba(255, 255, 255, 1);
+  transform: rotate(180deg);
+}
+
+.giftName {
+  color: rgba(63, 81, 181, 1);
+  font-size: 30rpx;
+}
+
+.nickName {
+  color: rgba(136, 136, 136, 1);
+  /* text-align: left; */
+  /* font-size: 30rpx; */
+  display: inline-block;
+  /* min-width: 200rpx; */
+  margin-left: 30rpx;
+}
+
+.message {
+  color: black;
+  /* text-align: left; */
+  word-wrap: break-word;
+  height: 120rpx;
+  width: 290rpx;
+  overflow: hidden;
+  font-size: 30rpx;
+  margin-left: 30rpx;
+  display: inline-block;
+}
+
+.message1 {
+  color: black;
+  /* text-align: left; */
+  word-wrap: break-word;
+  /* height: 120rpx; */
+  width: 290rpx;
+  /* overflow: hidden; */
+  font-size: 30rpx;
+  margin-left: 30rpx;
+  text-align: left;
+}
+
+.showNum {
+  /* min-width: 80rpx; */
+  /* max-width: 135rpx */
+  display: inline-block;
+  float: right;
+}
+
+.showDetail {
+  /* width: 280rpx */
+  vertical-align: middle;
+  display: inline-block;
+
+}
+
+.detailText {
+  width: 400rpx;
+  padding-top: 55rpx
+}
+
+.num {
+  /* max-height: 80rpx; */
+  /* overflow: hidden */
+  display: inline-block;
+  /* margin-left: 120rpx; */
+  float: right;
+  margin-right: 10rpx;
+
+}
+
+.chevron1 {
+  /* padding-top: 10rpx; */
+  text-align: right;
+  font-size: 38rpx;
+  /* height: 70rpx; */
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+
+.giftInfo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600rpx;
+  height: 920rpx;
+  line-height: 40rpx;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 80rpx 0 rgba(0, 0, 0, 0.24);
+  background-color: white;
+  padding: 24rpx;
+  box-sizing: border-box;
+}
+
+.giftInfoS {
+  float: left;
+  width: 410rpx;
+  height: 872rpx;
+  line-height: 40rpx;
+  border-radius: 8px;
+  text-align: center;
+  background-color: white;
+  box-sizing: border-box;
+  margin-left: 15rpx;
+}
+
+.infoTitle {
+  float: left;
+  width: 126rpx;
+  height: 872rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 24rpx 0;
+}
+
+.chevron2 {
+  width: 120rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  box-sizing: border-box;
+  padding-right: 24rpx;
+  font-size: 48rpx;
+  color: rgba(63, 81, 181, 1)
+}
+
+.giftItem2 {
+  color: rgba(63, 81, 181, 1);
+  font-size: 28rpx;
+  height: 164rpx;
+  width: 410rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.gift-detail{
+  width: 70%;
+  height: 50%;
+  position: absolute;
+  right: 0;
+  top: 23%;
+  z-index: 1000;
+  box-shadow: 0 0 40rpx 0 rgba(0, 0, 0, 0.24);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20rpx;
+  border-radius: 8rpx;
+  background-color: #fff;
+}
+.gift-img{
+  width: 274rpx;
+  height: 274rpx;
+  /* background-color: #000; */
+}
+.gift-desc{
+  font-size: 30rpx;
+  word-break: break-all;
+  text-align: left;
+}

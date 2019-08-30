@@ -1,0 +1,79 @@
+<view class="" hover-class="none" hover-stop-propagation="false" bindtap='hideStory'>
+  <view class='gift-detail' hidden='{{giftDetail.cantSee}}'>
+    <image class="gift-img" src="{{giftDetail.icon}}"></image>
+    <text class="gift-desc">{{giftDetail.desc}}</text>
+  </view> 
+  <swiper class='giftsGetted' vertical="true" display-multiple-items="5">
+    <block wx:for="{{giftList}}" wx:for-index="idx">
+      <swiper-item class="giftItem">
+        <block wx:if="{{item != null}}">
+
+          <view class="img" catchtap='showStory' data-idx='{{idx}}' data-giftdetail='{{item}}'>
+            <image src='{{item.icon}}' class='giftPic'></image>
+
+            <!-- <view class='gift_desc' wx:if="{{item.story}}">
+              <text class="">{{item.desc}}</text>
+              <i class="bubbleTail"></i>
+            </view>  -->
+            <view class='giftName'>{{item.giftsName}}</view>
+          </view>
+          <view class="showDetail" catchtap='{{item.sendNum > 0 ? "giftInfo" : ""}}' data-index='{{idx}}'>
+            <view class="detailText">
+              <view class='nickName' catchtap='toOtgerInfo' data-id="{{item.giverId}}">来自：{{item.nickName}}</view>
+              <view class='num'>
+                <span wx:if="{{item.sendNum > 0 }}">{{item.sendNum}}</span>
+                <span wx:if="{{item.sendNum != item.customerGiftsNum}}">
+                  /{{item.customerGiftsNum}}
+                </span>
+              </view>
+            </view>
+            <view class="">
+              <view class="message" wx:if="{{item.message}}">{{item.message}}</view>
+              <view class="message" wx:else>留下惊喜，悄无声息</view>
+              <view class="showNum">
+                <view wx:if="{{item.sendNum > 0}}" class="chevron1">
+                  <i class="fa fa-angle-right"></i>
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </swiper-item>
+      <!-- 礼物故事 -->
+      <!-- <view class='gift_desc' wx:if="{{item.story}}" style="top: {{initTop + itemTop}}rpx;">
+        <text class="">{{item.desc}}</text>
+        <i class="bubbleTail"></i>
+      </view> -->
+    </block>
+  </swiper>
+</view>
+<!-- 礼物详情 -->
+<view class='giftInfo' wx:if="{{giftInfo}}">
+  <view class='infoTitle'>
+    <view style='width:156rpx; position: relative;'>
+      <image src='{{selectGift.icon}}' class='giftPic'></image>
+      <view class='giftName'>{{selectGift.giftsName}}</view>
+    </view>
+    <view class='chevron2' catchtap='hiddenGiftIngo'>
+      <i class="fa fa-chevron-left"></i>
+    </view>
+  </view>
+  <swiper class='giftInfoS' vertical="true" display-multiple-items="5">
+    <block wx:for="{{giftInfoList}}">
+      <swiper-item class="giftItem2">
+        <block wx:if="{{item != null}}">
+          <view style="width:280rpx">
+            <view class='nickName' catchtap='toOtgerInfo' data-id="{{item.giverId}}" style="width:300rpx;text-align: left;">
+              来自：{{item.nickName}}
+            </view>
+            <view class="message1" wx:if="{{item.message}}">{{item.message}}</view>
+            <view class="message1" wx:else>留下惊喜，悄无声息</view>
+          </view>
+          <view style='min-width:80rpx;max-width:135rpx'>
+            <view class='num'>{{item.sendNum}}</view>
+          </view>
+        </block>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

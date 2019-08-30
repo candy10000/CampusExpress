@@ -1,0 +1,88 @@
+<view class='warning'>
+  <i class=" img_warning fa fa-exclamation-circle fa-rotate-180"></i>
+  <!-- <image class='img_warning' src='https://xcx.gaoxiao114.cn/images/warning.png'></image> -->
+  <span class='conrirmtext'>请确认信息后付款</span>
+  <!-- <span class='totalprice'>总计：{{bignum}}*大件+{{smallnum}}*小件：{{totalprice}}({{pricefree}}折)</span> -->
+  <span class='totalprice'>总计：{{smallnum}}*件：{{totalprice}}({{pricefree}}折)</span>
+</view>
+<!-- 显示区 -->
+<view hidden='{{showhidden}}'>
+   <!-- 删除按钮 -->
+  <view class='del_view' bindtap='deleteclick'>
+    <i class="fa fa-times-circle del_btn"  hidden='{{delhidden}}' />
+    <!-- <image class='del_btn' src='https://xcx.gaoxiao114.cn/images/del_btn.png' bindtap='deleteclick' hidden='{{delhidden}}'></image> -->
+  </view>
+  <swiper id="myswiper" class='swiperinfo' bindchange='onSlideChange' circular='true' indicator-dots='true'  current='{{currentid}}'>
+    <swiper-item wx:for="{{orders}}" wx:key="{{currentid}}" class='eachinfo'>
+      <input type='text' class='eachtext' value='{{item.recipients}}' disabled='disabled'></input>
+      <input type='text' class='eachtext' value='{{item.customerTelephone}}' disabled='disabled'></input>
+      <input type='text' class='eachtext' value='{{item.expressageCompany}}  {{item.expressageCode}}' disabled='disabled'></input>
+      <input type='text' class='eachtext' value='{{item.customerPlace}}' disabled='disabled'></input>
+      <!-- <input type='text' class='eachtext' value='{{item.specification==0?"小于40cm*40cm":"大于40cm*40cm"}}' disabled='disabled'></input>
+      <input type='text' class='eachtext' value='{{date[item.expressageArriveTime_index]}} 到件' disabled='disabled'></input> -->
+      <!-- <image class='left' src='https://xcx.gaoxiao114.cn/images/turn_left.png'></image>
+      <image class='right' src='https://xcx.gaoxiao114.cn/images/turn_right.png'></image> -->
+
+      <!-- <image class='del_btn' src='https://xcx.gaoxiao114.cn/images/del_btn.png'></image> -->
+    </swiper-item>
+  </swiper>
+</view>
+
+<view hidden='{{updatehidden}}'>
+  <swiper class='swiperinfo1' bindchange='onSlideChange' circular='true' indicator-dots='true'  current='{{currentid}}'>
+    <swiper-item wx:for="{{orders}}" wx:key="{{currentid}}" class='eachinfo'>
+      <view class='left_'></view>
+      <!-- <image class='left_' src='https://xcx.gaoxiao114.cn/images/turn_left.png'></image>
+      <image class='right_' src='https://xcx.gaoxiao114.cn/images/turn_right.png'></image> -->
+      <input class='ups upusername' value='{{item.recipients}}' name='uprecipients' bindinput='update_recipients'></input>
+      <input class='ups upphonenum' value='{{item.customerTelephone}}' name='upphonenum' bindinput='update_customerTelephone'></input>
+      <picker class='ups companypicker' value='{{express[item.expressageCompany_index-1]}}' range='{{express}}' bindchange='expressageCompanyChange' name="upexpressageCompany">
+        <input class='ups upcompany' type='text' value='{{express[item.expressageCompany_index-1]}}' disabled='disabled'></input>
+        <image src='https://xcx.gaoxiao114.cn/images/003.png' class="body_img_4"></image>
+      </picker>
+      <input class='ups upcode' value='{{item.expressageCode}}' name='upcode' bindinput='update_expressageCode'></input>
+
+      <picker class='ups destinationpicker'  name="updestination" mode="multiSelector" value="{{multiArray[1][multiIndex[1]]}}" range="{{multiArray}}" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange">
+        <input class='ups updestination' type='text' value='{{item.destination}}' disabled='disabled'></input>
+        <image src='https://xcx.gaoxiao114.cn/images/003.png' class="body_img_4"></image>
+      </picker>
+      <!-- <input class='ups uproomnum' value='{{item.roomnum}}' name='uproomnum' bindinput='update_roomnum'></input> -->
+
+      <!-- <radio-group name="upsize" bindchange='update_specification'>
+        <label class="radio" style='display:block'>
+          <radio value='{{MailSpecification[0].value}}' checked='{{item.specification==0?true:flase}}'/>{{MailSpecification[0].value}}
+        </label>
+        <label class="radio" style='display:block'>
+          <radio value='{{MailSpecification[1].value}}' checked='{{item.specification==1?true:flase}}'/>{{MailSpecification[1].value}}
+        </label>
+      </radio-group>
+      
+      <picker class='ups datepicker' value='{{date[item.expressageArriveTime_index]}}' range='{{date}}' bindchange='update_expressageArriveTime' name="upexpressageArriveTime">
+        <input class='ups update' type='text' value='{{date[item.expressageArriveTime_index]}}' disabled='disabled'></input>
+        <image src='https://xcx.gaoxiao114.cn/images/003.png' class="body_img_4"></image>
+      </picker>
+      <span class='uptext'>到达</span> -->
+      
+      
+
+    </swiper-item>
+    
+  </swiper>
+</view>
+
+<view class='buttons'>
+  <view class='button btn_confirm' bindtap='orderPay' hidden='{{btn_pay}}'>
+    <i class="fa fa-check"/>
+    <text>支付</text>
+  </view>
+  <view bindtap='tomodify' class='button btn_modify' hidden='{{btn_modify}}'>
+    <i class="fa fa-pencil"/>
+    <text>修改</text>
+  </view>
+  <view bindtap='toconfirm' class='button1 btn_modify' hidden='{{btn_confirm}}'>
+    <i class="fa fa-pencil"/>
+    <text>确认修改</text>
+  </view>
+</view>
+
+<view style='height:260rpx'></view>

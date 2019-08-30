@@ -1,0 +1,4 @@
+<!--component/Modal-Input/Modal-Input.wxml-->
+<modal title="{{title}}" confirm-text="{{confirmText}}" cancel-text="{{cancelText}}" hidden="{{hidden}}" bindconfirm="modalConfirm" bindcancel="modalCancel">
+  <input placeholder="{{placeholder}}" value="{{text}}" class='refuse-input' bindinput="getText"></input>
+</modal>

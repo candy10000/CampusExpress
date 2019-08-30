@@ -1,0 +1,44 @@
+/* pages/mine/talkWithUs/talkWithUs.wxss */
+page{
+  margin-top: 10rpx;
+  background-color: #3F51B5;
+}
+.box{
+  display: flex;
+  padding-left: 5rpx;
+}
+.png2{
+  margin-top: 40rpx;
+  margin-left: 40rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+.question{
+  margin-top: 60rpx;
+  margin-left: 40rpx;
+  color: #FFFFFF;
+  font-size: 60rpx;
+}
+.QA{
+    margin-left: 60rpx;
+    color: #FFFFFF;
+    font-size: 40rpx;
+}
+.A{
+  opacity: 0.8;
+}
+.qa1{
+    margin-top: 60rpx;
+}
+.qa2{
+    margin-top: 50rpx;
+}
+.qa3{
+    margin-top: 50rpx;
+}
+.qa4{
+    margin-top: 50rpx;
+}
+.qa5{
+    margin-top: 50rpx;
+}

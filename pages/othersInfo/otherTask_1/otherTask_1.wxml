@@ -1,0 +1,50 @@
+<!-- pages/othersInfo/otherTask_1/otherTask_1.wxml -->
+<block wx:for='{{taskList}}' wx:key='taskId' >
+    <view class = "tasklist" data-id="{{item.taskId}}">
+    <!-- <block wx:for='{{taskList}}' wx:key='taskId'> -->
+    <!-- <view class = "tasklist"> -->
+     <view class='left-gap'></view>
+      <view class='right-gap'></view>
+      <view class='initiatorInfo'>
+        <image src='{{item.userPic}}' class='initiatorPic' data-id='{{item.openId}}' lazy-load='true'></image>
+        <text class='nickname'>{{item.nickName}}</text>
+        <view wx:if="{{item.gender=='1'}}" class='iconfont icon-male icon-gender-male'></view>
+        <view wx:elif="{{item.gender=='0'}}" class='iconfont icon-female icon-gender-female'></view>
+        <text class='title'>{{item.userTitle}}</text>
+      </view>
+      <view class='taskInfo'>
+        <view class='decs'>
+          <!-- <textarea class='decs' selectable='true'>{{item.decs}}</textarea> -->
+          <text class='decs' selectable='true'> {{item.decs}} </text>
+        </view>
+        <view class='tplace' wx:if="{{item.tPlace != '无'}}">
+          <text>任务地点：{{item.tPlace}}</text>
+        </view>
+        <view wx:if="{{item.taskType==1 && item.place != '无' }}" class='place'>
+          <text>我在这里：{{item.place}}</text>
+        </view>
+        <view wx:elif="{{item.taskType==2 && item.place != '无' }}" class='place'>
+          <text>希望你在：{{item.place}}</text>
+        </view>
+        <view class='lable'>
+          <text decode="{{true}}" wx:if="{{item.taskType==1}}">标签:&nbsp;#找TA帮我&nbsp;#{{item.label}}</text>
+          <text decode="{{true}}" wx:else>标签:&nbsp;#我要帮TA&nbsp;&nbsp;#{{item.label}}</text>
+        </view>
+        <view class='reward' wx:if="{{item.reward != 0}}">
+          <text decode="{{true}}" >赏金:&nbsp;{{item.reward/100}}￥</text>
+        </view>
+        <!-- <view class='initime'>
+          <text>{{item.cardTime}}</text>
+        </view> -->
+      </view>
+      <view class='pickup'>
+        <text id="{{item.taskId}}" data-reward="{{item.reward}}" catchtap='toEnvelope' wx:if="{{item.contactType == '任务信封'}}">发送信封</text>
+        <text id="{{item.taskId}}" data-reward="{{item.reward}}" catchtap='pickup2' wx:elif="{{item.taskType==2}}">给TA任务</text>
+        <text id="{{item.taskId}}" data-reward="{{item.reward}}" catchtap='pickup1' wx:elif="{{item.taskType==1}}">拾起任务</text>
+      </view>
+      <view class="marginview"></view>
+    </view>
+  </block>
+<view class='noItem' wx:if="{{taskList.length < 1}}">
+  <text>TA还没有发布任务哦~</text>
+</view>

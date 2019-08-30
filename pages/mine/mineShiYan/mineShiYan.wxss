@@ -1,0 +1,535 @@
+/* pages/mine/mineShiYan/mineShiYan.wxss */
+ 
+@import '/utils/icon-search.wxss';
+ 
+@import '/utils/icon-edit.wxss';
+ 
+ 
+page{
+ 
+  
+ 
+  background-color: #3F51B5;
+ 
+}
+.topBar{
+  left:20rpx;
+  top: 24rpx;
+  font-size: 30rpx;
+  text-align: center;
+  position: fixed;
+  border: 1px solid #3F51B5;
+  width: 100%;
+  height: 130rpx;
+  background: #3F51B5;
+  z-index: 1;
+}
+.topBar::before{
+  content: '';
+  width: 24rpx;
+  height: 130rpx;
+  position: fixed;
+  background-color: inherit;
+  z-index: 1;
+  left: 0;
+}
+.topBar::after{
+  content:'';
+  width: 100%;
+  height: 40rpx;
+  position: fixed;
+  border: 1px solid inherit;
+  background: inherit;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  
+}
+.tab{
+  height: 100rpx;
+  width: 200rpx;
+  background-color: #4A5ED2;
+  float: left;
+}
+.actived{
+  color:#FFFFFF;
+  border-bottom: 4rpx solid yellow;
+}
+.default{
+  color:#FFFFFF;
+  opacity: 0.7
+}
+.topTitle{
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search{
+ 
+  width:100%;
+ 
+  height: 130rpx;
+ 
+  position: fixed;
+ 
+  color: rgba(16, 16, 16, 1);
+ 
+  font-size: 14rpx;
+ 
+  box-shadow: 0rpx 2rpx 4rpx 0rpx rgba(0, 0, 0, 0.24);
+ 
+  font-family: Arial;
+ 
+  background-color: #3F51B5;
+ 
+  top: 0;
+ 
+  z-index: 100;
+ 
+}
+ 
+.input{
+ 
+  width: 534rpx;
+ 
+  height: 68rpx;
+ 
+  background-color: white;
+ 
+  margin-top: 30rpx;
+ 
+  margin-left: 24rpx;
+ 
+  border-radius: 114rpx;
+ 
+  float: left;
+ 
+}
+ 
+.input_box{
+ 
+  font-size: 32rpx;
+ 
+  margin-left: 20rpx;
+ 
+  height: 50rpx;
+ 
+  padding-top: 10rpx;
+ 
+  float: left;
+ 
+}
+ 
+.icon_search{
+ 
+  padding-top:2rpx;
+ 
+  font-size: 60rpx;
+ 
+  color: #000000;
+ 
+  opacity: 0.30;
+ 
+  margin-left: 20rpx;
+ 
+  float: left;
+ 
+}
+ 
+.icon_edit{
+ 
+  font-size: 50rpx;
+ 
+  color: white;
+ 
+  float: left;
+ 
+  margin-top: 36rpx;
+ 
+  margin-left: 70rpx;
+ 
+}
+ 
+.topic{
+ 
+  margin-top:134rpx;
+ 
+  margin-left: 24rpx;
+ 
+  font-size: 32rpx;
+ 
+  color: white;
+ 
+}
+ 
+.card{
+ 
+  min-height: 200rpx;
+ 
+  width: 702rpx;
+ 
+  background-color: white;
+ 
+  margin-top: 24rpx;
+ 
+  margin-left: 24rpx;
+ 
+  border-radius: 8rpx;
+ 
+ 
+}
+ 
+ 
+.initiatorInfo{
+ 
+  height: 128rpx;
+ 
+  width: 100%;
+}
+.initiatorInfo2{
+ 
+  height: 32rpx;
+ 
+  width: 100%;
+}
+ 
+.initiatorPic{
+ 
+  height: 90rpx;
+ 
+  width: 90rpx;
+ 
+  border: 3rpx solid #bbbbbb;
+ 
+  border-radius: 100%;
+ 
+  margin-left: 20rpx;
+ 
+  margin-top: 20rpx;
+ 
+  float: left;
+ 
+  
+ 
+}
+ 
+.nickname{
+ 
+  font-size: 34rpx;
+ 
+  margin-left: 20rpx;
+ 
+  margin-top: 48rpx;
+ 
+  float: left;
+ 
+}
+.nickname2{
+
+  font-size: 34rpx;
+ 
+  margin-left: 20rpx;
+ 
+  margin-top: 48rpx;
+ 
+  float: left;
+
+  color: #888888;
+}
+ 
+.title{
+ 
+  color: #469771;
+ 
+  font-size: 30rpx;
+ 
+  font-weight: 500;
+ 
+  margin-right: 46rpx;
+ 
+  margin-top: 40rpx;
+ 
+  float: right;
+ 
+}
+ 
+.desc
+ 
+{
+  
+  margin-top: 7rpx;
+ 
+  margin-left: 24rpx;
+ 
+  width: 630rpx;
+ 
+  font-size: 34rpx;
+
+  line-height: 18pt;
+
+  letter-spacing: 3rpx;
+ 
+}
+.desc2
+{
+  
+  margin-top: 7rpx;
+ 
+  margin-left: 49rpx;
+ 
+  width: 480rpx;
+ 
+  font-size: 34rpx;
+ 
+}
+.commentInfo{
+  width: 600rpx;
+  word-break: break-all;
+}
+.bottom{
+ 
+  width: 100%;
+ 
+  height: 100rpx;
+  
+  display: flex;
+
+  align-items: center;
+ 
+}
+.deleteButton{
+  font-size: 30rpx;
+ 
+  color: #000000;
+ 
+  opacity: 0.3;
+
+  flex: 2.5;
+
+  margin-left: 24rpx;
+}
+ 
+.num{
+ 
+  font-size: 30rpx;
+ 
+  color: #000000;
+
+  display: flex;
+ 
+  flex: 1;
+  
+ 
+  }
+  .opacity_3{
+    opacity: 0.3;
+  }
+ 
+  .imgAndVedio{
+ 
+    overflow: hidden;
+ 
+    width: 600rpx;
+ 
+    display:inline-block;
+ 
+  }
+ 
+  .inlineSmall{
+ 
+    float: left;
+ 
+    margin-left: 24rpx;
+ 
+    height: 240rpx;
+ 
+    width: 240rpx;
+ 
+    margin-top: 24rpx;
+ 
+    z-index: 2;
+ 
+    color: #FFF;
+ 
+    font-size: 40rpx;
+ 
+    
+ 
+  }
+ 
+.inlineBig{
+ 
+    float: left;
+ 
+    margin-left: 24rpx;
+ 
+    height: 504rpx;
+ 
+    width: 504rpx;
+ 
+    margin-top: 24rpx;
+ 
+    z-index: 2;
+ 
+    
+ 
+    color: #FFF;
+ 
+    font-size: 40rpx;
+ 
+  }
+ .inlineBig2{
+  float: left;
+  margin-left: 24rpx;
+  margin-bottom: 6rpx;
+  height: 268rpx;
+  width: 504rpx;
+  color: #fff;
+  
+ }
+.font-42{
+ 
+  font-size: 42rpx;
+ 
+  margin-right:12rpx 
+ 
+}
+ 
+ 
+ 
+ .inlineSmall video{
+ 
+    height: 240rpx;
+ 
+    width: 240rpx;
+ 
+    
+ 
+  }
+ 
+.inlineBig video{
+ 
+    height: 504rpx;
+ 
+    width: 504rpx;
+ 
+  }
+ 
+ 
+.inlineSmall view{
+ 
+    height: 240rpx;
+ 
+    width: 240rpx;
+ 
+    display: flex;
+ 
+    flex-direction: row;
+ 
+    justify-content: center;
+ 
+    align-items: center;
+ 
+    background-color: #000;
+ 
+  }
+ 
+.inlineBig view{
+ 
+    height: 504rpx;
+ 
+    width: 504rpx;
+ 
+    display: flex;
+ 
+    flex-direction: row;
+ 
+    justify-content: center;
+ 
+    align-items: center;
+ 
+    background-color: #000;
+ 
+  }
+.hiddnArea{
+  width: 750rpx;
+  height: 550rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.hiddenFont{
+  width: 600rpx;
+  height: 90rpx;
+  border-radius: 300rpx;
+  line-height: 90rpx;
+  text-align: center;
+  background: #F0F0F2;
+  font-size: 38rpx;
+  color: rgba(0, 0, 0, 0.24);
+}
+.voiceArea{
+  color: #3f51b5;
+  min-width: 100rpx;
+  margin-left: 24rpx ;
+  margin-top: 24rpx ;
+  padding: 14rpx 34rpx;
+  box-shadow: 0rpx 4rpx 15rpx 0rpx rgba(0, 0, 0, 0.24);
+  border-radius: 50rpx;
+  display: inline-block;
+}
+.voice_content{
+  display: inline-block;
+  margin-left: 40rpx ;
+  margin-right: 40rpx ;
+}
+.red{
+  color: #FF3E4C;
+}
+.commentTo{
+  color: #0076FF;
+}
+.commentImg{
+  width: 128rpx;
+  height: 128rpx;
+  display: block;
+}
+.commentLikeNum{
+  font-size: 30rpx;
+  color: #000;
+  float: right;
+  margin-right: 70rpx;
+  margin-top: 18rpx;
+  display: flex;
+}
+.imgArea{
+  margin-top: 20rpx;
+  display: flex;
+  width: 100%;
+  
+  /* justify-content: space-around; */
+}
+.imgArea view{
+  margin-left: 24rpx;
+}
+.imgArea view:first-child {
+  margin-left: 0;
+}
+.roundCor{
+  border-radius: 8rpx;
+}
+.shareIcon{
+  margin-top: 5rpx;
+}
+.chatIcon{
+  margin-bottom: 4rpx;
+}
+.likeIcon{
+  margin-top: 2rpx;
+}

@@ -1,0 +1,15 @@
+<!--pages/mine/mineFollow/Following/Following.wxml-->
+<view>
+  <view wx:for="{{followingList}}" class='businessList' wx:key="id">
+    <view class='myList' bindtap='toList' data-index='{{item.id}}'>
+      <view class='listPic'><image class='img' src='{{item.picUrl}}' catchtap='toOtgerInfo' data-index='{{item.id}}'></image></view>
+      <view class='profile'>
+        <text class='name'>{{item.name}}</text>
+        <text class='about'>{{item.desc}}</text>
+      </view>
+      <view class='following-view'>
+<view class='following' catchtap='cancelFollow' data-index="{{item.id}}">已关注</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "task": "../task/task",
+    "mine": "../mine/mine",
+    "exIndex": "../exclusive/exIndex/exIndex",
+    "square": "../square/square",
+    "giftmall": "../giftmall/giftmall"
+  },
+  "onReachBottomDistance": 50,
+  "enablePullDownRefresh": true
+}
+

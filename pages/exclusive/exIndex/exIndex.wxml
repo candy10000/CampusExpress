@@ -1,0 +1,26 @@
+
+<!-- <view class='myList'>
+  <view class='iconfont icon-list orderPic'></view>
+  <view class='title'>我的订单</view>
+  <view class='desc'>所有在专属下的订单都在这里了</view>
+</view> -->
+<view class="top" >
+  <!------------ 学校下拉框 ----------->
+  <view>
+    
+    <picker class="schoolSelect" bindchange='schoolSelect' value='{{schoolIndex}}' range='{{school}}'>
+      <i class="fa fa-map-marker font-20"/>
+      <text>{{school[schoolIndex]}}</text>
+    </picker> 
+    <i class="fa fa-angle-down font-22"/>  <!----- 下拉框右侧箭号 ----->
+  </view>
+</view>
+<view wx:for="{{businessList}}" class='businessList' wx:key="id">
+  
+  <view class='myList' bindtap='toList' data-index='{{item.id}}'>
+    <image class='img' src='{{item.picUrl}}'></image>
+    <view class='title'>{{item.name}}</view>
+    <view class='desc'>{{item.desc}}</view>
+  </view>
+
+</view>

@@ -1,0 +1,124 @@
+.order {
+position: absolute;
+left: 0rpx;
+top: 0rpx;
+width: 750rpx;
+height: 4180rpx;
+line-height: 40rpx;
+background-color: rgba(0, 0, 0, 0.2);
+color: rgba(16, 16, 16, 1);
+font-size: 28rpx;
+text-align: center;
+font-family: Arial;
+}
+.order-container {
+position: absolute;
+left: 84rpx;
+top: 190rpx;
+width: 578rpx;
+height: 870rpx;
+line-height: 40rpx;
+border-radius: 16rpx;
+color: rgba(16, 16, 16, 1);
+background-color: white;
+font-size: 28rpx;
+text-align: center;
+box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.24);
+font-family: Arial;
+}
+
+.section {
+  padding-top: 30rpx;
+  padding-bottom: 20rpx;
+  margin: 0rpx auto;
+  width: 430rpx;
+  height: 60rpx;
+  border-bottom:1px solid #F0F0F2; 
+  display: flex;
+  font-size: 28rpx;
+  text-align: left;
+  font-family: PingFangSC-regular;
+}
+
+.section .section__title{
+
+color: rgba(16, 16, 16, 1);
+font-size: 28rpx;
+text-align: left;
+font-family: PingFangSC-regular;
+}
+.section .form-group{
+margin-left: 60rpx;
+width: 300rpx;
+height: 44rpx;
+color: rgba(136, 136, 136, 1);
+font-size: 28rpx;
+text-align: left;
+font-family: PingFangSC-regular;
+}
+ .section-text{
+  padding-top: 38rpx;
+  padding-bottom: 26rpx;
+  margin: 0rpx auto;
+  width: 430rpx;
+  height: 60rpx;
+  display: flex;
+  font-size: 28rpx;
+  text-align: left;
+  font-family: PingFangSC-regular;
+}
+ .section-text .section__detail{
+position: absolute;
+left: 200rpx;
+width: 190rpx;
+height: 190rpx;
+color: rgba(0, 0, 0, 1);
+font-size: 28rpx;
+text-align: left;
+font-family: PingFangSC-regular;
+ }
+
+
+
+
+/* 按钮样式 */
+.order-btn {
+  display: flex;
+  position: absolute;
+  bottom: 66rpx;
+width: 578rpx;
+height: 100rpx;
+}
+
+.order-btn .btn-ok{
+  position: absolute;
+  right: 70rpx;
+bottom: 0rpx;
+width: 130rpx;
+height: 66rpx;
+border-radius: 60rpx;
+background-color: rgba(63, 81, 181, 0.8);
+color: rgba(255, 255, 255, 1);
+font-size: 28rpx;
+font-family: Microsoft Yahei;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.order-btn .btn-no{
+position: absolute;
+left: 70rpx;
+bottom: 0rpx;
+width: 130rpx;
+height: 66rpx;
+border-radius: 60rpx;
+background-color: rgba(219, 217, 217, 1);
+color: rgba(255, 255, 255, 1);
+font-size: 28rpx;
+font-family: Microsoft Yahei;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+

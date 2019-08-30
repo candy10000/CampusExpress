@@ -1,0 +1,137 @@
+page {
+  background-color: #3f51b5;
+}
+
+.top_nav {
+  width: 100%;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.nav-name {
+  font-size: 32rpx;
+  font-family: PingFangSC-regular;
+  font-style: normal;
+  display: inline-block;
+  width: 33.33%;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.nav-hover {
+  color: #fff;
+  font-size: 40rpx;
+  font-family: PingFangSC-regular;
+  font-style: normal;
+}
+
+/* 布局 */
+
+/*top轮播样式*/
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin-top: 48px;
+  height: 900rpx;
+}
+
+#slide li {
+  border-radius: 32rpx;
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.24);
+  position: absolute;
+  width: 578rpx;
+  height: 782rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -webkit-align-items: flex-start;
+  background: #fff;
+  overflow: hidden;
+}
+
+#slide image {
+  width: 578rpx;
+  height: 686rpx;
+  border-radius: 16px;
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.24);
+}
+
+.p {
+  height: auto;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 2px 10px;
+  width: 100%;
+}
+
+p#left {
+  margin: 10px;
+  color: rgba(136, 136, 136, 1);
+  font-size: 32rpx;
+  text-align: left;
+  font-family: PingFangSC-regular;
+}
+
+p#right {
+  margin: 10px;
+  height: auto;
+  width: 80%;
+  color: rgba(16, 16, 16, 1);
+  font-size: 32rpx;
+  text-align: left;
+  font-family: PingFangSC-regular;
+  
+}
+
+/*bottom 轮播控件*/
+
+.home-swiper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 20px;
+  border-radius: 8px;
+  color: rgba(16, 16, 16, 1);
+  font-size: 14px;
+  text-align: center;
+  font-family: Arial;
+  width: 678rpx;
+  height: 442rpx;
+  background-color: white;
+  margin-bottom: 24px;
+}
+
+.botton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
+
+.reserve {
+  margin-top: 12rpx;
+  width: 128rpx;
+  height: 44rpx;
+  color: rgba(16, 16, 16, 1);
+  font-size: 32rpx;
+  text-align: center;
+  font-family: PingFangSC-regular;
+}

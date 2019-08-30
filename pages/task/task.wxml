@@ -1,0 +1,82 @@
+
+<!--pages/task/task.wxml-->
+<!-- //hidden="{{isHiddenTop}}" -->
+<view bindtap="postTask_hide">
+  <view class="top {{isHiddenTop ? 'bar-hidden' : 'bar-show'}}" >
+    <view class = "school">
+      <view class='school-left'></view>
+      <picker value='{{schoolIndex}}' range='{{schoolList}}' class='school-body' bindchange='onChangeSchool'>
+        <view class='iconfont icon-address iconstyle-address' ></view>
+        <view class='address'>{{schoolList[schoolIndex]}}</view>
+      </picker>
+      <view class='school-right'></view>
+    </view>
+    <view class='search'>
+      <view class='searchInput'>
+        <text class='iconfont icon-search iconstyle-search' bindtap='searchInfo'></text>
+        <input class='subinput-1' bindinput="bindKeyInput" confirm-type='search' bindconfirm='searchInfo' placeholder='{{isFocus?"搜索描述、标签、用户":""}}' bindtap='getFocus' bindblur='outFocus'></input>
+        <view class='filter' bindtap="onPickHeaderClick">筛选<text class='iconfont icon-filterList iconstyle-filter'></text></view>
+      </view>
+      <postTask wx:if="{{postTask}}" class="show_postTask"></postTask>
+      <view class='classcc'>
+          <view class="filter_class {{page == 0?'class_checked':''}}" catchtap='classChange' data-clazz='0'>推荐</view>
+          <view class="filter_class {{page == 1?'class_checked':''}}" bindtap='classChange' data-clazz='1'>生活</view>
+          <view class="filter_class {{page == 2?'class_checked':''}}" bindtap='classChange' data-clazz='2'>互动</view>
+          <view class="filter_class {{page == 3?'class_checked':''}}" bindtap='classChange' data-clazz='3'>问答</view>
+          <view class="postTask" catchtap='postTask'>发布任务</view>
+      </view>
+    </view>
+    <view class="pick-container {{isHiddenPick ? 'hidden-pick' : 'show-pick'}}" >
+      <view class="filter_item">
+        <view class='item_name'>任务地点</view>
+        <view class='item_picked'>{{filter_task_palce_list[1][placeMultiIndex[1]]}}</view>
+        <picker class='item_btn' mode="multiSelector" range='{{filter_task_palce_list}}' value='{{taskplace_index}}' bindchange='taskPlaceChange' bindcolumnchange="taskPlaceColChange">></picker>
+      </view>
+      <view class="filter_item">
+
+        <view class='item_name'>我在这里/希望你在</view>
+        <view class='item_picked'>{{filter_person_palce_list[personplace_index]}}</view>
+        <picker class='item_btn' range='{{filter_person_palce_list}}' value='{{personplace_index}}' bindchange='personPlaceChange'>></picker>
+      </view>
+      <view class="filter_item">
+        <view class='item_name'>种类标签</view>
+        <view class='item_picked'>{{filter_label_list[1][tagMultiIndex[1]]}}</view>
+        <picker class='item_btn' mode="multiSelector" range='{{filter_label_list}}' value='{{label_index}}' bindchange='labelChange' bindcolumnchange="labelColChange">></picker>
+      </view>
+      <view class="filter_radio_group">
+        <view class='filter_radio'>
+          <image class='radioimg' src='{{radio_checked[0]?"../pic/radio_on.png":"../pic/radio_off.png"}}' data-type='0' bindtap='changeRadio'></image>
+          <view class='radiotext' data-type='0' bindtap='changeRadio'>全部</view>
+
+          <image class='radioimg' src='{{radio_checked[1]?"../pic/radio_on.png":"../pic/radio_off.png"}}' data-type='1' bindtap='changeRadio'></image>
+          <view class='radiotext' bindtap='changeRadio' data-type='1'>#我要帮TA</view>
+
+          <image class='radioimg' src='{{radio_checked[2]?"../pic/radio_on.png":"../pic/radio_off.png"}}' data-type='2' bindtap='changeRadio'></image>
+          <view class='radiotext' bindtap='changeRadio' data-type='2'>#找TA帮我</view>
+        </view>
+      </view>
+      <view class='confirm_btn' bindtap='confirmFilter'><view class='confirm_text'>确定</view></view>
+    </view>
+  </view>
+  <!-- <view class='filter_cover'></view>
+  <view class='filter_cover2'></view> -->
+  <!-- <view class="content-container"> -->
+</view>
+<view bindtap="postTask_hide">
+  <swiper style="height: {{windowHeight}}px" bindtouchstart="touchS" bindtouchend="touchE"  bindchange="swiperChange" current="{{page}}">
+    <block wx:for="{{[0,1,2,3]}}" wx:key="{{index}}">
+      <swiper-item>
+        <scroll-view scroll-y style="height: {{windowHeight}}px" bindscroll="cardScroll" bindscrolltolower="scrollReloadTask">
+          <view style='margin-top:294rpx' wx:if="{{page == item}}">
+            <import src ="showTaskList/showTaskList.wxml"/>
+            <template is="showTaskList" data="{{taskList:taskList}}"/>
+          </view>
+        </scroll-view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view wx:if="{{taskList.length == 0}}" style='height:1000rpx;' animation="{{ani1}}{{ani2}}{{ani3}}{{ani4}}"></view>
+</view>
+
+
+<!-- <postTask wx:if="{{postTask}}" class="show_postTask"></postTask> -->

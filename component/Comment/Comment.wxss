@@ -1,0 +1,201 @@
+/* component/Comment/Comment.wxss */
+.comment-bottom{
+  position: fixed;
+  left: 0;
+  bottom: 0rpx;
+  width: 100%;
+  min-height: 120rpx;
+  background: pink;
+  transition: bottom 0.5s;
+}
+.comment-bottom.comment-box-up {
+  bottom: 250rpx;
+  transition: bottom 0.5s;
+}
+.comment-bottom .record, .comment-bottom .chooseImg {
+  width: 120rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  z-index: 100;
+  color: #3F51B5;
+}
+.comment-bottom .record {
+  float: right;
+}
+.comment-bottom .chooseImg {
+  float: left;
+}
+.comment-bottom .textarea{
+  overflow: hidden;
+  font-size: 30rpx;
+  color: #888888;
+  background: #FFF;
+  width: calc(100% - 240rpx);
+  margin-left: 120rpx;
+  height: 120rpx;
+  background: greenyellow
+}
+.comment-bottom textarea {
+  font-size: 30rpx;
+  width: 100%;
+  height: 100%;
+  line-height: 40rpx;
+
+  /* padding: 5rpx 0 5rpx 0; */
+}
+.comment-bottom .textview {
+  overflow-y: scroll;
+  font-size: 30rpx;
+  width: 100%;
+  height: 100%;
+  line-height: 40rpx;
+  /* padding: 5rpx 0 5rpx 0; */
+}
+.comment-bottom .gift-but{
+  float: left;
+  font-size: 60rpx;
+  color: #3F51B5;
+  margin: 10rpx 30rpx;
+  border: 1px dashed #3F51B5;
+  border-radius: 100%;
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+}
+.comment-bottom .gift-but1{
+  float: left;
+  font-size: 60rpx;
+  color: #3F51B5;
+  margin: 10rpx 30rpx;
+  border-radius: 100%;
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.recordArea{
+  display: flex;
+  position: fixed;
+  bottom: -250rpx;
+  height: 250rpx;
+  background: antiquewhite;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  transition: bottom 0.5s;
+}
+.recordArea.recordAreaUp {
+  bottom: 0;
+  transition: bottom 0.5s;
+}
+.recordArea.show {
+  z-index: 1;
+}
+.recordArea .button{
+  width: 100rpx;
+  height: 100rpx;
+  border: 1px solid #3f51b5;
+  border-radius: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 50rpx;
+  color: #3f51b5
+}
+.recordArea .time{
+  width: 100rpx;
+  text-align: center;
+  color: #3f51b5;
+  margin-bottom: 25rpx;
+}
+.remove_btn{
+width: 110rpx;
+height: 66rpx;
+line-height: 66rpx;
+border-radius: 50rpx;
+background-color: rgba(0, 0, 0, 0.24);
+color: rgba(255, 255, 255, 1);
+font-size: 28rpx;
+text-align: center;
+}
+.save_btn{
+width: 110rpx;
+height: 66rpx;
+line-height: 66rpx;
+border-radius: 50rpx;
+font-size: 28rpx;
+text-align: center;
+background-color: rgba(63, 81, 181, 1);
+color: rgba(255, 255, 255, 1);
+}
+.font-52{
+  font-size: 50rpx;
+  color: #3F51B5;
+}
+
+.puctureArea {
+  position: fixed;
+  left: 0;
+  bottom: -250rpx;
+  width: 100%;
+  display: flex;
+  height: 250rpx;
+  justify-content: space-between;
+  align-items: center;
+  background: antiquewhite;
+  transition: bottom 0.5s;
+}
+.puctureArea.puctureAreaUp {
+  bottom: 0;
+  transition: bottom 0.5s;
+}
+.puctureArea.show {
+  z-index: 1;
+}
+.select-pic:last-child { 
+  margin-right: 25rpx;
+}
+.select-pic:first-child {
+  margin-left: 25rpx;
+}
+.select-pic, .empty-pic {
+  position: relative;
+  width: 200rpx;
+  height: 200rpx;
+  margin-right: 25rpx;
+}
+.select-pic {
+  border: #CDCDCD 2rpx solid;
+  border-radius: 15rpx;
+  line-height: 200rpx;
+  text-align: center;
+}
+.select-pic .pic {
+  width: 100%;
+  height: 100%;
+  border-radius: 15rpx;
+}
+.delete-pic {
+  position: absolute;
+  top: 3rpx;
+  right: 3rpx;
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 48rpx;
+}
+.add-pic {
+  width: 48rpx;
+  height: 48rpx;
+  vertical-align: middle;
+}

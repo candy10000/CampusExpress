@@ -1,0 +1,52 @@
+<view class="order" hidden="{{flag}}">
+  <view class='order-container'>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+
+      <view class="section">
+        <view class="section__title">姓名:</view>
+        <view class='form-group'>
+          <input type="text" class="input-text" value="{{form.photoUsername}}" name="photoUsername" placeholder="请输入姓名" />
+        </view>
+      </view>
+
+      <view class="section">
+        <view class="section__title">手机:</view>
+        <view class='form-group'>
+          <input type="text" class="input-text" value="{{form.photoTelephone}}" name="photoTelephone" placeholder="请输入手机号码" />
+        </view>
+      </view>
+
+      <view class="section">
+        <view class="section__title">联系:</view>
+        <view class='form-group'>
+          <input type="text" class="input-text" value="{{form.photoContact}}" name="photoContact" placeholder="请输入联系方式或号码" />
+        </view>
+      </view>
+
+      <view class="section">
+        <view class="section__title">选项:</view>
+        <view class='form-group'>
+          <picker bindchange="bindPickerChange" value="{{phoneCameramanCombos[index].comeramanComboContent}}" range="{{phoneCameramanCombos}}" range-key="{{'comeramanComboContent'}}">
+            <view class="picker">               
+              <input type="hidden" disabled="true" name="photoContent" value="{{phoneCameramanCombos[index].comeramanComboContent}}" />
+            </view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="section-text">
+        <view class="section__title">详情:</view>
+        <view class="section__detail">
+          <text name="photoDetail">
+             {{phoneCameramanCombos[index].comeramanComboDeatil}}
+          </text>
+        </view>
+      </view>
+
+      <view class="order-btn">
+        <button class="btn-no" bindtap='_error'>取消</button>
+        <button class="btn-ok"  formType="submit" >支付</button>
+      </view>
+    </form>
+  </view>
+</view>

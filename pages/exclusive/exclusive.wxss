@@ -1,0 +1,483 @@
+/* pages/exclusive/exclusive.wxss */
+/* pages/info/index.wxss */
+page{
+  height: 100%;
+  background: #3F51B5;
+}
+.top{
+background: white;
+margin-top: -85rpx;
+height: 85rpx;
+width: 100%;
+position: fixed;
+z-index: 100; 
+border-bottom: 4rpx solid #f0f0f2;
+}
+.top_img_1{
+margin-left: 16rpx;
+margin-top: 14rpx;
+height: 46rpx;
+width: 46rpx;
+float: left;
+
+}
+.top_img_2{
+margin-top: 12rpx;
+margin-left: 11rpx;
+height: 70%;
+width: 1%;
+float: left;
+}
+.schoolSelect{
+  font-size: 1rem;
+  font-family: "PingFangSC-regular";
+  float: left;
+  margin-left: 240rpx;
+  text-align: center;
+  height: 85rpx;
+  line-height: 85rpx;
+  width:300rpx;
+}
+.top_img_3{
+margin-left:1%; 
+height: 30rpx;
+width: 30rpx;
+margin-top: 5rpx;
+}
+.body{
+  /* flex: 1; */
+  /* margin-top: 85rpx; */
+  /* margin-top: 0rpx; */
+  padding-top: 13rpx;
+  background: white;
+  /* height: 820rpx; */
+  width: 700rpx;
+  margin-left: 24rpx;
+  border-radius: 8rpx;
+}
+.infoInput{
+height:104rpx;
+width: 100%;
+/* 此处是为了将每个infoinput组件多余的部分隐藏起来，
+避免在不同机型上空白内容的溢出 */
+overflow: hidden;  
+}
+.body_text{
+float: left;
+font-size: .87rem;
+height: 104rpx;
+line-height: 104rpx;
+margin-left: 42rpx;
+}
+.body_img_1{
+float:left;
+margin-top: 20rpx;
+left: 26rpx;
+height:50rpx;
+width:50rpx;
+position: relative;
+vertical-align:center;
+z-index: 0;
+}
+.body_img_2{
+float: left;
+margin-top:20rpx;
+margin-left:28rpx;
+height:48rpx;
+width:46rpx;
+position:relative;
+z-index:0;
+}
+.body_img_3{
+float: left;
+margin-top:25rpx;
+margin-left:30rpx;
+height:41rpx;
+width:36rpx;
+position:relative;
+z-index:0;
+
+}
+.body_img_4{
+float: left;
+height: 104rpx;
+line-height: 104rpx;
+margin-left: 10rpx;
+font-size: 44rpx;
+color: #888888;
+}
+.body_img_5{
+  margin-right: -390rpx;
+}
+.body_img_6{
+float: left;
+margin-right: -115rpx;
+margin-top: 35rpx;
+height:20rpx;
+width:20rpx;
+}
+.input_1{
+float: right;
+margin-right:24rpx;
+width:400rpx;
+height:100rpx;
+line-height: 100rpx;
+font-size:.87rem;
+/* border:3rpx solid #c1c1c1;
+border-color:#c1c1c1; */
+z-index:99;
+font-family: "微软雅黑";
+}
+.input_2{
+float: left;
+width:140rpx;
+height:100rpx;
+line-height: 100rpx;
+font-size:.87rem;
+/* border:3rpx solid #c1c1c1;
+border-radius: 4px; */
+z-index:99;
+font-family: "微软雅黑";
+}
+.input_3{
+float: left;
+margin-left:28rpx;
+vertical-align:center;
+width:150rpx;
+height:100rpx;
+line-height: 100rpx;
+font-size:.87rem;
+/* border:3rpx solid #c1c1c1; */
+z-index:99;
+font-family: "微软雅黑";
+}
+.input_4{
+float: left;
+width:300rpx;
+height:100rpx;
+line-height: 100rpx;
+font-size:.87rem;
+/* border:3rpx solid #c1c1c1;
+border-radius: 4px; */
+z-index:99;
+font-family: "微软雅黑";
+}
+.input_5{
+float: right;
+margin-right:24rpx;
+width:400rpx;
+height:150rpx;
+line-height: 150rpx;
+font-size:.87rem;
+/* border:3rpx solid #c1c1c1;
+border-color:#c1c1c1; */
+z-index:99;
+font-family: "微软雅黑";
+}
+
+.infoInput_specification{
+height:150rpx;
+}
+.infoInput_specification .body_text{
+  /* margin-top: -10rpx; */
+  height: 150rpx;
+  line-height: 150rpx;
+}
+.infoInput_specification .body_img_3{
+  margin-top: 36rpx;
+}
+radio-group{
+font-size: .87rem;
+line-height: 70rpx;
+text-align: start;
+height: 150rpx;
+width: 100%;
+box-sizing: border-box;
+}
+
+.radio radio{
+  font-size: 1.2rem;
+  transform:scale(0.7);
+}
+.price1,.price2{
+  float: right;
+  font-size: 28rpx;
+}
+.price1{
+  margin-top: -110rpx;
+  margin-right: 200rpx;
+}
+.price2{
+  margin-top: -48rpx;
+  margin-right: 200rpx;
+}
+.bottom{
+  padding: 24rpx 0;
+  background: f8f8f8;
+  width: 100%;
+  overflow: hidden;
+}
+.button{
+  text-align: center;
+  width: 350rpx;
+  height: 100rpx;
+  float: left;
+  margin-top: 24rpx;
+ 
+  border-radius: 8rpx;
+}
+.button::after{
+  border-radius: 0;
+}
+.buy{
+  margin-left: 24rpx;
+  background-color: white;
+}
+.pay{
+   margin-left: 4rpx;
+  background-color: white;
+}
+.button_text{
+  position: relative;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: .9rem;
+  color: #3F51B5;
+}
+.swiperinfo1{
+clear: both;
+width:702rpx;
+margin: 0 24rpx;
+}
+
+
+.swiperinfo{
+clear: both;
+width:702rpx;
+height: 338rpx;
+margin: 0 24rpx 24rpx 24rpx;
+border-radius: 8rpx;
+overflow: hidden;
+}
+.swiperinfo swiper-item{
+  background-color: #fff;
+}
+
+.infoComfirming{
+clear: both;
+width:100%;
+
+}
+.infoComfirming .ad{
+  width: 100%;
+  overflow: hidden;
+border-radius: 5px;
+}
+/* .swiperinfo .infoComfirming{
+  
+} */
+.deliveryman_img{
+position: relative;
+left: 40rpx;
+top: 20rpx;
+height:90rpx;
+width:90rpx;
+z-index: 10;
+border-radius: 50%;
+overflow: hidden;
+
+}
+/* .img_radio{
+  height: 90rpx;
+  width: 90rpx;
+  overflow: hidden;
+  border-radius: 50%;
+} */
+.deliveryman_img_cutoff{
+position: relative;
+left:175rpx;
+top:5rpx;
+height:1.6rem;
+width: 1%;
+}
+.deliveryman_name{
+position: relative;
+left: 60rpx;
+top: -11rpx;
+  font-size: 0.75rem;
+}
+.deliveryman_phone{
+   position: relative;
+left: 160rpx;
+top: -11rpx;
+  font-size: 0.75rem;
+}
+.deliveryman_info{
+position: relative;
+left: 200rpx;
+top: -11rpx;
+font-size: 0.75rem;
+color: rgba(0, 150, 136, 1);
+}
+.cancle{
+  float: right;
+  margin-right: 35rpx;
+  margin-top:65rpx;
+  width: 174rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color:  #BBBBBB;
+  border:4rpx solid #BBBBBB;
+  border-radius: 40rpx;
+}
+.cancle_text{
+  display: block;
+  
+  font-size: .73rem;
+}
+.cut-off{
+position:relative;
+left:38rpx;
+top:20rpx;
+width:90%;
+height:3rpx;
+background:#c1c1c1;
+}
+.user{
+  position:relative;
+  left:38rpx;
+  top:40rpx;
+  width: 90%;
+  height:75rpx;
+  background:  #c1c1c1;
+}
+.user_info{
+  float: left;
+  text-align: center;
+  height: 75rpx;
+  line-height: 75rpx;
+  width: 100%;
+  left:15rpx;
+  top:10rpx;
+  font-size: .75rem;
+  color: white;
+
+  overflow: hidden;
+ text-overflow:ellipsis;
+ white-space: nowrap;
+}
+/* .turn{
+  height: 40rpx;
+  width: 40rpx;
+  margin-top:16.5rpx;
+}
+.turn_left_image{
+  float: left;
+  margin-left: 15rpx
+}
+.turn_right_image{
+  float: right;
+  margin-right: 15rpx;
+} */
+
+.time{
+  position:relative;
+  left:37rpx;
+  top:56rpx;
+  font-size: .73rem;
+}
+.ad_text{
+  display: block;
+  margin: auto;
+  font-size: .8rem;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  margin-top: 100rpx;
+}
+.loading{
+text-align: center;
+  width: 100%;
+  height: 50rpx;
+  /* background: red; */
+}
+.loading image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.loading text{
+  float: left;
+  color: #9c9b9b;
+  font-size: .80rem;
+  width: 100%;
+}
+.placeholder_line{
+  height: 4rpx;
+  width: 640rpx;
+  margin-left: 30rpx;
+  background-color: #F0F0F2;
+}
+
+.font-42{
+  float:left;
+  font-size: 42rpx;
+  height:104rpx;
+  width: 45rpx; 
+  text-align: center;
+  line-height:104rpx;
+  margin-left:28rpx;
+  color: rgba(16, 16, 16, 1);
+}
+
+.font-46{
+  float:left;
+  font-size: 46rpx;
+  height:104rpx;
+  width: 45rpx; 
+  text-align: center;
+  line-height:104rpx;
+  margin-left:28rpx;
+  color: rgba(16, 16, 16, 1);
+}
+.font-38{
+  float:left;
+  font-size: 38rpx;
+  height:104rpx;
+  width: 45rpx; 
+  text-align: center;
+  line-height:104rpx;
+  margin-left:28rpx;
+  color: rgba(16, 16, 16, 1);
+}
+
+.font-44{
+  float:left;
+  font-size: 44rpx;
+  height:104rpx;
+  width: 45rpx; 
+  text-align: center;
+  line-height:104rpx;
+  margin-left:28rpx;
+  color: rgba(16, 16, 16, 1);
+}
+.font-44p{
+  float:left;
+  font-size: 40rpx;
+  height:150rpx;
+  width: 45rpx; 
+  text-align: center;
+  line-height:150rpx;
+  margin-left:28rpx;
+  color: rgba(16, 16, 16, 1);
+}
+.font-40{
+  float:left;
+  font-size: 40rpx;
+  height:104rpx;
+  width: 45rpx; 
+  text-align: center;
+  line-height:104rpx;
+  margin-left:28rpx;
+  color: rgba(16, 16, 16, 1);
+}

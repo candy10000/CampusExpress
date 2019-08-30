@@ -1,0 +1,192 @@
+/* pages/giftmall/giftmall.wxss */
+/* @import '/utils/FontAwesome.wxss' ; */
+.giftmall{
+  width: 600rpx;
+  height: 980rpx;
+  background-color: white;
+  border-top-left-radius:.5rem;
+  border-bottom-left-radius:.5rem;
+  border-top-right-radius:.5rem;
+  border-bottom-right-radius:.5rem;
+  box-shadow: 0rpx 0rpx 80rpx #a8a3a3d3;
+}
+.tab{
+  width: 200rpx;
+  display: inline-block;
+  font-size: 32rpx;
+  margin-top: 60rpx;
+  color: #888888;
+}
+.tab_text_left{
+ width: 66rpx;
+ margin-left: 114rpx;
+}
+.tab_text_center{
+ width: 68rpx;
+ margin-left: 64rpx;
+}
+.tab_text_right{
+ width: 66rpx;
+ margin-left: 12rpx;
+}
+.tab_select{
+  font-size: 34rpx;
+  color: black;
+}
+.swiper{
+  margin-top: 52rpx;
+  width: 570rpx;
+  height: 462rpx;
+  margin-left: 16rpx;
+  
+}
+.swiper_item{
+  
+  /* background-color: bisque; */
+}
+
+.gift_detail{
+  width:186rpx;
+  height: 150rpx;
+  /* border: 2rpx solid #888888; */
+  /* display: inline-block; */
+  float: left;
+}
+.gitf_pic{
+  width: 48rpx;
+  height: 48rpx;
+  margin-left: 82rpx;
+  margin-top: 20rpx;
+}
+.gift_name{
+  margin-top: 10rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #3F51B5;
+}
+.gift_cart{
+  position: relative;
+  width: 100%;
+  border-top: 6rpx dashed #3F51B5;
+}
+.gift_info{
+  width: 220rpx;
+  float: left;
+}
+.gift_num{
+   margin-top: 20rpx;
+  width: 200rpx;
+  height: 180rpx;
+
+  float: left;
+}
+.send_btn{
+   margin-top: 20rpx;
+   width: 180rpx;
+  height: 180rpx;
+
+  float: left;
+}
+.gift_pic_selected{
+  width: 100rpx;
+  height: 100rpx;
+  margin-left: 56rpx;
+  margin-top: 34rpx;
+}
+.gift_name_seleced{
+  margin-top: 10rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #3F51B5;
+}
+.price{
+   margin-top: 10rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #3F51B5;
+}
+.num_sub{
+  margin-top: 60rpx;
+  width: 44rpx;
+  height: 44rpx;
+  float: left;
+}
+.num_value{
+   margin-top: 58rpx;
+  text-align: center;
+  width: 70rpx;
+  font-size: 32rpx;
+  line-height: 44rpx;
+  float: left;
+}
+.num_add{
+   margin-top: 60rpx;
+  width: 44rpx;
+  height: 44rpx;
+  float: left;
+}
+.send{
+  text-align: center;
+  font-size: 28rpx;
+  background-color: #3F51B5;
+  opacity: 0.8;
+  width: 106rpx;
+  height: 50rpx;
+  margin-top: 50rpx;
+  color: white;
+  border-radius: 10rpx;
+  padding: 6rpx;
+
+}
+.send_text{
+  margin-top: 4rpx;
+}
+.input{
+  margin-left: 42rpx;
+  margin-top: 22rpx;
+  float: left;
+  width: 520rpx;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  border-bottom-left-radius:2rem; 
+  border-bottom-right-radius:2rem;
+  border: 2rpx solid #888888;
+}
+.message{
+  margin-left: 20rpx;
+  font-size: 28rpx; 
+}
+.gift_desc{
+  position: absolute;
+  width: 398rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  border-radius: 8rpx;
+  background-color: rgba(255, 255, 255, 1);
+  text-align: center;
+  box-shadow: 0rpx 0rpx 80rpx 0rpx rgba(0, 0, 0, 0.24);
+  z-index: 10;
+  left: 68rpx;
+  padding: 24rpx 26rpx 24rpx 40rpx;
+  bottom: -16rpx;
+  word-wrap: break-word;
+}
+.gift_desc_triangle{
+  position: absolute;
+  bottom: -16rpx;
+  left: 30rpx;
+  font-size: 38rpx;
+  color: rgba(255, 255, 255, 1); 
+}
+
+.giftPage{
+  position: absolute;
+  top: -64rpx;
+  left: -74rpx;
+  width: 1000rpx;
+  min-height: 1500rpx;
+  box-sizing: border-box;
+  padding-top: 64rpx ;
+  padding-left: 74rpx;
+
+}

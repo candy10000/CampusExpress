@@ -1,0 +1,59 @@
+<!--pages/task/task.wxml-->
+
+<view>
+
+  
+  <view style='margin-top:0rpx;'>
+    <view class = "tasklist" wx:for='{{taskList}}' wx:key='taskId'>
+    <!-- <view class = "tasklist"> -->
+     <view class='left-gap'></view>
+      <view class='right-gap'></view>
+       <view class='initiatorInfo'>
+          <image src='{{item.initiatorPic}}' class='initiatorPic'></image>
+          <text class='nickname'>{{item.nickName}}</text>
+          <view wx:if="{{item.gender=='1'}}" class='iconfont icon-male icon-gender-male'></view>
+          <view wx:elif="{{item.gender=='0'}}" class='iconfont icon-female icon-gender-female'></view>
+          <text class='title'>{{item.userTitle}}</text>
+        </view>
+      <view class='taskInfo'>
+        <view class='decs'><text class='decs'>{{item.decs}}</text></view>
+        <view class='tplace'><text> 任务地点：{{item.tPlace}}</text></view>
+        <view wx:if="{{item.taskType==1}}" class='place'><text> TA的地点：{{item.place}}</text></view>
+        <view wx:elif="{{item.taskType==2}}" class='place'><text> 我的地点：{{item.place}}</text></view>
+    
+        <view class='reward'><text> 酬劳：{{item.reward/100}}￥</text></view>
+        <view class='contact'><text>{{item.contactInfo}}</text></view>
+        <view class='initime'><text> {{item.iniTime}}</text></view>
+        <view class='taskState'>
+          <text wx:if="{{item.taskState==0}}">寻找拾友中</text>
+          <text wx:if="{{item.taskState==1}}">等ta确认中</text>
+          <text wx:if="{{item.taskState==2}}">已完成</text>
+        </view>
+      </view>
+      <view class='pickup {{item.taskState==0?"cancel":""}}' wx:if="{{item.taskState!=2}}">
+        <text wx:if="{{item.taskState==0}}" id="{{item.taskId}}" bindtap='cancel'>取消任务</text>
+        <text wx:elif="{{item.taskState==1}}" id="{{item.taskId}}" data-tId = "{{item.tId}}">等TA确认中</text> 
+      </view>
+            <view class='gift_line' wx:if="{{item.taskState!=0}}"></view>
+      <view wx:if="{{item.taskState!=0}}" class='giftarea'>
+        <view class='gift_text'>觉得TA还不错？送TA些小礼物吧</view>
+       
+       <image class='gift_choose' bindtap='chooseGift'></image>
+        
+      <swiper class='giftSwiper' display-multiple-items="{{item.giftListLength>3?3:item.giftListLength}}" >
+        <block wx:for="{{item.giftList}}" wx:for-index='key' wx:for-item="spItem">
+          <swiper-item bindtap='cancelTrans' id='{{key}}'>
+            <image src='{{spItem.giftPic}}' class='giftPic'></image>
+            <view class='giftName'>{{spItem.giftName}}</view>
+            <view class='giftNum'>*{{spItem.giftNum}}</view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    </view> 
+    
+  </view> 
+  <view style='height:120rpx'></view>
+</view>
+  
+                                                                                          

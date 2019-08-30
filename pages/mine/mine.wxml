@@ -1,0 +1,73 @@
+<!-- pages/mine/mine.wxml -->
+<view class='EditBoard'>
+  <view class='user_1'>
+    <image src='{{userInfo.userPic}}' class='headimg'></image>
+    <view class='nickname'>
+      <text>{{userInfo.nickName}}</text>
+    </view>
+    <view class='gender'>
+      <text class='iconfont {{userInfo.gender=="1"?"icon-male male":"icon-female female"}}'></text>
+    </view>
+  </view>
+  <!-- <view class='fans'>已被关注：{{userInfo.fans}}</view> -->
+  <view class='edit' bindtap='editInfo'>
+    <view class='iconfont icon-edit editStyle'></view>
+    <view class='editText'>编辑</view>
+  </view>
+  <view wx:if="{{userInfo.isAuthority}}" class='titleText'>
+    <image src="../pic/isAuthority.jpg" class="authorityPic" alt=""></image>
+    <text class="authority_Text" selectable="false" space="false" decode="false">{{userInfo.userTitle}}</text>
+  </view>
+  <view class='sign' wx:if="{{userInfo.signature}}">{{userInfo.signature}}</view>
+  <view class='sign' wx:else>暂未设置签名</view>
+  <view class='label'>
+    <text wx:if="{{userInfo.laber}}" decode="{{true}}">#{{userInfo.laber}}&nbsp;&nbsp;</text>
+    <text wx:if="{{userInfo.major}}" decode="{{true}}">#{{userInfo.major}}&nbsp;&nbsp;</text>
+    <text wx:if="{{userInfo.school}}">#{{userInfo.school}}</text>
+    <!-- <text>{{userInfo.laberArr[1]}}</text>
+    <text>{{userInfo.laberArr[2]}}</text> -->
+  </view>
+  <view class='titleList'>
+    <view class='titleLeft'></view>
+    <!-- <view wx:for="{{titleList}}" wx:for-index='key'> -->
+    <view class='progressBar'></view>
+    <!-- </view> -->
+    <view class='titleRight'></view>
+  </view>
+  <view class='divider1'></view>
+  <view class='gift2'>
+    <view style="margin-left:32rpx;margin-right:24rpx;display: inline-block;font-size:40rpx;color:#3F51B5">
+      礼物栏
+    </view>
+    <swiper class='giftSwiper swiper-no-swiping' display-multiple-items="3">
+      <block wx:for="{{giftList}}" wx:for-index='key'>
+        <swiper-item class="giftSwiperItem">
+          <block wx:if="{{item != null}}">
+            <image src='{{item.icon}}' class='giftPic'></image>
+            <view class='giftName'>{{item.giftsName}}</view>
+          </block>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='chevron-right' catchtap='showGiftsGetted'>
+      <i class="fa fa-chevron-right"></i>
+    </view>
+  </view>
+  <!-- <view style="margin-top:32rpx"> -->
+  <view class="bule"></view>
+  <block wx:for="{{array}}" wx:for-index='key'>
+    <view class='{{"myTask"+key}}' bindtap='MineSwitchPage' id="{{key}}">
+      <view class='arrayItem'>
+        <!-- <text class='iconfont {{arrayList[key].pic}}'></text> -->
+        <i class="iconlist {{item.class}}"></i>
+        <text class='arrayText'>{{item.message}}</text>
+        <view wx:if="{{key==2&&message}}" class='dot'></view>
+      </view>
+    </view>
+  </block>
+  <!-- </view> -->
+  <view style='height:200rpx'></view>
+</view>
+<view style='position: absolute;height: 1700rpx;width: 750rpx;top:0' wx:if="{{giftsGetted}}" bindtap='hiddenGiftsGetted'>
+  <giftsGetted class="gift" catchtap="showGiftsGetted" wx:if="{{giftsGetted}}" type="0"></giftsGetted>
+</view>

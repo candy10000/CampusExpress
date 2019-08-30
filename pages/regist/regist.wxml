@@ -1,0 +1,77 @@
+<!-- pages/mine/mineEdit/mineEdit.wxml -->
+<view id="img">
+  <view class='userInfo.userPic' class='headimg {{userInfo.userPic==""?"hedingDefault":""}}' bindtap='chooseImg'>
+    <image src='{{userInfo.userPic}}' class='img'>
+      <text wx:if="{{userInfo.userPic==null}}" class='picText'>点击上传</text>
+      <text wx:else class='picText'>点击更换</text>
+    </image>
+  </view>
+</view>
+<form bindsubmit='regist'>
+  <view class='alert bold'>必填项*</view>
+  <view class='userInfo'>
+    <view class='block btop'>
+      <view class='infoText'>昵称</view>
+      <input id='nickaname' name='nickname' class='Required' placeholder="输入昵称" value="{{userInfo.nickname}}" bindinput="bindNameInput"></input>
+    </view>
+    <view class='block'>
+      <view class='infoText'>性别</view>
+      <view class='input'>
+        <picker id='genderPicker' name='gender' range='{{gender}}' value='{{genderIdx}}' bindchange='genderChange'>
+          {{gender[genderIdx]}}
+        </picker>
+      </view>
+    </view>
+    <view class='block'>
+      <view class='infoText'>学校</view>
+      <view class='input'>
+        <!-- <view  class='input' id='schoolPicker' name='school' >{{school}}</view> -->
+        <picker class='school_picker' id='school' name='school' range='{{school}}' value='{{schoolIdx}}' bindchange='schoolChange'>
+          {{school[schoolIdx]}}
+        </picker>
+      </view>
+    </view>
+    <view class='block bbottom'>
+      <view class='infoText'>手机</view>
+      <!-- <input id='tel' name='tel' placeholder='输入手机号' class='notRequired' disabled="{{true}}">{{tel}}</input> -->
+      <button class="button" name='tel' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+        {{tel}}
+      </button>
+    </view>
+  </view>
+  <view class='userInfo alert'>
+    <text>手机号码不会向其他用户显示,在每次发布任务时可选择使用手机号码，我们将为您创建临时虚拟号码来与对方联系，保护个人隐私。</text>
+  </view>
+  <view class='alert bold'>选填项</view>
+  <view class='userInfo'>
+    <view class='block btop'>
+      <view class='infoText'>专业</view>
+      <input id='nickaname' name='major' placeholder='填写专业让更多同学认识你' class='notRequired'>
+        {{userInfo.major}}
+      </input>
+    </view>
+    <view class='block bbottom'>
+      <view class='infoText'>地址</view>
+      <view id='input'>
+        <view class="address">
+          <picker id='addressPicker' name='address1' range='{{address2}}' value='{{addressIdx}}' bindchange='addressChange'>
+            <text class="input2_text">{{address2[addressIdx]}}</text>
+            <i class='iconfont icon-sort-down sortdown'></i>
+          </picker>
+          <input id='addressIn' name='address3' placeholder='输入地址'></input>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='userInfo alert'>
+    <text>地址不会向其他用户直接显示，填写之后每次发布任务时，地址将默认填入此时设置的，这会更加方便，而且系统将为你推荐距离更近的任务。</text>
+  </view>
+  <view>
+    <button form-type="submit" class='okBtn'>完成</button>
+  </view>
+  <view style='height:150rpx;'></view>
+</form>
+<view id='bottom_alert_1'>
+  注册表示同意
+  <text id='bottom_alert_2' decode="true">&nbsp;用户协议</text>
+</view>

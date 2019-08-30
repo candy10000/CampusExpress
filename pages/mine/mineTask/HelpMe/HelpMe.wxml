@@ -1,0 +1,125 @@
+<!-- pages/task/task.wxml -->
+<view catchtap='hideGiftMall'>
+  <view style='margin-top:0rpx;'>
+    <view class="tasklist {{item.newstatus!=0?'gift':''}}" wx:for='{{taskList}}' wx:key='taskId' wx:for-index="idx">
+      <!-- <view class = "tasklist"> -->
+      <view class='left-gap'></view>
+      <view class='right-gap'></view>
+      <view class='initiatorInfo'>
+        <image src='{{item.userPic}}' class='initiatorPic' catchtap='toOtgerInfo' data-id='{{item.openId}}'></image>
+        <text class='nickname'>{{item.nickName}}</text>
+        <view wx:if="{{item.gender=='1'}}" class='iconfont icon-male icon-gender-male'></view>
+        <view wx:elif="{{item.gender=='0'}}" class='iconfont icon-female icon-gender-female'></view>
+        <text class='title'>{{item.userTitle}}</text>
+      </view>
+      <view class='taskInfo' style="{{item.newstatus==0 || item.newstatus==1 ? 'padding-bottom : 0;' : ''}}">
+        <view class='decs'>
+          <textare class='decs'>{{item.decs}}</textare>
+        </view>
+        <view class='tplace'>
+          <text wx:if="{{item.tPlace != '无'}}">任务地点：{{item.tPlace}}</text>
+        </view>
+        <view wx:if="{{item.taskType==1}}" class='place'>
+          <text wx:if="{{item.place != '无'}}">TA的地点：{{item.place}}</text>
+        </view>
+        <view wx:elif="{{item.taskType==2}}" class='place'>
+          <text wx:if="{{item.place != '无'}}">我的地点：{{item.place}}</text>
+        </view>
+        <view class='reward' wx:if="{{item.reward != 0}}">
+          <text>赏金：{{item.reward/100}} </text>
+          <i class='fa fa-database'></i>
+        </view>
+        <view class="cardNum" wx:if="{{item.newstatus==-1 && item.helperLimit!= 99}}">数量  :  {{item.helperAmount}}/{{item.helperLimit}}
+        </view>
+        <view class='contact'>
+          <text>{{item.contactType}}  :  {{item.contactInfo}}</text>
+        </view>
+        <view class='initime'>{{item.cardTime}}<text ecode="{{true}}" wx:if="{{ item.deadline != 0 && item.decs!='无时限'}}" decode="{{true}}">&nbsp;&nbsp;{{item.deadline/2}}小时后停止寻找</text>
+        </view>
+        <!-- <view class='deadline'>
+          <text>{{item.deadline}}小时后停止寻找</text>
+        </view> -->
+        <view class="cancel-reason" wx:if="{{item.status == 2}}"><text>取消原因  :  {{item.cancelReason != '' ? item.cancelReason : '无'}}</text></view>
+        <view class='status'>
+          <view wx:if="{{item.newstatus== -1}}" class="center2">
+            <span>寻找拾友中</span>
+            <i class="fa fa-ellipsis-h font-48"></i>
+          </view>
+
+          <!-- <view wx:elif="{{item.status == 0 && item.contactType == '任务信封'}}" data-index="{{idx}}" data-id='{{item.taskId}}' class="center2" bindtap='gotoEnvelope'> -->
+
+          <view wx:elif="{{item.newstatus==0 && item.contactType == '任务信封'}}" data-index="{{idx}}" data-id='{{item.taskId}}' class="center2" bindtap='gotoEnvelope'>
+
+            <span>点击拆开信封</span>
+            <i class="fa fa-envelope-o font-48"></i>
+          </view>
+          <view wx:elif="{{item.status == 0}}" class="center2">
+            <span>被TA拾起</span>
+            <i class="fa fa-smile-o font-48"></i>
+          </view>
+          <view wx:elif="{{item.status == 1}}" class="center2">
+            <span>已完成</span>
+            <i class="fa fa-check font-48"></i>
+          </view>
+          <view wx:elif="{{item.status == 2}}" class="center2">
+            <span>已取消</span>
+            <i class="fa fa-close font-48"></i>
+          </view>
+          <!-- <view wx:if="{{item.newstatus==1}}" class="center2">
+            <span wx:if="{{item.newstatus==1}}">已完成</span>
+            <i class="fa fa-check font-48"></i>
+          </view> -->
+
+
+          <view class='pickup {{item.newstatus==-1? "cancel" : item.status == 0 ? "" : "cancel"}}'  wx:if="{{ item.newstatus==-1 }}" id="{{item.taskId}}"  data-index="{{idx}}"  bindtap='cancel' >
+            <text>停止寻找</text>
+          </view>
+          <view class='pickup {{item.newstatus==-1? "cancel" : item.status == 0 ? "" : "cancel"}}'  wx:elif="{{item.status == 0}}" id="{{item.taskId}}" data-tId = "{{item.tId}}" data-index="{{idx}}" bindtap='pickup'>
+            <text>确认完成</text>
+          </view>
+          <view class='pickup {{item.newstatus==-1? "cancel" : item.status == 0 ? "" : "cancel"}}'  wx:elif="{{item.status == 1}}" id="{{item.taskId}}" data-tId = "{{item.tId}}"  data-index="{{idx}}"  bindtap='deal'>
+            <text>删除记录</text>
+          </view>
+          <view class='pickup {{item.newstatus==-1? "cancel" : item.status == 0 ? "" : "cancel"}}'  wx:elif="{{item.status == 2}}" id="{{item.taskId}}" data-tId = "{{item.tId}}"  data-index="{{idx}}" bindtap='deal'>
+            <text>删除记录</text> 
+            <!-- <text wx:elif="{{item.newstatus==1}}" id='{{item.taskId}}' data-tId = "{{item.tId}}" bindtap='pickup'>已完成</text>  -->
+          <!-- <text wx:elif="{{item.newstatus==2}}" id='{{item.taskId}}' bindtap='pickup'>待用户确认完成</text>  -->
+          </view>
+
+
+          <view wx:if="{{item.newstatus!=-1}}">
+            <text class='msg' wx:if="{{item.status == 0}}">如需取消请联系对方，如有异常请联系客服</text>
+            <text class='msg' wx:elif="{{item.status == 2}}">任务已被对方取消，如有异常请联系客服</text>
+          </view>
+        </view>
+      </view>
+      <view class='gift_line' wx:if="{{item.newstatus==0 || item.newstatus==1}}"></view>
+      <view wx:if="{{item.newstatus==0 || item.newstatus==1}}" class='giftarea'>
+        <view class='gift_text'><text decode="{{true}}">觉得TA不错？\n送TA些小礼物吧</text></view>
+        <!-- <view class='gift_choose' catchtap='chooseGift'> </view> -->
+        <i class="fa fa-gift gift_choose" catchtap='chooseGift' data-id="{{item.helpSeekerId}}" data-taskId="{{item.taskId}}"/>
+        <swiper class='giftSwiper' display-multiple-items="{{item.giftListLength > 2 ? 2 : item.giftListLength}}">
+          <block wx:for="{{item.giftList}}" wx:for-index='key' wx:for-item="spItem">
+            <swiper-item bindtap='cancelTrans' id='{{key}}' class='gift-item'>
+              <image src='{{spItem.giftPic}}' class='giftPic' src="{{spItem.icon}}"></image>
+              <view class='giftName'>{{spItem.giftsName}}</view>
+              <view class='giftNum'>*{{spItem.total}}</view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+
+  <!-- </view>
+  <view style='height:120rpx'></view>
+</view>
+<view style='position: absolute;height: 1700rpx;width: 750rpx;top:0' wx:if="{{giftmall}}" bindtap='hiddenGiftsGetted'>
+  <giftmall name="giftmall" class="giftmall" catchtap="showGift" wx:if="{{giftmall}}" receiverId="{{receiverId}}" sendgiftTaskId="{{sendgiftTaskId}}" sendgiftType="1"/>
+</view> -->
+
+    </view>
+  </view>
+  <view style='height:120rpx'></view>
+<!-- </view> -->
+<view style='position: absolute;height: 1700rpx;width: 750rpx;top:0' wx:if="{{giftmall}}" bindtap='hiddenGiftsGetted'>
+<giftmall name="giftmall" class="giftmall" catchtap="showGift" wx:if="{{giftmall}}" receiverId="{{receiverId}}"/> </view>

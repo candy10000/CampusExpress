@@ -1,0 +1,283 @@
+/* pages/taskPublish/taskPublish.wxss */
+@import '../../utils/icon-sort-down.wxss';
+@import '../../utils/icon-fanhui.wxss';
+@import '../../utils/icon-xuanzhong.wxss';
+
+page {
+  margin-top: 22rpx;
+  background-color: #3f51b5;
+  /* background-color: white; */
+  height: 100%;
+  width: 100%;
+}
+
+.box {
+  display: flex;
+  padding-left: 68rpx;
+
+}
+
+.font1 {
+  font-size: 40rpx;
+  width: 80rpx;
+  color: white;
+}
+
+.font2 {
+  font-size: 40rpx;
+  line-height: 66rpx;
+  width: 80rpx;
+  color: white;
+  margin-top: 50rpx;
+}
+
+.inputBox1 {
+  margin-left: 56rpx;
+  background-color: white;
+  height: 190rpx;
+  width: 476rpx;
+  padding: 12rpx;
+  box-sizing: border-box;
+  /* border: 2rpx white solid; */
+  border-radius: 8rpx;
+  font-size: 32rpx;
+  letter-spacing: 3rpx;
+  line-height: 18pt;
+  color: #000;
+
+}
+
+.inputBox2 {
+  margin-left: 56rpx;
+  margin-top: 56rpx;
+  background-color: white;
+  height: 60rpx;
+  width: 192rpx;
+  /* border: 2rpx white solid; */
+  line-height: 60rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  color: #888888;
+  overflow: hidden;
+
+}
+
+.inputBox2 .iconfont {
+  float: right;
+}
+
+.inputBox3 {
+  margin-left: 56rpx;
+  margin-top: 56rpx;
+  background-color: white;
+  width: 234rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  /* border: 2rpx white solid; */
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  color: #888888;
+}
+
+.taskplace_sortdown {
+  text-align: right;
+  width: 302rpx;
+  height: 60rpx;
+  position: relative;
+  top: -55rpx;
+  left: 53rpx;
+  color: #888888;
+}
+
+.myplace_sort_down {
+  text-align: right;
+  width: 100rpx;
+  height: 60rpx;
+  position: relative;
+  top: 60rpx;
+  left: -96rpx;
+  color: #888888;
+}
+
+.myplacepicker {
+  width: 0
+}
+
+.inputBox4 {
+  margin-left: 56rpx;
+  margin-top: 56rpx;
+  background-color: white;
+  width: 234rpx;
+  height: 60rpx;
+  /* border: 2rpx white solid; */
+  line-height: 60rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  color: #888888;
+}
+
+.inputBox5 {
+  margin-left: 56rpx;
+  margin-top: 56rpx;
+  background-color: white;
+  width: 175rpx;
+  height: 60rpx;
+  /* border: 2rpx white solid; */
+  line-height: 60rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  color: #888888;
+  overflow: hidden;
+}
+
+.inputBox5 .iconfont {
+  float: right;
+  padding-right: 5rpx;
+}
+
+.inputBox6 {
+  margin-left: 56rpx;
+  margin-top: 56rpx;
+  background-color: white;
+  width: 150rpx;
+  height: 60rpx;
+  /* border: 2rpx white solid; */
+  line-height: 60rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  color: #888888;
+  overflow: hidden;
+}
+
+.inputBox6 .iconfont {
+  float: right;
+  padding-right: 10rpx;
+}
+
+.PlaceDetail {
+  width: 280rpx;
+  height: 60rpx;
+  background-color: white;
+  margin-left: 56rpx;
+  margin-top: 25rpx;
+  /* border: 2rpx white solid; */
+  line-height: 60rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  color: #888888;
+}
+
+.PlaceDetail3 {
+  width: 80rpx;
+  height: 60rpx;
+  background-color: white;
+  margin-left: 20rpx;
+  margin-top: 56rpx;
+  /* border: 2rpx white solid; */
+  line-height: 60rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  color: #888888;
+}
+
+.tplaceInput {
+  width: 260rpx;
+  height: 60rpx;
+  background-color: white;
+  margin-left: 298rpx;
+  margin-top: 57rpx;
+  /* border: 2rpx white solid; */
+  line-height: 60rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  color: #888888;
+}
+
+.PlaceDetail2 {
+  width: 260rpx;
+  height: 60rpx;
+  background-color: white;
+  margin-left: 20rpx;
+  margin-top: 56rpx;
+  /* border: 2rpx white solid; */
+  line-height: 60rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  color: #888888;
+}
+
+.tips1 {
+  margin-left: 206rpx;
+  margin-top: 26rpx;
+  width: 474rpx;
+  color: #FFFFFF;
+  opacity: 0.7;
+  font-size: 28rpx;
+}
+
+.tips2 {
+  margin-left: 206rpx;
+  margin-top: -35rpx;
+  color: #FFFFFF;
+  opacity: 0.7;
+  font-size: 28rpx;
+}
+
+.tips3 {
+
+  margin-left: 206rpx;
+  margin-top: 10rpx;
+  color: #FFFFFF;
+  opacity: 0.7;
+  font-size: 28rpx;
+}
+
+/* .PlaceDetail{
+  border: 2rpx white solid;
+  
+  color: #888888;
+} */
+.default {
+  width: 169rpx;
+  height: 60rpx;
+  /* margin-bottom: 162rpx; */
+  margin-top: 136rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #3f51b5;
+  justify-content: space-around;
+
+}
+
+.default .iconfont {
+  font-size: 35rpx;
+  height: 48rpx;
+  width: 48rpx;
+  margin-right: 16rpx;
+}
+
+.xuanzhong {
+  color: #3F51B5;
+  font-weight: bolder;
+
+
+}

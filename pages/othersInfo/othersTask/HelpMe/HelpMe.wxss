@@ -1,0 +1,206 @@
+/* pages/task/task.wxss */
+@import '/utils/icon-address.wxss';
+@import '/utils/icon-search.wxss';
+@import '/utils/icon-filterList.wxss';
+@import '/utils/icon-male.wxss';
+@import '/utils/icon-female.wxss';
+page{
+  background-color: #3f51b5;
+   /* background-color: white; */
+   height: 100%;
+   width: 100%;
+}
+.tasklist{
+  
+  width: 680rpx;
+  background-color: white;
+  margin-left: 5%;
+  margin-bottom: 20rpx;
+  border-radius: .2rem;
+  padding-bottom: 50rpx;
+  
+}
+
+.initiatorInfo{
+  height: 128rpx;
+  width: 100%;
+  display:flex; 
+  /* padding: 0.2rem; */
+  flex-direction: row;
+  margin-top: -120rpx;
+}
+.initiatorPic{
+  height: 90rpx;
+  width: 90rpx;
+  border: 3rpx solid #bbbbbb;
+  border-radius: 100%;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  display:flex; 
+}
+
+.left-gap{
+ width:60rpx;
+ height: 60rpx;
+ background-color: #3f51b5;
+ position: relative;
+ top:300rpx;
+ left: -30rpx;
+ border-radius: 100%;
+ z-index: 100;
+}
+.right-gap{
+ width: 60rpx;
+ height: 60rpx;
+ background-color: #3f51b5;
+ position: relative;
+ top:240rpx;
+ right: -650rpx;
+ border-radius: 100%;
+ z-index: 100;
+}
+.nickname{
+  font-size: 32rpx;
+  width: 200rpx;
+  margin-left: 20rpx;
+  margin-top: 40rpx;
+  display:flex; 
+  
+}
+.icon-gender-male{
+  color: #0f6cf8;
+  margin-top: 20rpx;
+  margin-left: 70rpx;
+  font-size: 70rpx;
+  display:flex; 
+}
+.icon-gender-female{
+  color: #f80f8fe0;
+  margin-top: 20rpx;
+  margin-left: 70rpx;
+  font-size: 70rpx;
+  font-weight: bold;
+  display:flex; 
+}
+.title{
+  color: #469771;
+  font-size: 32rpx;
+  font-weight: 500;
+  margin-top: 40rpx;
+  margin-left: 10rpx;
+  display:flex; 
+}
+.taskInfo{
+  width: 80%;
+  height: 400rpx;
+  background-color: white;
+  margin-left: 70rpx;
+  margin-top: 10rpx;
+  padding-top: 20rpx;
+  font-size: 28rpx;
+  padding: 1%;
+}
+.decs{
+  font-size: 30rpx;
+  height:120rpx;
+}
+.tplace{
+  margin-top: 20rpx;
+  font-weight: bold;
+}
+.place{
+  margin-top: 20rpx;
+  font-weight: bold;
+}
+.lable{
+   margin-top: 20rpx;
+   color: #3F51B5;
+}
+.contact{
+  margin-top: 20rpx;
+}
+.reward{
+   margin-top: 20rpx;
+   color: #E3CF03;
+}
+.initime{
+   margin-top: 20rpx;
+}
+.taskState{
+   margin-top: 20rpx;
+   color: #3F51B5;
+   font-size: 28rpx;
+}
+.pickup{
+  height: 54rpx;
+  width: 155rpx;
+  border: 5rpx solid #3F51B5;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  text-align: center;
+  margin-left: 465rpx;
+ 
+  
+  font-size: 30rpx;
+  color: #3F51B5;
+  /* padding-top: 1%; */
+}
+.cancel{
+  color: #BBBBBB;
+  border: 5rpx solid #BBBBBB;
+}
+
+.gift_line{
+  margin-top: 80rpx;
+  border-top: #3f51b5 dashed 4rpx;
+}
+.giftarea{
+  height: 120rpx;
+  font-size: 28rpx;
+  color: #3F51B5;
+}
+.gift_text{
+  width: 210rpx;
+  margin-top: 40rpx;
+  margin-left: 20rpx;
+  line-height: 50rpx;
+  display: inline-block;
+  }
+
+.gift_choose{
+  display: inline-block;
+  height: 90rpx;
+  width: 90rpx;
+  margin-left: 20rpx;
+  border: red dashed 6rpx;
+  border-radius: 120rpx;
+}
+.giftSwiper{
+
+  position: relative;
+  left: 390rpx;
+  top:-100rpx;
+  width: 300rpx;
+  height: 145rpx;
+
+
+}
+.giftPic{
+  height: 40rpx;
+  width: 40rpx;
+
+}
+.giftName{
+  color: #3F51B5;
+  font-size: 24rpx;
+
+}
+.giftNum{
+  color: #3F51B5;
+  font-size: 24rpx;
+
+}
+
+

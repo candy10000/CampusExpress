@@ -1,0 +1,50 @@
+<!-- pages/giftmall/giftmall.wxml -->
+<view class='giftmall' bindtap='hiddenGiftDesc' wx:if="{{showGiftMall}}">
+  <view class='top_tabbar'>
+    <view class='tab' bindtap='changeTab' data-index='0'>
+      <view class='tab_text_left'>{{tab_list[0].text}}</view>
+    </view>
+    <view class='tab'>
+      <view class='tab_text_center tab_select'>{{tab_list[1].text}}</view>
+    </view>
+    <view class='tab' bindtap='changeTab' data-index='2'>
+      <view class='tab_text_right'>{{tab_list[2].text}}</view>
+    </view>
+  </view>
+  <view class='gift_list'>
+    <swiper class='swiper' bindchange='giftsChange' current='{{current}}'>
+      <block wx:for="{{gift_list_sliced}}" wx:key='item' wx:for-index="id1">
+        <swiper-item class='swiper_item'>
+          <view class='gift_detail' wx:for="{{item}}" wx:for-index="id2" wx:for-item="gft" wx:key="gft" catchtap='getgift' data-id1='{{id1}}' data-id2='{{id2}}'>
+            <image class='gitf_pic' src='{{gft.icon}}'></image>
+            <view class='gift_name'>{{gft.giftsName}}</view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='gift_cart'>
+    <view class='gift_desc' wx:if="{{gift_desc}}">
+      {{gift_selected.desc}}
+      <i class="fa fa-sort-desc gift_desc_triangle" aria-hidden="true"></i>
+    </view>
+    <view class='gift_info'>
+      <image class='gift_pic_selected' src='{{gift_selected.icon}}'></image>
+      <view class='gift_name_seleced'>{{gift_selected.giftsName}}</view>
+      <view class='price'>{{gift_selected.value*num}}￥</view>
+    </view>
+    <view class='gift_num'>
+      <image class='num_sub' catchtap='num_sub' src='../pic/minus.png'></image>
+      <input bindblur='getNum' class='num_value' value='{{num}}'></input>
+      <image class='num_add' catchtap='num_add' src='../pic/plus.png'></image>
+    </view>
+    <view class='send_btn'>
+      <view class='send' catchtap='send'>
+        <view class='send_text'>赠送</view>
+      </view>
+    </view>
+  </view>
+  <view class='input'>
+    <input class='message' bindinput='getMsg' placeholder='为礼物留言...' value='{{message}}'></input>
+  </view>
+</view>

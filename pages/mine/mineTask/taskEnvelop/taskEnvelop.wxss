@@ -1,0 +1,153 @@
+page{
+  background: #3f51b5
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.card{
+  position: relative;
+  width: 702rpx;
+  background-color: white;
+  margin: 24rpx;
+  border-radius: 8rpx;
+  box-sizing: border-box;
+}
+.edit{
+  width: 100%;
+  padding-top: 44rpx;
+  padding-left: 44rpx;
+  padding-right: 44rpx;
+  box-sizing: border-box;
+}
+.contentArea{
+  width: 90%;
+  min-height: 600rpx;
+  color: #000;
+  font-size: 30rpx;
+  overflow-y:hidden;
+  word-break:break-all;
+  word-wrap:break-word;
+}
+.imgArea{
+  overflow: hidden;
+  margin-bottom: 34rpx;
+}
+.voiceArea{
+  color: #3f51b5;
+  min-width: 100rpx;
+  margin-left: 24rpx ;
+  margin-top: 24rpx ;
+  padding: 14rpx 34rpx;
+  border-radius: 50rpx;
+  box-shadow: 0rpx 4rpx 15rpx 0rpx rgba(0, 0, 0, 0.24);
+
+}
+.voice_content{
+  display: inline-block;
+  margin-left: 40rpx ;
+  margin-right: 40rpx ;
+}
+.inlineSmall{
+    float: left;
+    margin-left: 24rpx;
+    height: 240rpx;
+    width: 240rpx;
+    margin-top: 24rpx;
+    
+  }
+.inlineBig{
+    float: left;
+    margin-left: 24rpx;
+    height: 504rpx;
+    width: 504rpx;
+    margin-top: 24rpx;
+  }
+  .buttonArea{
+    width: 100%;
+    height: 160rpx;
+    font-size: 50rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .round{
+    width: 90rpx;
+    height: 90rpx;
+    border: 1px solid #3f51b5;
+    border-radius: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .button1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50rpx;
+  }
+  .button2{
+    display: inline-block;
+    width: 120rpx;
+    color: #3f51b5;
+    font-size: 36rpx;
+    background: white;
+    text-align: center;
+    padding: 12rpx;
+    border-radius: 60rpx;
+    margin-top: 44rpx;
+  }
+.recordArea{
+  position: fixed;
+  bottom: 0;
+  height: 250rpx;
+  background: #FFF;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.recordArea .button{
+  width: 100rpx;
+  height: 100rpx;
+  border: 1px solid #3f51b5;
+  border-radius: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 50rpx;
+  color: #3f51b5
+}
+.recordArea .time{
+  width: 100rpx;
+  text-align: center;
+  color: #3f51b5;
+  margin-bottom: 25rpx;
+}
+.remove_btn{
+width: 110rpx;
+height: 66rpx;
+line-height: 66rpx;
+border-radius: 50rpx;
+background-color: rgba(0, 0, 0, 0.24);
+color: rgba(255, 255, 255, 1);
+font-size: 28rpx;
+text-align: center;
+}
+.save_btn{
+width: 110rpx;
+height: 66rpx;
+line-height: 66rpx;
+border-radius: 50rpx;
+font-size: 28rpx;
+text-align: center;
+background-color: rgba(63, 81, 181, 1);
+color: rgba(255, 255, 255, 1);
+
+}

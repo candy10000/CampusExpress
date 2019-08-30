@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "giftsGetted": "/pages/giftmall/giftsGetted/giftsGetted"
+  }
+}

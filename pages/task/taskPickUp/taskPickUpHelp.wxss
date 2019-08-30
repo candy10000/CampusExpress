@@ -1,0 +1,85 @@
+/* pages/task/taskPickUp/taskPickUpHelp.wxss */
+/* @import '/utils/icon-zan.wxss'; */
+@import '/utils/icon-zan2.wxss';
+page{
+background-color: #3f51b5;
+}
+.box{
+  margin-top:50rpx; 
+  display: flex; /*设置显示样式**/
+  align-items: center;
+  flex-direction: column; 
+}
+.box_text{
+  display:flex;
+  flex-direction: row;
+}
+.temp{
+  height: 50rpx;
+  width: 180rpx;
+}
+.zan{
+  color: white;
+  font-size: 230rpx;
+}
+.text1{
+  margin-top:70rpx; 
+  color: white;
+  font-size: 56rpx;
+}
+
+.box_text2{
+  margin-top: 60rpx;
+  display: flex; /*设置显示样式**/
+  align-items: center;
+  flex-direction: column; 
+}
+
+.text2{
+  margin-top:35rpx; 
+  color: white;
+  font-size: 32rpx;
+}
+
+.contactBtn{
+  margin-top:30rpx;
+  margin-left:25rpx; 
+  height: 50rpx;
+  width: 150rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  text-align: center;
+  color: white;
+  background-color: silver;
+  border-radius: 100rpx;
+  }
+
+.text3{
+  margin-top:60rpx; 
+  margin-left: 5rpx;
+  width: 480rpx;
+  color: white;
+  font-size: 32rpx;
+  opacity:0.7;
+  line-height: 56rpx;
+  text-align: center;
+}
+
+.text4{
+  margin-top:50rpx; 
+  margin-left: 5rpx;
+  width: 430rpx;
+  color: white;
+  font-size: 32rpx;
+  opacity:0.7;
+  line-height: 56rpx;
+  text-align: center;
+
+}
+.placeholder{
+  margin-top:30rpx; 
+  height: 1rpx;
+  width: 425rpx;
+  border-bottom: 5rpx dashed white;
+}
+

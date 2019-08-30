@@ -1,0 +1,146 @@
+page{
+   background-color: #3f51b5;
+}
+/*swtich样式-start*/
+/*swtich整体大小*/
+.wx-switch-input{
+width:62rpx !important;
+height:30rpx !important;
+background: rgba(86, 119, 252, 0.6) !important;
+}
+/*白色样式（false的样式）*/
+.wx-switch-input::before{
+width:62rpx !important;
+height: 30rpx !important;
+}
+/*绿色样式（true的样式）*/
+.wx-switch-input::after{
+width: 44rpx !important;
+height: 44rpx !important;
+background:  rgba(86, 119, 252, 1) !important;
+margin-top: -8rpx;
+margin-left:-8rpx;
+}
+/*swtich样式end*/
+.on_off_switch{
+  color: white;
+  opacity: 0.7;
+  font-size: 26rpx;
+  margin-left: 440rpx;
+  margin-top: 20rpx;
+}
+.switch{
+
+  margin-left: 20rpx;
+}
+.message_list{
+  margin-top: 24rpx;
+  /* height: 160rpx; */
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  width: 700rpx;
+  background-color: white;
+  margin-left: 24rpx;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+}
+.orderPic{
+  width: 50rpx;
+  color: #3F51B5;
+  font-size: 46rpx;
+  font-weight: 900;
+  margin-left: 68rpx;
+  margin-top: 66rpx;
+  float: left
+}
+.title{
+  width: 250rpx;
+  font-size: 26rpx;
+  margin-left: 70rpx;
+  margin-top: 70rpx;
+  float: left;
+}
+.desc{
+  width: 220rpx;
+  font-size: 26rpx;
+  margin-left: 0rpx;
+  margin-top: 50rpx;
+  color: #888888;
+  float: left;
+}
+.businessList{
+  margin-top: 24rpx;
+}
+.img{
+  height: 90rpx;
+  width: 90rpx;
+  margin-left: 24rpx;
+  /* margin-top: 40rpx; */
+  /* float: left; */
+  border: 2rpx solid rgba(187, 187, 187, 1);
+  border-radius: 100rpx;
+}
+.profile{
+  width: 460rpx;
+  /* height: 100%; */
+  font-size: 26rpx;
+  margin-left: 55rpx;
+  /* padding-top:  38rpx; */
+  /* float: left; */
+  /* box-sizing: border-box */
+  display: inline-block;
+}
+.zanprofile{
+  min-width: 350rpx;
+  max-width: 500rpx;
+  height: 100%;
+  font-size: 26rpx;
+  margin-left: 55rpx;
+  padding-top:  62rpx;
+  float: left;
+  box-sizing: border-box
+}
+.profile .name{
+  display: inline-block;
+  height: 35rpx;
+  line-height: 35rpx;
+  overflow: hidden;
+  /* margin-bottom: 30rpx; */
+  /* min-width: 100rpx; */
+  margin-right: 20rpx;
+}
+.zanprofile .name{
+  display: inline-block;
+  height: 35rpx;
+  line-height: 35rpx;
+  overflow: hidden;
+  margin-bottom: 30rpx;
+  min-width: 100rpx;
+}
+.detail{
+  display: inline-block;  
+  overflow: hidden;
+  /* margin-bottom: 30rpx; */
+  min-width: 220rpx;
+  color: #888888;
+}
+.about{
+  display: block;  
+  overflow: hidden;
+  /* margin-bottom: 30rpx; */
+  min-width: 100rpx;
+  color: #888888;
+}
+.message_icon{
+  color: #3F51B5;
+  font-size: 48rpx;
+  /* position: absolute; */
+  /* right: 64rpx; */
+  /* margin-top: 58rpx; */
+}
+
+
+
+
+

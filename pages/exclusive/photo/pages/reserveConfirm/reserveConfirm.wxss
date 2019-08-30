@@ -1,0 +1,133 @@
+/* pages/reserveConfirm/reserveConfirm.wxss */
+
+/* pages/orderConfirm/orderConfirm.wxss */
+
+.container {
+  display: flex;
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  width: 750rpx;
+  height: 1506rpx;
+  background-color: rgba(63, 81, 181, 1);
+}
+
+.container view#top {
+  position: absolute;
+  left: 58rpx;
+  top: 0rpx;
+  width: 630rpx;
+  height: 544rpx;
+  border-bottom: 2px dashed rgba(255, 255, 255, 1);
+}
+
+.container view#top image {
+  position: absolute;
+  left: 198rpx;
+  top: 32rpx;
+  width: 240rpx;
+  height: 240rpx;
+}
+
+.container view#top view#top-warn-msg {
+  position: absolute;
+  left: 158rpx;
+  top: 326rpx;
+  width: 320rpx;
+  height: 56rpx;
+  color: rgba(255, 255, 255, 1);
+  font-size: 40rpx;
+  text-align: left;
+  font-family: PingFangSC-regular;
+}
+
+.container view#top view#top-total-msg {
+  position: absolute;
+  left: 144rpx;
+  top: 438rpx;
+  width: 360rpx;
+  height: 50rpx;
+  color: rgba(255, 255, 255, 1);
+  font-size: 36rpx;
+  text-align: center;
+  font-family: PingFangSC-regular;
+}
+
+.container view#middle {
+  position: absolute;
+  left: 58rpx;
+  top: 544rpx;
+  width: 630rpx;
+  height: 250rpx;
+  border-bottom: 2px dashed rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 1);
+  font-size: 28rpx;
+  font-family: PingFangSC-regular;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding-top: 8rpx;
+  padding-bottom: 8rpx;
+}
+
+.container view#middle view {
+  padding-top: 18rpx;
+  padding-bottom: 18rpx;
+}
+
+/* 按钮样式 */
+
+.container view#bottom {
+  position: absolute;
+  left: 58rpx;
+  top: 840rpx;
+  width: 630rpx;
+  height: 360rpx;
+}
+
+.order-btn {
+  width: 630rpx;
+  height: 360rpx;
+}
+
+.btn-ok {
+  position: absolute;
+  left: 230rpx;
+  top: 22rpx;
+  width: 170rpx;
+  height: 66rpx;
+  border-radius: 8rpx;
+  color: #3f51b5;
+  background-color: rgba(255, 255, 255, 1);
+  font-size: 28rpx;
+  text-align: center;
+  font-family: Arial;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-no {
+  z-index: 2;
+  position: absolute;
+  left: 230rpx;
+  top: 100rpx;
+  width: 170rpx;
+  height: 66rpx;
+  border-radius: 8rpx;
+  color: #3f51b5;
+  background-color: rgba(255, 255, 255, 1);
+  font-size: 28rpx;
+  text-align: center;
+  font-family: Arial;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-btn image {
+  width: 24px;
+  height: 24px;
+  margin-right: 12rpx;
+}

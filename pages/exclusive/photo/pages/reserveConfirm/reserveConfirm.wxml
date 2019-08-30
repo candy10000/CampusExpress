@@ -1,0 +1,23 @@
+<view class="container">
+  <view id="top">
+    <image src="../images/warn.png"></image>
+    <view id="top-warn-msg"> 请确认信息后付款</view>
+    <view id="top-total-msg">总计：{{photoCamboOrder.comboPrice}} </view>
+  </view>
+  <view id="middle">
+    <view>{{photoCamboOrder.username}}</view>
+    <view>{{photoCamboOrder.telephone}}</view>
+    <view>{{photoCamboOrder.comboMeal}}</view>
+  </view>
+
+  <view id="bottom">
+    <view class="order-btn btn-no" bindtap='_error'>
+      <image src="../images/xiugai.png"></image>
+      <text>修改</text>
+    </view>
+    <view class="order-btn btn-ok" bindtap='orderPay'>
+      <image src="../images/zhifu.png"></image>
+      <text>支付</text>
+    </view>
+  </view>
+</view>

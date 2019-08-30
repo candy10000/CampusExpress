@@ -1,0 +1,10 @@
+<!-- pages/task/postTask/postTask.wxml -->
+<view class="container">
+    <view class="" style="height:50%;position:relative" catchtap='helpMe'>
+        <view class="help">找TA帮我</view>
+    </view>
+    <view class="line" hover-class="none" hover-stop-propagation="false"></view>
+    <view class="" style="height:50%;position:relative" catchtap='helpOthers'>
+        <view class="help">我要帮TA</view>
+    </view>
+</view>

@@ -1,0 +1,2 @@
+<!--pages/mine/mineTask/HelpMe/EnvelopDetail/EvelopDetail.wxml-->
+<comment taskId='{{taskId}}' bind:sendData="getDataFromComment" bind:sendRecord='getRecordFromComment'></comment>

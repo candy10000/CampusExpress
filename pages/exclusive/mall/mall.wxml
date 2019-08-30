@@ -1,0 +1,375 @@
+<!--pages/exclusive/exclusive.wxml-->
+<!-- <text>pages/exclusive/exclusive.wxml</text> -->
+<!--pages/info/index.wxml-->
+<view>
+  <!---------------------------------- 顶部栏 （固定）------------------------------------>
+  <!-- <view class="top" wx:if="{{false}}"> -->
+   <!-- <view class="top" > -->
+    <!------------ 学校下拉框 ----------->
+    <!-- <view>
+      <picker class="schoolSelect" bindchange='schoolSelect' value='{{schoolIndex}}' range='{{school}}'>
+        <text>{{school[schoolIndex]}}</text>
+        <image src='https://xcx.gaoxiao114.cn/images/pic/003.png' class="top_img_3"></image>  <!----- 下拉框右侧箭号 ----->
+      <!-- </picker> 
+    </view>
+  </view>  -->
+  <!------------------------------ 中部栏 (快递信息填写区) ------------------------------>
+  <view class="body">
+    <!------------ 取件姓名 ----------->
+    <view class="infoInput">
+      <text class='body_text'>收货姓名</text>
+      <i class="fa fa-id-badge font-42" />
+      <input placeholder='{{usernameph}}' class="input_1" name="recipients" style='{{recipients_color}}' type='text' bindinput='catch_recipients' value='{{name}}'></input>
+    </view>
+    <view class="placeholder_line"></view>
+    <!------------ 联系电话 ----------->
+    <view class="infoInput">
+      <text class='body_text'>联系电话</text>
+      <i class="fa fa-tablet font-46" />
+      <input placeholder='{{phonenumph}}' class="input_1" name="customerTelephone" style='{{customerTelephone_color}}' type='number' bindinput='catch_customerTelephone' value='{{tel}}'></input>
+    </view>
+     <view class="placeholder_line"></view>
+       <!------------ 送达地点 ----------->
+    <view class="infoInput">
+      <text class='body_text'>送达地点</text>
+      <i class="fa fa-map-marker font-44" />
+      <view class='input_1'>
+        <picker mode="multiSelector" value="{{multiArray[1][multiIndex[1]]}}" range="{{multiArray}}" disabled='{{distination_enable}}' bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" bindtap='destinationwarn' name="destination">
+        <input class='input_2' type='text' placeholder='{{multiArray[1][multiIndex[1]]}}' disabled='disabled' ></input>  <!---地址信息显示区--->
+        </picker>
+        <i class="fa fa-angle-down body_img_4"/><!----- 下拉框右侧箭号 ----->
+        <input type='text' placeholder='{{roomnumph}}' class="input_3" name="roomnum" style='{{roomnum_color}}' disabled='{{roomnum_enable}}' bindtap='destinationwarn' type='number' bindinput='catch_roomnum' value='{{number}}'></input><!--宿舍号码-->
+        
+      </view>
+      
+    </view>
+     <view class="placeholder_line"></view>
+    <!------------ 商品选择 ----------->
+    <view class="infoInput">
+      <text class='body_text'>商品选择</text>
+      <i class="fa fa-file-text-o font-38" />
+      <view class='input_1'>
+        <picker mode="multiSelector" value='{{goodsIndex}}' range='{{goods}}' bindchange='goodsChange' name="" bindcolumnchange='goodsColumnChange' class='goods_picker' >
+          <input class='goods_input' type='text' placeholder='选择商品' disabled='disabled' bindinput='catch_goods' value='{{goodsItem}}' style='{{itemInput_color}}'></input>  <!---商品--->
+        
+        </picker>
+        <i class="fa fa-angle-down body_img_4"/><!----- 下拉框右侧箭号 ----->
+        <view class='goods_num' wx:if="{{goodsItem!=undefine}}">
+            <i class="fa fa-minus-circle btn_sub_num" bindtap='subGoodsNum'/>
+           
+            <view class='goods_numtext'>{{itemNum}}</view>
+            <i class="fa fa-plus-circle btn_add_num" bindtap='addGoodsNum'/>
+        </view>
+      </view>
+      
+    </view>
+     <view class="placeholder_line"></view>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+    <!------------ 其他备注 ----------->
+    <view class="infoInput">
+      <text class='body_text'>其他备注</text>
+      <i class="fa fa-pencil font-40" />
+      <input placeholder='{{otherph}}' class="input_1" name="expressageDescription"   bindinput='catch_expressageDescription' value='{{otherMark}}'></input>
+    </view>
+     
+  
+
+  <!------------------------------ 底部栏 (按钮 + 小卡片) ------------------------------>
+  </view>
+  <!------------ 2个按钮 ----------->
+    <button class="button buy" bindtap='addclick'><text class="button_text">加入购物车</text></button>
+    <button class="button pay" bindtap='buyclick'><text class="button_text">结算购物车({{buynum}})</text></button>
+  <view class='bottom'>
+    <!------------ 卡片 1 ----------->
+    <swiper class='swiperinfo' circular='true' current='0' indicator-dots='true' wx:if="{{cards_main_groupId.length>0}}">
+      <swiper-item wx:for="{{cards}}" wx:key="data.id" wx:if="{{cards_main_groupId[0]==item.main_id}}"  >
+          <view class="infoComfirming" >
+            <view class="deliveryman">
+              <image src="https://xcx.gaoxiao114.cn/images/pic/jerry.png" class="deliveryman_img"></image>
+              <image src="https://xcx.gaoxiao114.cn/images/pic/002.png" class="deliveryman_img_cutoff"></image>
+              <text class='deliveryman_name'>小李子</text>
+              <text class='deliveryman_phone'>13235072380</text>
+              <text class='deliveryman_info'>特约快递员</text>
+            </view>
+             
+            <view class='user'>
+              <text class='user_info' bindtap='showinfos'>{{item.recipients}}  {{item.customerTelephone}}  {{item.expressageCompany}}  {{item.expressageCode}}  {{item.customerPlace}}  {{item.expressageDescription}} {{item.goodsName}} {{item.num}}</text>
+            </view>
+            <view class='others'>
+              <text class='time'>送达时间: {{item.expectTime}}配送</text>
+              <view class="cancle" bindtap='cancleclick' data-id='{{item.id}}' data-num='{{item.num}}'><text class="cancle_text">取消订单</text></view>
+            </view>
+          </view>
+      </swiper-item>  
+    </swiper>
+    
+
+    <!-- <button type="primary" open-type="contact" bindcontact="handleContact">客服按钮</button> -->
+
+
+
+    <swiper class='swiperinfo1' autoplay='true' interval='5000' circular='true' indicator-dots='true' bindchange='setHeight' style='height:{{imgheights[current]}}rpx'> 
+
+      <block wx:for="{{imgs}}" wx:for-index="index">
+        <swiper-item>
+          <view class="infoComfirming">
+            <image class="ad" src='{{item}}' bindload='getImgHeight' mode='widthFix' data-index="{{index}}"> </image>
+          </view>
+        </swiper-item>
+      </block>
+    
+    <!-- <swiper-item>
+    <view class="infoComfirming" >
+       <image class="ad" src='https://xcx.gaoxiao114.cn/img/page_info/timg.jpg'> </image>
+    </view>
+    </swiper-item>
+
+        <swiper-item>
+    <view class="infoComfirming" >
+       <image class="ad" src='https://xcx.gaoxiao114.cn/img/page_info/timg1.jpg'> </image>
+    </view>
+    </swiper-item>
+
+
+
+                <swiper-item>
+    <view class="infoComfirming" >
+       <image class="ad" src='https://xcx.gaoxiao114.cn/img/page_info/timg5.jpg'> </image>
+    </view>
+    </swiper-item> -->
+
+    </swiper>
+
+    
+
+
+    <!------------ 卡片 2 ----------->
+    <swiper class='swiperinfo' circular='true' current='0' indicator-dots='true' wx:if="{{cards_main_groupId.length>1}}">
+      <swiper-item wx:for="{{cards}}" wx:key="{{data.id}}" wx:if="{{cards_main_groupId[1]==item.main_id}}">
+          <view class="infoComfirming" >
+            <view class="deliveryman">
+              <image src="https://xcx.gaoxiao114.cn/images/pic/jerry.png" class="deliveryman_img"></image>
+              <image src="https://xcx.gaoxiao114.cn/images/pic/002.png" class="deliveryman_img_cutoff"></image>
+              <!-- <text class='deliveryman_name'>{{item.data.Express_name}}</text>
+              <text class='deliveryman_phone'>{{item.data.Express_tel}}</text>
+              <text class='deliveryman_info'>{{item.data.Express_remark}}</text> -->
+              <text class='deliveryman_name'>小李子</text>
+              <text class='deliveryman_phone'>13235072380</text>
+              <text class='deliveryman_info'>特约快递员</text>
+            </view>
+             
+            <view class='user'>
+              <!-- <image src='../pic/turn_left.png' class='turn turn_left_image'></image> -->
+              <text class='user_info' bindtap='showinfos'>{{item.recipients}}  {{item.customerTelephone}}  {{item.expressageCompany}}  {{item.expressageCode}}  {{item.customerPlace}}  {{item.expressageDescription}}</text>
+              <!-- <image src='../pic/turn_right.png' class='turn turn_right_image'></image> -->
+            </view>
+            <view class='others'>
+              <text class='time'>送达时间: {{item.expectTime}}配送</text>
+              <view class="cancle" bindtap='cancleclick' data-id='{{item.id}}' data-num='{{item.num}}'><text class="cancle_text">取消订单</text></view>
+            </view>
+          </view>
+      </swiper-item>  
+    </swiper>
+
+    <!------------ 卡片 3 ----------->
+    <swiper class='swiperinfo' circular='true' current='0' indicator-dots='true' wx:if="{{cards_main_groupId.length>2}}" hidden="{{card3}}">
+      <swiper-item wx:for="{{cards}}" wx:key="{{data.id}}" wx:if="{{cards_main_groupId[2]==item.main_id}}">
+          <view class="infoComfirming" >
+            <view class="deliveryman">
+              <image src="https://xcx.gaoxiao114.cn/images/pic/jerry.png" class="deliveryman_img"></image>
+              <image src="https://xcx.gaoxiao114.cn/images/pic/002.png" class="deliveryman_img_cutoff"></image>
+              <!-- <text class='deliveryman_name'>{{item.data.Express_name}}</text>
+              <text class='deliveryman_phone'>{{item.data.Express_tel}}</text>
+              <text class='deliveryman_info'>{{item.data.Express_remark}}</text> -->
+              <text class='deliveryman_name'>小李子</text>
+              <text class='deliveryman_phone'>13235072380</text>
+              <text class='deliveryman_info'>特约快递员</text>
+            </view>
+             
+            <view class='user'>
+              <!-- <image src='../pic/turn_left.png' class='turn turn_left_image'></image> -->
+              <text class='user_info' bindtap='showinfos'>{{item.recipients}}  {{item.customerTelephone}}  {{item.expressageCompany}}  {{item.expressageCode}}  {{item.customerPlace}}  {{item.expressageDescription}}</text>
+              <!-- <image src='../pic/turn_right.png' class='turn turn_right_image'></image> -->
+            </view>
+            <view class='others'>
+              <text class='time'>送达时间: {{item.expectTime}}配送</text>
+              <view class="cancle" bindtap='cancleclick' data-id='{{item.id}}' data-num='{{item.num}}'><text class="cancle_text">取消订单</text></view>
+            </view>
+          </view>
+      </swiper-item>  
+    </swiper>
+
+    <!------------ 卡片 4 ----------->
+    <swiper class='swiperinfo' circular='true' current='0' indicator-dots='true' wx:if="{{cards_main_groupId.length>3}}" hidden="{{card4}}">
+      <swiper-item wx:for="{{cards}}" wx:key="{{data.id}}" wx:if="{{cards_main_groupId[3]==item.main_id}}">
+          <view class="infoComfirming" >
+            <view class="deliveryman">
+              <image src="https://xcx.gaoxiao114.cn/images/pic/jerry.png" class="deliveryman_img"></image>
+              <image src="https://xcx.gaoxiao114.cn/images/pic/002.png" class="deliveryman_img_cutoff"></image>
+              <!-- <text class='deliveryman_name'>{{item.data.Express_name}}</text>
+              <text class='deliveryman_phone'>{{item.data.Express_tel}}</text>
+              <text class='deliveryman_info'>{{item.data.Express_remark}}</text> -->
+              <text class='deliveryman_name'>小李子</text>
+              <text class='deliveryman_phone'>13235072380</text>
+              <text class='deliveryman_info'>特约快递员</text>
+            </view>
+             
+            <view class='user'>
+              <!-- <image src='../pic/turn_left.png' class='turn turn_left_image'></image> -->
+              <text class='user_info' bindtap='showinfos'>{{item.recipients}}  {{item.customerTelephone}}  {{item.expressageCompany}}  {{item.expressageCode}}  {{item.customerPlace}}  {{item.expressageDescription}}</text>
+              <!-- <image src='../pic/turn_right.png' class='turn turn_right_image'></image> -->
+            </view>
+            <view class='others'>
+              <text class='time'>送达时间: {{item.expectTime}}配送</text>
+              <view class="cancle" bindtap='cancleclick' data-id='{{item.id}}' data-num='{{item.num}}'><text class="cancle_text">取消订单</text></view>
+            </view>
+          </view>
+      </swiper-item>  
+    </swiper>
+
+    <!------------ 卡片 5 ----------->
+    <swiper class='swiperinfo' circular='true' current='0' indicator-dots='true' wx:if="{{cards_main_groupId.length>4}}" hidden="{{card5}}">
+      <swiper-item wx:for="{{cards}}" wx:key="{{data.id}}" wx:if="{{cards_main_groupId[4]==item.main_id}}">
+          <view class="infoComfirming" >
+            <view class="deliveryman">
+              <image src="https://xcx.gaoxiao114.cn/images/pic/jerry.png" class="deliveryman_img"></image>
+              <image src="https://xcx.gaoxiao114.cn/images/pic/002.png" class="deliveryman_img_cutoff"></image>
+              <!-- <text class='deliveryman_name'>{{item.data.Express_name}}</text>
+              <text class='deliveryman_phone'>{{item.data.Express_tel}}</text>
+              <text class='deliveryman_info'>{{item.data.Express_remark}}</text> -->
+              <text class='deliveryman_name'>小李子</text>
+              <text class='deliveryman_phone'>13235072380</text>
+              <text class='deliveryman_info'>特约快递员</text>
+            </view>
+             
+            <view class='user'>
+              <!-- <image src='../pic/turn_left.png' class='turn turn_left_image'></image> -->
+              <text class='user_info' bindtap='showinfos'>{{item.recipients}}  {{item.customerTelephone}}  {{item.expressageCompany}}  {{item.expressageCode}}  {{item.customerPlace}}  {{item.expressageDescription}}</text>
+              <!-- <image src='../pic/turn_right.png' class='turn turn_right_image'></image> -->
+            </view>
+            <view class='others'>
+              <text class='time'>送达时间: {{item.expectTime}}配送</text>
+              <view class="cancle" bindtap='cancleclick' data-id='{{item.id}}' data-num='{{item.num}}'><text class="cancle_text">取消订单</text></view>
+            </view>
+          </view>
+      </swiper-item>  
+    </swiper>
+
+    <!------------ 卡片 6 ----------->
+    <swiper class='swiperinfo' circular='true' current='0' indicator-dots='true' wx:if="{{cards_main_groupId.length>5}}" hidden="{{card6}}">
+      <swiper-item wx:for="{{cards}}" wx:key="{{data.id}}" wx:if="{{cards_main_groupId[5]==item.main_id}}">
+          <view class="infoComfirming" >
+            <view class="deliveryman">
+              <image src="https://xcx.gaoxiao114.cn/images/pic/jerry.png" class="deliveryman_img"></image>
+              <image src="https://xcx.gaoxiao114.cn/images/pic/002.png" class="deliveryman_img_cutoff"></image>
+              <!-- <text class='deliveryman_name'>{{item.data.Express_name}}</text>
+              <text class='deliveryman_phone'>{{item.data.Express_tel}}</text>
+              <text class='deliveryman_info'>{{item.data.Express_remark}}</text> -->
+              <text class='deliveryman_name'>小李子</text>
+              <text class='deliveryman_phone'>13235072380</text>
+              <text class='deliveryman_info'>特约快递员</text>
+            </view>
+             
+            <view class='user'>
+              <!-- <image src='../pic/turn_left.png' class='turn turn_left_image'></image> -->
+              <text class='user_info' bindtap='showinfos'>{{item.recipients}}  {{item.customerTelephone}}  {{item.expressageCompany}}  {{item.expressageCode}}  {{item.customerPlace}}  {{item.expressageDescription}}</text>
+              <!-- <image src='../pic/turn_right.png' class='turn turn_right_image'></image> -->
+            </view>
+            <view class='others'>
+              <text class='time'>送达时间: {{item.expectTime}}配送</text>
+              <view class="cancle" bindtap='cancleclick' data-id='{{item.id}}' data-num='{{item.num}}'><text class="cancle_text">取消订单</text></view>
+            </view>
+          </view>
+      </swiper-item>  
+    </swiper>
+
+    <!------------ 卡片 7 ----------->
+    <swiper class='swiperinfo' circular='true' current='0' indicator-dots='true' wx:if="{{cards_main_groupId.length>6}}" hidden="{{card7}}">
+      <swiper-item wx:for="{{cards}}" wx:key="{{data.id}}" wx:if="{{cards_main_groupId[6]==item.main_id}}">
+          <view class="infoComfirming" >
+            <view class="deliveryman">
+              <image src="https://xcx.gaoxiao114.cn/images/pic/jerry.png" class="deliveryman_img"></image>
+              <image src="https://xcx.gaoxiao114.cn/images/pic/002.png" class="deliveryman_img_cutoff"></image>
+              <!-- <text class='deliveryman_name'>{{item.data.Express_name}}</text>
+              <text class='deliveryman_phone'>{{item.data.Express_tel}}</text>
+              <text class='deliveryman_info'>{{item.data.Express_remark}}</text> -->
+              <text class='deliveryman_name'>小李子</text>
+              <text class='deliveryman_phone'>13235072380</text>
+              <text class='deliveryman_info'>特约快递员</text>
+            </view>
+             
+            <view class='user'>
+              <!-- <image src='../pic/turn_left.png' class='turn turn_left_image'></image> -->
+              <text class='user_info' bindtap='showinfos'>{{item.recipients}}  {{item.customerTelephone}}  {{item.expressageCompany}}  {{item.expressageCode}}  {{item.customerPlace}}  {{item.expressageDescription}}</text>
+              <!-- <image src='../pic/turn_right.png' class='turn turn_right_image'></image> -->
+            </view>
+            <view class='others'>
+              <text class='time'>送达时间: {{item.expectTime}}配送</text>
+              <view class="cancle" bindtap='cancleclick' data-id='{{item.id}}' data-num='{{item.num}}'><text class="cancle_text">取消订单</text></view>
+            </view>
+          </view>
+      </swiper-item>  
+    </swiper>
+
+    <!------------ 卡片 8 ----------->
+    <swiper class='swiperinfo' circular='true' current='0' indicator-dots='true' wx:if="{{cards_main_groupId.length>7}}" hidden="{{card8}}">
+      <swiper-item wx:for="{{cards}}" wx:key="{{data.id}}" wx:if="{{cards_main_groupId[7]==item.main_id}}">
+          <view class="infoComfirming" >
+            <view class="deliveryman">
+              <image src="https://xcx.gaoxiao114.cn/images/pic/jerry.png" class="deliveryman_img"></image>
+              <image src="https://xcx.gaoxiao114.cn/images/pic/002.png" class="deliveryman_img_cutoff"></image>
+              <!-- <text class='deliveryman_name'>{{item.data.Express_name}}</text>
+              <text class='deliveryman_phone'>{{item.data.Express_tel}}</text>
+              <text class='deliveryman_info'>{{item.data.Express_remark}}</text> -->
+              <text class='deliveryman_name'>小李子</text>
+              <text class='deliveryman_phone'>13235072380</text>
+              <text class='deliveryman_info'>特约快递员</text>
+            </view>
+             
+            <view class='user'>
+              <!-- <image src='../pic/turn_left.png' class='turn turn_left_image'></image> -->
+              <text class='user_info' bindtap='showinfos'>{{item.recipients}}  {{item.customerTelephone}}  {{item.expressageCompany}}  {{item.expressageCode}}  {{item.customerPlace}}  {{item.expressageDescription}}</text>
+              <!-- <image src='../pic/turn_right.png' class='turn turn_right_image'></image> -->
+            </view>
+            <view class='others'>
+              <text class='time'>送达时间: {{item.expectTime}}配送</text>
+              <view class="cancle" bindtap='cancleclick' data-id='{{item.id}}' data-num='{{item.num}}'><text class="cancle_text">取消订单</text></view>
+            </view>
+          </view>
+      </swiper-item>  
+    </swiper>
+
+
+
+  </view>
+  
+
+  <!-- 点击加载更多 -->
+  <view class='loading' hidden='{{morehidden}}' bindtap='showmore'>
+    <image src='https://xcx.gaoxiao114.cn/images/pic/pull_up.png'></image>
+    <text>点击加载更多</text>
+  </view>
+
+  <!-- 加载完成 -->
+  <view class='loading' hidden='{{completehidden}}'>
+    <image src='https://xcx.gaoxiao114.cn/images/pic/load_complete.png'></image>
+    <text>加载完成</text>
+  </view>
+
+
+</view>

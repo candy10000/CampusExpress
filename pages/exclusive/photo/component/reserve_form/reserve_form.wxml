@@ -1,0 +1,39 @@
+<view class="order" hidden="{{flag}}">
+  <view class='order-container'>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+
+      <view class="section">
+        <view class="section__title">姓名:</view>
+        <view class='form-group'>
+          <input type="text" class="input-text" username="userusername" bindinput="getUsername" placeholder="请输入姓名" />
+        </view>
+      </view>
+
+      <view class="section">
+        <view class="section__title">手机:</view>
+        <view class='form-group'>
+          <input type="text" class="input-text" username="userusername" bindinput="getTelephone" placeholder="请输入手机号码" />
+        </view>
+      </view>
+
+      <view class="section-text">
+        <view class="section__title">套餐:</view>
+        <view class="section__detail">
+          <text>{{list.comboMeal}}</text>
+        </view>
+      </view>
+
+      <view class="section-text">
+        <view class="section__title">详情:</view>
+        <view class="section__detail">
+          <text>{{list.comboDetail}}</text>
+        </view>
+      </view>
+
+      <view class="order-btn">
+        <text class="btn-no" bindtap='_error'>取消</text>
+        <text class="btn-ok" bindtap='_success'>支付</text>
+      </view>
+    </form>
+  </view>
+</view>

@@ -1,0 +1,29 @@
+<!--pages/index/index.wxml-->
+<task id='task' name='task' wx:if="{{currentTab==0}}" bind:changeSearchInfo='changeSearchInfo'/>
+<mine id='mine' name='mine' wx:if="{{currentTab==3}}" />
+<!-- <giftmall class='gift' name='giftmall' wx:if="{{currentTab==2}}" /> -->
+<square id='square' name='square' wx:if="{{currentTab==2}}" bind:changeSearchInfo2='changeSearchInfo2' bind:isReload='isReload'/>
+<exIndex id="exIndex" name='exIndex' wx:if="{{currentTab==1}}" />
+
+
+<view class='placeholder'></view>
+<view class='tabbar'>
+
+  <view class="tabList {{currentTab==idx?'active':'default'}} {{'tab'+idx}}" wx:for="{{items}}" wx:key="prototype" wx:for-index="idx" wx:for-item="item" data-current="{{idx}}" bindtap='swicNav'>
+  <text class="tab-text {{currentTab==idx?'active-text':'default-text'}}" wx:for-index="idx" data-current="{{idx}}" src="{{currentTab == idx ? item.selectedIconPath : item.iconPath }}">{{item.text}}</text>
+    <!-- <image class="iconPath" wx:for-index="idx" data-current="{{idx}}" src="{{currentTab == idx ? item.selectedIconPath : item.iconPath }}"></image> -->
+      <text  wx:for-index="idx" data-current="{{idx}}" class="iconPath fa {{currentTab == idx ? item.selectedIconPath : item.iconPath }}"></text>
+
+  </view>
+  <view class='add' bindtap='addTask'>
+    <view class='add1'></view>
+    <view class='add2'></view>
+  </view>
+ 
+</view>
+ <view class='addSelect-left' wx:if="{{isAddTask==true}}" bindtap='forHelp'>
+    <view class='text-left'>找TA帮我</view>
+</view>
+  <view class='addSelect-right' wx:if="{{isAddTask==true}}" bindtap='helpOthers'>
+    <view class='text-right'>我要帮TA</view>
+  </view>

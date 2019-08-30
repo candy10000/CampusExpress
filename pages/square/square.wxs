@@ -1,0 +1,9 @@
+var filter = {
+  // 返回学历
+  parseInt: function (i) {
+    return parseInt(i)
+  }
+}
+module.exports = {
+  parseInt: filter.parseInt
+}

@@ -1,0 +1,175 @@
+/* pages/mine/mine.wxss */
+/* pages/mine/mine.wxss */
+@import '/utils/icon-male.wxss';
+@import '/utils/icon-female.wxss';
+@import '/utils/icon-pisa.wxss';
+page{
+  background-color: #3f51b5;
+   /* background-color: white; */
+   height: 100%;
+   width: 100%;
+}
+
+.EditBoard{
+  background-color:white;
+  height: 748rpx;
+  width: 700rpx;
+  margin: auto;
+  border-radius: 10rpx;
+}
+.user_1{
+  display: flex;
+
+}
+.nickname{
+  font-size: 40rpx;
+  font-family: PingFangSC-regular;
+  margin-left: 32rpx;
+  margin-top: 80rpx;
+  
+
+}
+.gender{
+  margin-top:80rpx;
+  margin-left: 10rpx;
+}
+.male{
+  font-size: 1.2rem;
+  color:  #0080FF;
+ 
+}
+.female{
+  font-size: 1.2rem;
+  color: #FF4081;
+
+}
+.headimg{
+  height: 160rpx;
+  width: 160rpx;
+  margin-left: 24rpx;
+  margin-top: 24rpx;
+  border-radius: 100%;
+  border: 1rpx solid rgba(187, 187, 187, 1);
+}
+.fans{
+  color: #009688;
+  font-size: 30rpx;
+  text-align: left;
+  font-weight: 500;
+  margin-left: 220rpx;
+  margin-top: -35rpx;
+}
+.sign{
+  margin-top: 20rpx;
+  text-align: center;
+  color: #3F51B5;
+  font-size: 30rpx;
+}
+.label{
+  margin-top: 20rpx;
+  text-align: center;
+  color: #3F51B5;
+  font-size: 30rpx;
+}
+.titleList{
+  margin-top:50rpx;
+  display: flex;
+  margin-left: 40rpx;
+}
+.titleLeft{
+  height: 82rpx;
+  width: 41rpx;
+  margin-right: 5rpx;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  background-color: #009688;
+}
+.titleRight{
+  height: 82rpx;
+  width: 41rpx;
+  margin-left: 5rpx;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background-color: #009688;
+}
+.progressBar{
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+  width: 123rpx;
+  height: 82rpx;
+  background-color: #009688;
+  display: flex;
+  flex-direction: column;
+
+}
+.titleText{
+  color: #009688;
+  font-size: 30rpx;
+  margin-top: 100rpx;
+}
+.divider1{
+  width: 100%;
+  margin-top: 110rpx;
+  border-top: 8rpx dashed #3F51B5;
+}
+.giftSwiper{
+  width: 450rpx;
+  height: 145rpx;
+  margin-left: 230rpx;
+  margin-top: -100rpx;
+}
+.giftPic{
+  height: 60rpx;
+  width: 60rpx;
+
+}
+.giftName{
+  color: #3F51B5;
+  font-size: 30rpx;
+
+}
+.giftNum{
+  color: #3F51B5;
+  font-size: 30rpx;
+
+}
+.arrayList{
+  margin-top: -100rpx;
+  margin-bottom: 300rpx;
+  height: 840rpx;
+  width:700rpx;
+  background-color: white;
+  border-radius: 10rpx;
+
+}
+
+
+.myTask{
+  width: 700rpx;
+  height: 120rpx;
+  border-bottom: 5rpx solid #3F51B5;
+}
+.myTaskBottom{
+  width: 700rpx;
+  height: 120rpx;
+  background-color: white;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+.arrayItem{
+  padding-top: 35rpx;
+  padding-left: 70rpx;
+  display: flex;
+}
+.arrayText{
+  font-size: 36rpx;
+  color: #3F51B5;
+}
+.dot{
+  margin-left: 20rpx;
+  margin-top: 12rpx;
+  height: 25rpx;
+  width: 25rpx;
+  border-radius: 100%;
+  background-color: #E3CF03;
+}

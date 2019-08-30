@@ -1,0 +1,36 @@
+<view class='search'>
+  <view class='input'>
+    <view class='iconfont icon-search icon_search'></view>
+    <view class='input_box'><input></input></view>
+  </view>
+  <view class='iconfont icon-edit icon_edit'></view>
+</view>
+<!-- <view class='topic'>话题进行中：{{topic}}</view> -->
+<view class='topic'></view>
+<view wx:for="{{json}}"  wx:for-item="item1" wx:key='idx1' class='card'>
+  <view class='initiatorInfo'>
+          <image src='{{item1.userPic}}' class='initiatorPic'></image>
+          <view class='nickname'>{{item1.nickname}}</view>
+          <text class='title'>{{item1.userTitle}}</text>
+        </view>
+  <view class='desc'>
+    要字这里应该换行因为它的字数马上就要超过十八个字了
+    
+</view>
+<view class='imgAndVedio'>
+  <view wx:for="{{item1.resourse}}" wx:for-index='idx2' wx:for-item="item2">
+    <image wx:if="{{item2.type==0}}" src='{{item2.url}}' class="{{(item1.resourseNum==1&&idx2==0)||(item1.resourseNum==3&&idx2==2)?'inlineBig':'inlineSmall'}}"></image>
+    <video wx:if="{{item2.type==1}}" src='{{item2.url}}' class="{{(item1.resourseNum==1&&idx2==0)||(item1.resourseNum==3&&idx2==2)?'inlineBig':'inlineSmall'}}"></video>
+  </view>
+
+</view>
+<view class='bottom'>
+  
+
+  <view class='num shareNum'>{{item1.shareNum}}</view>
+  <view class='num commentNum'>{{item1.commentNum}}</view>
+  <view class='num likesNum'>{{item1.likesNum}}</view>
+
+</view>
+</view>
+<view style='height:135rpx'></view>

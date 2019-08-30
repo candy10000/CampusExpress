@@ -1,0 +1,42 @@
+<!--pages/mine/mine.wxml-->
+<view class='EditBoard'>
+  <view class='user_1'>
+    <image src='{{userInfo.userPic}}' class='headimg'></image>
+    <view class='nickname'><text > {{userInfo.nickname}}</text></view>
+    <view class='gender'><text class='iconfont {{userInfo.gender=="m"?"icon-male male":"icon-female female"}}'></text></view>
+  </view>
+  <view class='fans'>已被关注：{{userInfo.fans}}</view>
+  <view class='sign'>{{userInfo.sign}}</view>
+  <view class='label'> <text>{{userInfo.label_1}} </text><text>{{userInfo.label_2}} </text><text>{{userInfo.label_3}}</text></view>
+  <view class='titleList' >
+    <view class='titleLeft'></view>
+    <view wx:for="{{titleList}}" wx:for-index='key'>
+      <view class='progressBar'>
+        <view class='titleText'>{{item.title}}</view>
+      </view>
+    </view>
+    <view class='titleRight'></view>
+  </view>
+
+<view class='divider1'> </view>
+  <view class='gift' style='height:250rpx'>
+    <view style="margin-top:75rpx;margin-left:40rpx;font-size:40rpx;color:#3F51B5">礼物栏</view>
+    <swiper class='giftSwiper' display-multiple-items="3">
+    <block wx:for="{{giftList}}" wx:for-index='key'>
+    <swiper-item>
+      <image src='{{item.giftPic}}' class='giftPic'></image>
+      <view class='giftName'>{{item.giftName}}</view>
+      <view class='giftNum'>*{{item.giftNum}}</view>
+    </swiper-item>
+    </block>
+    </swiper>
+  </view>
+  <view class='arrayList'>
+    <block  wx:for="{{array}}" wx:for-index='key'>
+      <view class='{{key==6?"myTaskBottom":"myTask"}}' bindtap='MineSwitchPage' id="{{key}}"> 
+       <view class='arrayItem'><text class='iconfont {{arrayList[key].pic}}'></text><text class='arrayText'>{{item.message}}</text><view wx:if="{{key==2&&message}}" class='dot'></view></view> 
+      </view>
+    </block>
+  </view>
+</view>
+

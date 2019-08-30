@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "record-player": "/component/RecordPlayer/RecordPlayer"
+  },
+  "navigationBarTitleText": "我的拾言"
+}

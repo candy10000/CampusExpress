@@ -1,0 +1,61 @@
+/* pages/mine/mineTask/myTask.wxss */
+page{
+  background-color: #3F51B5;
+}
+.topBar{
+  left:24rpx;
+  top: 24rpx;
+  font-size: 30rpx;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  height: 130rpx;
+  background: #3F51B5;
+  z-index: 1
+}
+.topBar::before{
+  content: '';
+  width: 26rpx;
+  height: 130rpx;
+  position: fixed;
+  background-color: inherit;
+  z-index: 1;
+  left: 0;
+}
+.topBar::after{
+  content:'';
+  width: 100%;
+  height: 32rpx;
+  position: fixed;
+  border: 1px solid inherit;
+  background: inherit;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  
+}
+.forHelpBar{
+  height: 100rpx;
+  width: 200rpx;
+  background-color: #4A5ED2;
+  float: left;
+ 
+}
+.helpBar{
+  width: 200rpx;
+  height: 100rpx;
+  background-color: #4A5ED2;
+  float: left;
+}
+.selected{
+  color:#FFFFFF;
+  border-bottom: 4rpx solid yellow;
+  
+}
+.default{
+   color:#FFFFFF;
+   opacity: 0.7
+}
+.text{
+  margin-top: 28rpx;
+}

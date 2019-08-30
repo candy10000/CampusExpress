@@ -1,0 +1,48 @@
+<!--pages/square/fabushiyan/fabushiyan.wxml-->
+<view class='card'>
+  <view class='edit'>
+    <textarea class='contentArea' auto-height='true' placeholder='说点什么吧…' bindinput='getMsg' maxlength='600'></textarea>
+  </view>
+  <view class='voiceArea'  bindlongpress='clear_record' bindtouchstart='playvoice' style='display:{{show_voiceArea}}'>
+        <i class="fa {{record_action}}"  aria-hidden="true"></i>
+        <view class='voice_content'>{{record_time}}s</view>
+  </view>
+  <!-- <record-player src='' second=''></record-player> -->
+  <!--图片和视频区域-->
+  <view class='imgArea'>
+    <view  wx:for="{{imageArray}}" wx:key="unique" wx:for-index="img_index">
+      <image mode="aspectFill" class='inlineSmall' src='{{item.src}}' data-type="img" data-index="{{img_index}}" bindlongpress='remove_img_vdo'></image>
+    </view>
+    <view wx:for="{{viedoArray}}" wx:key="v_unique" wx:for-index="vdo_index">
+    <video id="myVideo" src="{{item.src}}" binderror="videoErrorCallback" class='inlineSmall' data-type="vdo" data-index="{{vdo_index}}" bindlongpress='remove_img_vdo'></video>
+    </view>
+  </view>
+  
+  <view style="border:1px dashed #3f51b5;" /><!--虚线-->
+   <view class="buttonArea" > <!-- wx:if="{{!isRecord}}" -->
+    <view style="color:#3f51b5" bindtap='choosePhoto'> <i class="fa fa-picture-o"  aria-hidden="true"></i> </view>
+    <view style="color:#3f51b5" bindtap='takePhoto'>
+      <view class="round">
+        <i class="fa fa-camera"  aria-hidden="true"></i> 
+      </view>  
+    </view>
+    <view style="color:{{color.col}}" bindtap='record_show'><i class="fa fa-microphone" aria-hidden="true"></i>
+    </view>
+  </view>
+</view>
+<view class='button1'>
+  <view class="button2" bindtap='submit'>发布</view>
+</view>
+<view class='recordArea' style='display: {{record_show}};'>
+  <text class='remove_btn' bindtap="clear_record">取消</text>
+  <view>
+    <view class='time'>{{record_time}}S</view>
+    <view class='button' bindtap="{{is_speak? 'playvoice' : 'record'}}"><i class="fa {{record_action}}"  aria-hidden="true"></i></view>
+  </view>
+  <text  class='save_btn' bindtap="save_record">确定</text>
+</view>
+<view style='height:120rpx'></view>
+
+<loading hidden="{{sendingHidden}}">
+ 发布中...
+</loading>

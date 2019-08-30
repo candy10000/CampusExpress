@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "orderForm": "../../component/order_form/order_form"
+  },
+  "navigationBarBackgroundColor": "#3F51B5",
+  "navigationBarTitleText": "作品集",
+  "backgroundTextStyle": "light",
+  "navigationBarTextStyle": "white"
+}

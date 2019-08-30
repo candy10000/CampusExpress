@@ -1,0 +1,85 @@
+<!-- pages/mine/mine.wxml -->
+<view class='EditBoard' catchtap='hideGiftMall'>
+  <view class='user_1'>
+    <image src='{{userInfo.userPic}}' class='headimg'></image>
+    <view class='nickname'>
+      <text>{{userInfo.nickname}}</text>
+    </view>
+    <view class='gender'>
+      <text class='iconfont {{userInfo.gender=="1"?"icon-male male":"icon-female female"}}'></text>
+    </view>
+  </view>
+  <view class='fans'>已被关注：{{userFans}}</view>
+  <view class='follow {{isFollow ? "followed" : "nofollow"}}' bindtap='follow'>
+    <view class='followText {{isFollow ? "textFollowed" : "textNoFollow"}}'>
+      {{isFollow ?  "已关注":"关注" }}
+    </view>
+  </view>
+  <view class='sign'>{{userInfo.sign}}</view>
+  <view class='label'>
+    <text wx:if='{{userInfo.label_1 != ""}}' decode="{{true}}">#{{userInfo.label_1}}&nbsp;&nbsp;</text>
+    <text wx:if='{{userInfo.label_2 != ""}}' decode="{{true}}">#{{userInfo.label_2}}&nbsp;&nbsp;</text>
+    <text wx:if='{{userInfo.label_3 != ""}}'>#{{userInfo.label_3}}</text>
+  </view>
+  <view class='titleList'>
+    <view class='titleLeft'></view>
+    <view wx:for="{{titleList}}" wx:for-index='key'>
+      <view class='progressBar'>
+        <view class='titleText'>{{item.title}}</view>
+      </view>
+    </view>
+    <view class='titleRight'></view>
+  </view>
+  <view class='divider1'></view>
+  <!-- <view class='gift' style='height:150rpx'>
+    <view style="margin-top:75rpx;margin-left:40rpx;font-size:40rpx;color:#3F51B5">礼物栏</view>
+    <swiper class='giftSwiper' display-multiple-items="3">
+    <block wx:for="{{giftList}}" wx:for-index='key'>
+    <swiper-item>
+      <image src='{{item.giftPic}}' class='giftPic'></image>
+      <view class='giftName'>{{item.giftName}}</view>
+      <view class='giftNum'>*{{item.giftNum}}</view>
+    </swiper-item>
+    </block>
+    </swiper>
+  </view> -->
+  <view class='gift2'>
+    <!-- <view style="margin-left:32rpx;margin-right:24rpx;display: inline-block;font-size:40rpx;color:#3F51B5">
+      礼物栏
+    </view> -->
+    <i class="fa fa-gift gift_choose" catchtap='chooseGift' data-id="{{item.helpSeekerId}}" />
+    <swiper class='giftSwiper swiper-no-swiping' display-multiple-items="3">
+      <block wx:for="{{giftList}}" wx:for-index='key'>
+        <swiper-item class="giftSwiperItem">
+          <block wx:if="{{item != null}}">
+            <image src='{{item.icon}}' class='giftPic'></image>
+            <view class='giftName'>{{item.giftsName}}</view>
+          </block>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='chevron-right' catchtap='showGiftsGetted'>
+      <i class="fa fa-chevron-right"></i>
+    </view>
+  </view>
+  <view>
+    <view class='interval'></view>
+    <view class="bule"></view>
+    <block wx:for="{{array}}" wx:for-index='key'>
+      <view class='{{"myTask"+key}}' bindtap='MineSwitchPage' id="{{key}}">
+        <view class='arrayItem'>
+          <text class='iconlist {{item.icon}}'></text>
+          <text class='arrayText'>{{item.message}}</text>
+          <view wx:if="{{key==2&&message}}" class='dot'></view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view style='height:200rpx'></view>
+</view>
+<view style='position: absolute;height: 1700rpx;width: 750rpx;top:0' wx:if="{{giftsGetted}}" bindtap='hiddenGiftsGetted'>
+  <giftsGetted class="gift" openId="{{otherId}}" catchtap="showGiftsGetted" wx:if="{{giftsGetted}}"></giftsGetted>
+</view>
+<view class="giftmallView" wx:if="{{giftmall}}" bindtap='hiddenGiftmall'>
+  <giftmall name="giftmall" class="gift" catchtap="showGift" wx:if="{{giftmall}}" receiverId="{{receiverId}}" sendgiftType="0"/>
+</view>

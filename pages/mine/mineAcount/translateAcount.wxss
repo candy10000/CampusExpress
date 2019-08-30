@@ -1,0 +1,175 @@
+/* pages/mine/mineAcount/translateAcount.wxss */
+
+.gift {
+  margin-top: 0;
+  background-color: white;
+  min-height: 190rpx;
+  width: 620rpx;
+  height: 720rpx;
+  margin-left: 55rpx;
+  border-radius: 16rpx;
+  padding-bottom: 4rpx;
+  padding-top: 4rpx;
+  font-size: 28rpx;
+  box-shadow: 0rpx 0rpx 80rpx #a8a3a3d3;
+}
+
+.gift_item {
+  margin-top: 2rpx;
+  margin-left: 4rpx;
+  height: 180rpx;
+  width: 610rpx;
+  background-color: white;
+}
+
+
+.gift_pic_info {
+  height: 180rpx;
+  width: 180rpx;
+
+  color: #3f51b5;
+  float: left;
+}
+
+.pic_view {
+  width: 160rpx;
+  height: 140rpx;
+}
+
+.pic {
+  width: 160rpx;
+  height: 140rpx;
+  margin-left: 10rpx;
+
+}
+
+.gift_name {
+  text-align: center;
+}
+
+.gift_detail {
+  height: 174rpx;
+  width: 428rpx;
+  float: left;
+  /* border-bottom: 2rpx solid rgb(189, 189, 196); */
+}
+
+.from {
+  margin-top: 50rpx;
+  width: 428rpx;
+  min-height: 50rpx;
+  color: rgb(94, 94, 95);
+}
+
+.num {
+  text-align: center;
+  min-width: 120rpx;
+  font-size: 34rpx;
+  color: #3F51B5;
+  display: inline-block;
+  float: right;
+}
+
+.message_text {
+  display: inline-block;
+}
+
+.itemicon {
+  width: 80rpx;
+  font-size: 38rpx;
+  display: inline-block;
+  float: right;
+  text-align: center;
+
+}
+
+.icon {
+  /* width: 120rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  box-sizing: border-box;
+  padding-right: 24rpx;
+  font-size: 48rpx;
+
+  color: rgba(63, 81, 181, 1); */
+
+  left: 67px;
+  top: 1214px;
+  width: 24px;
+  height: 24px;
+  color: rgb(56, 20, 214);
+  /* color: rgb(50, 10, 233);  */
+  margin-top: 100rpx;
+  margin-left: 60rpx;
+}
+
+.translate_view {
+  height: 180rpx;
+}
+
+
+.total {
+  height: 100%;
+  width: 200rpx;
+  float: left;
+  font-size: 32rpx;
+  margin-left: 200rpx;
+  margin-top: -121rpx;
+}
+
+.scroll-view {
+  height: 550rpx;
+}
+
+.total_num {
+  margin-top: 66rpx;
+  margin-left: 0rpx;
+  color: rgba(16, 16, 16, 1);
+  font-size: 20px;
+  text-align: left;
+  font-family: PingFangSC-regular;
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  float: left;
+  height: 74rpx;
+  width: 204rpx;
+  margin-top: -68rpx;
+  margin-left: 0rpx;
+  /* border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem; */
+  /* background-color: rgba(63, 81, 181, 0.808); */
+
+  border-radius: 30px;
+  background-color: rgba(63, 81, 181, 0.8);
+  color: rgba(255, 255, 255, 1);
+  font-size: 14px;
+  text-align: center;
+  font-family: Microsoft Yahei;
+
+
+}
+
+.button_text {
+  /* margin-left: 30rpx; */
+  margin-top: 16rpx;
+  /* color: white; */
+}
+
+.checkbox {
+  margin-top: 72rpx;
+  margin-left: 54rpx;
+
+}
+.money-icon {
+  color: #E3CF03;
+  margin-left: 5rpx;
+  font-size: 29rpx;
+  width: 36rpx;
+  display: inline-block;
+}

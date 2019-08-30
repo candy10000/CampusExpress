@@ -1,0 +1,24 @@
+<!--pages/task/taskPickUp/taskPickUpHelp.wxml-->
+<view class = "box">
+    <view class="iconfont icon-tubiaozhizuomoban zan"></view>
+
+    <view wx:if="{{taskStyle==1}}" class="text1">TA会感谢你的信任</view>
+    <view wx:if="{{taskStyle==2}}" class="text1">赠人玫瑰，手有余香</view>
+    <view class="box_text2">
+        <view class="text2">这是TA的联系号码</view>
+        <view class="placeholder"></view>
+        <view class="box_text">
+            <view class="temp"></view>
+            <view class="text2">{{contactType}}: {{contactInfo}}</view>
+            <view wx:if="{{contactType == '手机号'}}" class='contactBtn' bindtap='phoneCall'>拨打电话</view>
+            <view wx:else class='contactBtn' bindtap='copy'>复制</view>
+        </view>
+        <view class="placeholder"></view>
+        <view wx:if="{{taskStyle==1}}" class="text2">请尽快联系TA描述任务哦</view>
+        <view wx:if="{{taskStyle==2}}" class="text2">请尽快联系TA询问任务哦</view>
+    </view>
+
+    <view class="text3">该虚拟号码只能用本机号码拨打</view>
+    <view class="text4">现在你可以在"我的"页面点击"我的任务"查看此任务</view>
+</view>
+

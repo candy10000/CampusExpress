@@ -1,0 +1,94 @@
+<!-- pages/mine/mineEdit/mineEdit.wxml -->
+<view id="img">
+  <view class='headimg {{userInfo.userPic==""?"hedingDefault":""}}' bindtap='chooseImg'>
+    <image src='{{userInfo.userPic}}' class='img'>
+      <text wx:if="{{userInfo.userPic==null}}" class='picText'>点击上传</text>
+      <text wx:else class='picText'>点击更换</text>
+    </image>
+  </view>
+</view>
+<form bindsubmit="EditFormSubmit">
+  <!-- <view class='userInfo.userPic' class='headimg {{userInfo.userPic==""?"hedingDefault":""}}' bindtap='chooseImg'>
+    <image wx:if="{{userInfo.userPic}}" src='{{userInfo.userPic}}' class='img'></image>
+    <view wx:if="{{userInfo.userPic==''}}" class='picText'>点击上传</view>
+    <view wx:else class='picText'>点击更换</view>
+  </view> -->
+  <view class='userInfo'>
+    <view class='block btop'>
+      <view class='infoText'>昵称</view>
+      <input id='nickaname' class='Required' value="{{userInfo.nickName}}" bindinput="bindNameInput"></input>
+    </view>
+    <view class='block'>
+      <view class='infoText'>签名</view>
+      <input id='desc' placeholder='介绍一下你自己' class='input notRequired' value="{{userInfo.signature}}" bindchange='bindSigInput'></input>
+    </view>
+    <view class='block'>
+      <view class='infoText'>标签</view>
+      <input id='label' placeholder='选择标签,标识自己' class='input notRequired' value="{{userInfo.laber}}" bindchange='bindLaberInput'></input>
+    </view>
+    <view class='block'>
+      <view class='infoText'>性别</view>
+      <!-- <view class='input'> -->
+      <picker id='genderPicker' range='{{gender}}' value='{{userInfo.gender}}' bindchange='bindGenderInput'>
+        {{gender[userInfo.gender]}}
+      </picker>
+      <!-- </view> -->
+    </view>
+    <view class='block'>
+      <view class='infoText'>学校</view>
+      <!-- <input id='schoolPicker' placeholder='你来自哪里呀' class='input notRequired' value="{{userInfo.school}}" bindchange='bindSchollInput'></input> -->
+      <picker id='genderPicker' range='{{school}}' value='{{schoolIndex}}' bindchange='bindSchollInput'>
+        {{school[schoolIndex]}}
+      </picker>
+    </view>
+    <view class='block bbottom'>
+      <view class='infoText'>专业</view>
+      <input id='major' placeholder='填写专业让更多同学认识你' class='input notRequired' value="{{userInfo.major}}" bindchange='bindMajorInput'></input>
+    </view>
+  </view>
+  <view class='userInfo'>
+    <view class='block btop'>
+      <view class='infoText'>地址</view>
+      <view class='input'>
+        <view class="address">
+          <picker id='addressPicker' range='{{address2}}' value='{{addressIdx}}' bindchange='bindAddrInput'>
+            <text class="input2_text">{{address2[addressIdx]}}</text>
+            <i class='iconfont icon-sort-down sortdown'></i>
+          </picker>
+          <input id='addressIn' placeholder='输入地址' value='{{userInfo.address}}' bindchange='bindAddrInput2'></input>
+        </view>
+      </view>
+    </view>
+    <view class='block bbottom'>
+      <view class='infoText'>联系</view>
+      <view class='input'>
+        <view class="address">
+          <picker id='addressPicker' range='{{contact}}' value='{{contactIdx}}' bindchange='bindTelInput'>
+            <text class="input2_text">{{contact[contactIdx]}}</text>
+            <i class='iconfont icon-sort-down sortdown'></i>
+          </picker>
+          <input id='addressIn' placeholder='输入联系号码' value='{{userInfo.contact}}' bindchange='bindTelInput2'></input>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='userInfo alert'>
+    <text>默认地址和默认联系方式不会向别人显示，填写之后每次发布任务将自动填入，更加方便。</text>
+  </view>
+  <!-- <view class='userInfo alert'>
+    <text>为保护用户权益，只用进行实名认证之后您才可以拾起代领快递的任务。</text>
+  </view>
+  <view class='userInfo'>
+    <view class='block bdefault'>
+      <view class='infoText' style='width:150rpx;'>实名认证</view>
+      <view>
+        <input id='realName' placeholder='输入身份证号码' class='input Required' bindinput='idCodeIn'></input>
+        <view id='realNameBtn'>
+          <view class='btnText'>验证</view>
+        </view>
+      </view>
+    </view>
+  </view> -->
+  <button form-type="submit" class='okBtn'>保存</button>
+</form>
+<view style='height:150rpx;'></view>
