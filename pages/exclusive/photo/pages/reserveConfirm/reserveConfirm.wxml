@@ -1,23 +1,53 @@
-<view class="container">
-  <view id="top">
-    <image src="../images/warn.png"></image>
-    <view id="top-warn-msg"> 请确认信息后付款</view>
-    <view id="top-total-msg">总计：{{photoCamboOrder.comboPrice}} </view>
+<view class="wrapper">
+  <view class="top">
+    <i class="img_warning fa fa-exclamation-circle fa-rotate-180"></i>
+    <view class="top-warn-msg"> 请确认信息后付款</view>
+    <view class="top-total-msg">总计：{{photoCamboOrder.comboPrice}} </view>
   </view>
-  <view id="middle">
+
+  <view class="middle" hidden='{{showhidden}}'>
     <view>{{photoCamboOrder.username}}</view>
     <view>{{photoCamboOrder.telephone}}</view>
     <view>{{photoCamboOrder.comboMeal}}</view>
   </view>
 
-  <view id="bottom">
-    <view class="order-btn btn-no" bindtap='_error'>
-      <image src="../images/xiugai.png"></image>
-      <text>修改</text>
+  <view class="middle" hidden='{{updatehidden}}'>
+    <view class="inline">
+      <view class="line_text">
+        <text decode="{{true}}">名&emsp;字：</text>
+      </view>
+      <view class="line_input">
+        <input class="ups" value="{{photoCamboOrder.username}}" name='upUsername' bindinput='update_username'></input>
+      </view>
     </view>
-    <view class="order-btn btn-ok" bindtap='orderPay'>
-      <image src="../images/zhifu.png"></image>
-      <text>支付</text>
+    <view class="inline">
+      <view class="line_text">手机号：</view>
+      <view class="line_input">
+        <input class="ups" value="{{photoCamboOrder.telephone}}" name='upTelephone' bindinput='update_telephone'></input>
+      </view>
+    </view>
+    <view class="inline">
+      <view class="line_text">
+        <text decode="{{true}}">套&emsp;餐：</text>
+      </view>
+      <view class="line_input">
+        <input class="ups" value="{{photoCamboOrder.comboMeal}}" disabled='disabled'></input>
+      </view>
+    </view>
+  </view>
+
+  <view class="bottom">
+    <view class="order-btn btn-pay" bindtap='orderPay' hidden='{{btn_pay}}'>
+      <i class="fa fa-check " />
+      <text class="btn_text">支付</text>
+    </view>
+    <view class="order-btn btn-tomodify" bindtap='tomodify' hidden='{{btn_modify}}'>
+      <i class="fa fa-pencil" />
+      <text class="btn_text">修改</text>
+    </view>
+    <view class='order-btn btn_toconfirm' bindtap='toconfirm' hidden='{{btn_confirm}}'>
+      <i class="fa fa-pencil" />
+      <text class="btn_text">确认修改</text>
     </view>
   </view>
 </view>
