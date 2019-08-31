@@ -8,18 +8,20 @@
 
   <!-- 进阶摄影师 -->
   <view calss="tap1" hidden='{{currentId!=1}}'>
-    <view class="box" >
+     <view class="box" >
       <view class="slide" id="slide" bindtouchstart='moveStart' bindtouchend='moveItem'>
         <block wx:for="{{datas}}" wx:key="{{item.id}}">
           <li animation="{{item.animation}}" style="z-index: {{item.zIndex}}  ;opacity:{{item.opacity}};" bindtap="choose" data-id="{{item.photographId}}">
             <image src="{{item.image}}" alt="林奇涵" title=""></image>
             <view class="p">
               <p id="left">￥{{item.charge}} </p>
-              <p id="right">{{item.detail}}</p>
+              <p id="right">{{item.detail}}<br/></p>
             </view>
           </li>
-        </block>
+        </block>     
       </view>
+          
+          <view class="middle">candy</view>
       <!-- bottom轮播图 -->
       <!--轮播图-->
       <swiper class="home-swiper" indicator-dots="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
@@ -42,11 +44,13 @@
             <image src="{{item.image}}" alt="林奇涵" title=""></image>
             <view class="p">
               <p id="left">￥{{item.charge}} </p>
-              <p id="right">{{item.detail}}</p>
+              <p id="right">{{item.detail}}<br/></p>
             </view>
           </li>
-        </block>
+        </block>     
       </view>
+          
+          <view class="middle">candy</view>
       <!-- bottom轮播图 -->
       <!--轮播图-->
       <swiper class="home-swiper" indicator-dots="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
@@ -62,29 +66,30 @@
 
   <!-- 高级摄影师 -->
   <view calss="tap3" hidden='{{currentId!=3}}'>
-    <view class="box" >
+  <view class="box" >
       <view class="slide" id="slide" bindtouchstart='moveStart' bindtouchend='moveItem'>
         <block wx:for="{{datas}}" wx:key="{{item.id}}">
           <li animation="{{item.animation}}" style="z-index: {{item.zIndex}}  ;opacity:{{item.opacity}};" bindtap="choose" data-id="{{item.photographId}}">
             <image src="{{item.image}}" alt="林奇涵" title=""></image>
             <view class="p">
               <p id="left">￥{{item.charge}} </p>
-              <p id="right">{{item.detail}}</p>
+              <p id="right">{{item.detail}}<br/></p>
             </view>
           </li>
-        </block>
+        </block>     
       </view>
+          
+          <view class="middle">candy</view>
       <!-- bottom轮播图 -->
       <!--轮播图-->
       <swiper class="home-swiper" indicator-dots="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
         <block wx:for-items="{{comboPics}}">
           <swiper-item class="botton">
             <image src="{{item.image}}" class="slide-image" bindtap="showReserveForm" data-id="{{item.id}}"/>
-            <!-- <text class="reserve" bindtap="showReserveForm">点击预定</text> -->
           </swiper-item>
         </block>
       </swiper>
-    <view class="botton_text">点击图片预定</view>
+      <view class="botton_text">点击图片预定</view>
     </view>
   </view>
   <reserveForm id='reserveForm' title='小组件' content='学会了吗' btn_no='没有' btn_ok='学会了' bind:error="_error" bind:success="_success"></reserveForm>

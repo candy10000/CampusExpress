@@ -35,7 +35,10 @@
     "pages/othersInfo/othersTask/othersTask",
     "pages/othersInfo/othersSquare/othersSquare",
     "pages/othersInfo/othersInfo",
-    "pages/mine/mineTask/HelpMe/EnvelopDetail/EnvelopDetail"
+    "pages/mine/mineTask/HelpMe/EnvelopDetail/EnvelopDetail",
+    "pages/exclusive/photo/pages/photogarph_index/photogarph_index",
+     "pages/exclusive/photo/pages/works/works",
+     "pages/exclusive/photo/pages/orderConfirm/orderConfirm"
   ],
   "window": {
     "backgroundColor": "#3f51b5",

@@ -18,6 +18,7 @@ Page({
       typeId: '3'
     }],
 
+
     // 小卡片
     startX: 0,
     endX: 0,
@@ -55,10 +56,11 @@ Page({
         photographDetail.push({
           id: 1,
           zIndex: 2,
-          opacity: 0.6,
+          opacity: 0.4,
           left: -26,
+          up: 0,
           charge: 100,
-          image: "../images/candy.png",
+          image: "../images/cat1.jpg",
           animation: null
         });
 
@@ -71,6 +73,7 @@ Page({
             zIndex: 4,
             opacity: 1,
             left: 0,
+            up: -13, 
             charge: photographs[i].charge,
             image: getApp().globalData.urlb + "" + photographs[i].cameramanPhoto,
             detail: photographs[i].detail,
@@ -82,10 +85,11 @@ Page({
         photographDetail.push({
           id: 3,
           zIndex: 2,
-          opacity: 0.6,
+          opacity: 0.4,
           left: 26,
+          up: 0,
           charge: 300,
-          image: "../images/cat1.jpg",
+          image: "../images/cat.jpg",
           animation: null
         });
 
@@ -151,6 +155,7 @@ Page({
       })
     }
   },
+
   // 设置小卡片的动画
   move: function () {
     var datas = this.data.datas;
@@ -158,15 +163,20 @@ Page({
     /*图片分布*/
     for (var i = 0; i < datas.length; i++) {
       var data = datas[i];
+
       var animation = wx.createAnimation({
         duration: 200
       });
-      animation.translateX(data.left).step();
+      animation.translate(data.left, data.up).step();
+      // animation.translateY(data.up).step;
       this.setData({
         ["datas[" + i + "].animation"]: animation.export(),
         ["datas[" + i + "].zIndex"]: data.zIndex,
         ["datas[" + i + "].opacity"]: data.opacity,
       })
+
+      console.log("datas", this.data.datas);
+      console.log("order", this.data.order);
     }
 
   },
@@ -238,8 +248,9 @@ Page({
           zIndex: 2,
           opacity: 0.6,
           left: -26,
+          up: 0,
           charge: 100,
-          image: "../images/candy.png",
+          image: "../images/cat.jpg",
           animation: null
         });
 
@@ -252,6 +263,7 @@ Page({
             zIndex: 4,
             opacity: 1,
             left: 0,
+            up: -13,
             charge: photographs[i].charge,
             image: getApp().globalData.urlb + "" + photographs[i].cameramanPhoto,
             detail: photographs[i].detail,
@@ -264,6 +276,7 @@ Page({
           zIndex: 2,
           opacity: 0.6,
           left: 26,
+          up: 0,
           charge: 300,
           image: "../images/cat1.jpg",
           animation: null
