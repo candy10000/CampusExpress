@@ -31,7 +31,7 @@
 
       <view class="order-btn">
         <button class="btn-no" bindtap='_error'>取消</button>
-        <button class="btn-ok" formType="submit">支付</button>
+        <button class="btn-ok" formType="submit">确认</button>
       </view>
     </form>
   </view>

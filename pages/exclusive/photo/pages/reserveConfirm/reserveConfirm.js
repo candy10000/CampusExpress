@@ -12,6 +12,13 @@ Page({
     openid: "", //获取用户的wxopenid
     canpay: true, // “支付”按钮是否生效
     orderList: [],
+
+    //布尔类型
+    showhidden: false,
+    updatehidden: true,
+    btn_modify: false,  // “修改”按钮，默认为false即显示
+    btn_confirm: true,  // “确认修改”按钮，默认为true即隐藏
+    btn_pay: false,  // “支付”按钮，默认为false即显示
   },
 
   /**
@@ -21,7 +28,6 @@ Page({
     var that = this;
     var openid;
     let photoCamboOrder = JSON.parse(options.comboPhoto);
-
     console.log("**photoCamboOrder**", photoCamboOrder);
 
     var orderList = [];
@@ -45,6 +51,54 @@ Page({
       openid: openid,
       orderList: orderList,
     })
+  },
+
+  // 点击“修改”按钮，从“信息显示”到“信息修改”
+  tomodify: function () {
+    console.log("==before--showhidden==", this.data.showhidden);
+    console.log("==before--updatehidden==", this.data.updatehidden);    
+    var that = this;
+    that.setData({
+      btn_modify: true,
+      btn_confirm: false,
+      btn_pay: true,
+      showhidden: true,
+      updatehidden: false,
+    })
+    console.log("==showhidden==", that.data.showhidden);
+    console.log("==updatehidden==", that.data.updatehidden);
+  },
+
+  // 点击“确认修改”按钮，从“信息修改”到“信息显示”
+  toconfirm: function () {
+    this.setData({
+      btn_modify: false,
+      btn_confirm: true,
+      btn_pay: false,
+      showhidden: false,
+      updatehidden: true,
+    })
+  },
+
+  /* 修改订单数据 */
+  // 实时修改名字
+  update_username: function (e) {
+    var that = this;
+    var s = "photoCamboOrder.username"
+    that.setData({
+      [s]: e.detail.value
+    });
+    console.log(that.data.photoCamboOrder)
+  },
+
+  // 实时修改电话号码
+  update_telephone: function (e) {
+    var that = this;
+    var s = "photoCamboOrder.telephone"
+    that.setData({
+      [s]: e.detail.value
+    });
+    console.log(that.data.photoCamboOrder)
   },
 
   // 支付
