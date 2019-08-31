@@ -21,18 +21,19 @@ Page({
     var that = this;
     var openid;
     let photoCamboOrder = JSON.parse(options.comboPhoto);
+
+    console.log("**photoCamboOrder**", photoCamboOrder);
+
     var orderList = [];
-    var random = "" + Math.floor(Math.random() * 90000 + 10000) + options.time_stamp;
-    orderList.push(photoCamboOrder);
-    photoCamboOrder.username = options.username;
-    photoCamboOrder.telephone = options.telephone;
-    photoCamboOrder.photo_openid = "";
+    var random = "" + Math.floor(Math.random() * 90000 + 10000) + photoCamboOrder.time_stamp;
     photoCamboOrder.out_trade_no = random;
     photoCamboOrder.camboid = photoCamboOrder.id;
     photoCamboOrder.id = random;
-    console.log("**TEST1111111-comboMeal**", orderList);
-    console.log("**TEST-comboMeal**", photoCamboOrder);
-    console.log(typeof photoCamboOrder);
+    orderList.push(photoCamboOrder);
+    // photoCamboOrder.photo_openid = "";
+    
+    console.log("**orderList**", orderList);
+
     //获取用户的openid
     while (openid == "" || openid == null) {
       openid = app.getOpenid(app.globalData.url);

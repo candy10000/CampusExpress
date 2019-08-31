@@ -15,7 +15,7 @@
             <image src="{{item.image}}" alt="林奇涵" title=""></image>
             <view class="p">
               <p id="left">￥{{item.charge}} </p>
-              <text id="right">{{item.detail}}hhhhhh</text>
+              <p id="right">{{item.detail}}</p>
             </view>
           </li>
         </block>
@@ -23,13 +23,13 @@
       <!-- bottom轮播图 -->
       <!--轮播图-->
       <swiper class="home-swiper" indicator-dots="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block wx:for-items="{{lunboData}}">
+        <block wx:for-items="{{comboPics}}">
           <swiper-item class="botton">
-            <image src="{{item.imgurl}}" class="slide-image" bindtap="showReserveForm" data-id="{{item.id}}"/>
-            <text class="reserve" bindtap="showReserveForm">点击预定</text>
+            <image src="{{item.image}}" class="slide-image" bindtap="showReserveForm" data-id="{{item.id}}"/>
           </swiper-item>
         </block>
       </swiper>
+      <view class="botton_text">点击图片预定</view>
     </view>
   </view>
 
@@ -48,17 +48,15 @@
         </block>
       </view>
       <!-- bottom轮播图 -->
-      <!-- <view class="container"> -->
       <!--轮播图-->
       <swiper class="home-swiper" indicator-dots="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block wx:for-items="{{lunboData}}">
+        <block wx:for-items="{{comboPics}}">
           <swiper-item class="botton">
-            <image src="{{item.imgurl}}" class="slide-image" bindtap="showReserveForm" data-id="{{item.id}}"/>
-            <text class="reserve" bindtap="showReserveForm">点击预定</text>
+            <image src="{{item.image}}" class="slide-image" bindtap="showReserveForm" data-id="{{item.id}}"/>
           </swiper-item>
         </block>
       </swiper>
-      <!-- </view> -->
+      <view class="botton_text">点击图片预定</view>
     </view>
   </view>
 
@@ -79,13 +77,14 @@
       <!-- bottom轮播图 -->
       <!--轮播图-->
       <swiper class="home-swiper" indicator-dots="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block wx:for-items="{{lunboData}}">
+        <block wx:for-items="{{comboPics}}">
           <swiper-item class="botton">
-            <image src="{{item.imgurl}}" class="slide-image" bindtap="showReserveForm" data-id="{{item.id}}"/>
-            <text class="reserve" bindtap="showReserveForm">点击预定</text>
+            <image src="{{item.image}}" class="slide-image" bindtap="showReserveForm" data-id="{{item.id}}"/>
+            <!-- <text class="reserve" bindtap="showReserveForm">点击预定</text> -->
           </swiper-item>
         </block>
       </swiper>
+    <view class="botton_text">点击图片预定</view>
     </view>
   </view>
   <reserveForm id='reserveForm' title='小组件' content='学会了吗' btn_no='没有' btn_ok='学会了' bind:error="_error" bind:success="_success"></reserveForm>

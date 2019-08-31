@@ -1,18 +1,17 @@
 <view class="order" hidden="{{flag}}">
   <view class='order-container'>
     <form bindsubmit="formSubmit" bindreset="formReset">
-
       <view class="section">
         <view class="section__title">姓名:</view>
         <view class='form-group'>
-          <input type="text" class="input-text" username="userusername" bindinput="getUsername" placeholder="请输入姓名" />
+          <input type="text" class="input-text" value="{{username}}" name="username" placeholder="请输入姓名" />
         </view>
       </view>
 
       <view class="section">
         <view class="section__title">手机:</view>
         <view class='form-group'>
-          <input type="text" class="input-text" username="userusername" bindinput="getTelephone" placeholder="请输入手机号码" />
+          <input type="text" class="input-text" name="telephone" value="{{telephone}}" placeholder="请输入手机号码" />
         </view>
       </view>
 
@@ -31,8 +30,8 @@
       </view>
 
       <view class="order-btn">
-        <text class="btn-no" bindtap='_error'>取消</text>
-        <text class="btn-ok" bindtap='_success'>支付</text>
+        <button class="btn-no" bindtap='_error'>取消</button>
+        <button class="btn-ok" formType="submit">支付</button>
       </view>
     </form>
   </view>

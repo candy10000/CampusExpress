@@ -102,8 +102,17 @@ Page({
       success: function (res) {
         console.log("***PhoneCameramanComboById***", res.data);
         var photoCambo = res.data;
+        var comboPics = [];
+        for(var i = 0; i < photoCambo.length; i++) {
+          comboPics.push({
+            id:photoCambo[i].id,
+            image: getApp().globalData.urlb + "" + photoCambo[i].comboPic,
+          })
+        }
         that.setData({
+          comboPics: comboPics,
           all: photoCambo,
+          comboPic: photoCambo.comboPic,
         });
       }
     })
@@ -118,33 +127,7 @@ Page({
           winHeight: res.windowHeight
         });
       }
-
     });
-
-    // bottom轮播图片
-    var data = {
-      "datas": [
-        {
-          "id": 1,
-          "imgurl": "../images/cat.jpg"
-        },
-        {
-          "id": 2,
-          "imgurl": "../images/cat1.jpg"
-        },
-        {
-          "id": 3,
-          "imgurl": "../images/panda.jpg"
-        },
-        {
-          "id": 4,
-          "imgurl": "../images/photo1.jpg"
-        }
-      ]
-    };
-    that.setData({
-      lunboData: data.datas
-    })
    
   },
 
