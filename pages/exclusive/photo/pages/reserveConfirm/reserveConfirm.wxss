@@ -55,29 +55,25 @@ page {
   color: rgba(255, 255, 255, 1);
   font-size: 28rpx;
   font-family: PingFangSC-regular;
-  padding-top: 8rpx;
-  padding-bottom: 8rpx;
+  padding-top: 18rpx;
+  padding-bottom: 18rpx;
 }
 
 .middle view {
-  padding-top: 18rpx;
-  padding-bottom: 18rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
   margin: auto;
 }
 
 .middle .inline{
   display: flex;
-  direction: row;
-  justify-content:center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   line-height: 100%;
 }
-.middle .inline .line_text{
-  line-height: 100%;
-}
-/* update样式 */
-
-.ups {
-  display: inline-block;
+/* 修改输入框样式 */
+.inline input {
   height: 12%;
   border: 1px solid #c1c1c1;
   color: #fff;

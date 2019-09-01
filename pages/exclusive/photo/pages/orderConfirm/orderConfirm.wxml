@@ -3,7 +3,7 @@
     <!-- <image src="../images/warn.png"></image> -->
     <i class=" img_warning fa fa-exclamation-circle fa-rotate-180"></i>
     <view id="top-warn-msg"> 请确认信息后付款</view>
-    <view id="top-total-msg">总计：{{photoOrder.photoTotalprice}}￥ </view>
+    <view id="top-total-msg">总计：￥{{photoOrder.photoTotalprice}} </view>
   </view>
 
   <view id="middle" hidden='{{showhidden}}'>
@@ -15,19 +15,24 @@
   </view>
 
   <view id="middle" hidden='{{updatehidden}}'>
-    <view>
+    <view class="inline">
       <text decode="{{true}}">名&emsp;字：</text>
       <input class="ups" value="{{ photoOrder.photoUsername}}" name='upPhotoUsername' bindinput='update_photoUsername'></input>
     </view>
-    <view>手机号：
+    <view class="inline">手机号：
       <input class="ups" value="{{photoOrder.photoTelephone}}" name='upPhotoTelephone' bindinput='update_photoTelephone'></input>
     </view>
-    <view>
+    <view class="inline">
       <text decode="{{true}}">联&emsp;系：</text>
       <input class="ups" value="{{photoOrder.photoContact}}" name='upPhotoContact' bindinput='update_photoContact'></input>
     </view>
-    <view>摄影师：{{photoCameramanName}}</view>
-    <view>内容：{{photoOrder.photoContent}}</view>
+    <view class="inline">摄影师：
+      <input value="{{photoCameramanName}}" disabled='disabled'></input>
+    </view>
+    <view class="inline">
+      <text decode="{{true}}">内&emsp;容：</text>
+      <input value="{{photoOrder.photoContent}}" disabled='disabled'></input>
+    </view>
   </view>
 
   <view id="bottom">

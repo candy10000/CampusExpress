@@ -416,3 +416,4 @@ class WxValidate {
 }
 
 export default WxValidate
+

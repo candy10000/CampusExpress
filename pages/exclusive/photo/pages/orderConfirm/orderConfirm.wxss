@@ -1,11 +1,13 @@
 /* pages/orderConfirm/orderConfirm.wxss */
+page{
+  background-color: rgba(63, 81, 181, 1);
+}
 
 .wrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  height: 1506rpx;
-  background-color: rgba(63, 81, 181, 1);
+  height: 100%;
 }
 
 /* top */
@@ -64,6 +66,23 @@
   margin: 10rpx auto;
 }
 
+.wrapper view#middle .inline {
+  margin: 10rpx auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  line-height: 100%;
+}
+
+/* 修改输入框样式 */
+.inline input {
+  height: 12%;
+  border: 1px solid #c1c1c1;
+  color: #fff;
+  text-align: center;
+}
+
 /* bottom按钮样式 */
 
 .wrapper view#bottom {
@@ -105,15 +124,13 @@
 
 /* update样式 */
 
-.ups {
+/* .ups {
   display: inline-block;
   height: 12%;
   margin-top: 15rpx;
-  /* margin-bottom: 2rpx; */
   padding-left: 3rpx;
   padding-right: 3rpx;
-  /* background-color: white; */
   border: 1px solid #c1c1c1;
   color: #fff;
   text-align: center;
-}
+} */

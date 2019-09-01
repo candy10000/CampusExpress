@@ -90,19 +90,6 @@ Component({
       this.WxValidate = new WxValidate(rules, message);
     },
 
-    getUsername:function(e){
-      var username = e.detail.value;
-      console.log("***username***", e.detail.value);
-      this.setData({
-        username:username,
-      })
-    },
-    getTelephone: function (e) {
-      var telephone = e.detail.value;
-      this.setData({
-        telephone: telephone,
-      })
-    },
     //隐藏弹框
     hideReserveForm: function () {
       this.setData({
@@ -111,14 +98,11 @@ Component({
     },
     //展示弹框
     showReserveForm(e) {
-      // var comboPhoto = JSON.stringify(e);
-      // console.log("***comboPhoto***", comboPhoto);
       console.log("eeee====", e);
       console.log(typeof e);
       this.setData({
         flag: !this.data.flag,
         list:e,
-        // comboPhoto: comboPhoto,
       })
     },
 
@@ -159,8 +143,6 @@ Component({
       var comboPhoto = JSON.stringify(order);
       wx.navigateTo({
         url: '../../pages/reserveConfirm/reserveConfirm?comboPhoto=' + comboPhoto,
-        // url: '../../pages/reserveConfirm/reserveConfirm?username='+ this.data.username + '&telephone=' + 
-        //   this.data.telephone + '&comboPhoto=' + this.data.comboPhoto + '&time_stamp=' + this.data.time_stamp,
         success: function (res) { },
         fail: function (res) { },
         complete: function (res) { },

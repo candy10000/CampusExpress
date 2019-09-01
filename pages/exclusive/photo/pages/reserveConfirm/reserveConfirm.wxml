@@ -2,7 +2,7 @@
   <view class="top">
     <i class="img_warning fa fa-exclamation-circle fa-rotate-180"></i>
     <view class="top-warn-msg"> 请确认信息后付款</view>
-    <view class="top-total-msg">总计：{{photoCamboOrder.comboPrice}} </view>
+    <view class="top-total-msg">总计：￥{{photoCamboOrder.comboPrice}} </view>
   </view>
 
   <view class="middle" hidden='{{showhidden}}'>
@@ -12,29 +12,20 @@
   </view>
 
   <view class="middle" hidden='{{updatehidden}}'>
-    <view class="inline">
-      <view class="line_text">
+      <view class="inline">
         <text decode="{{true}}">名&emsp;字：</text>
+        <input value="{{photoCamboOrder.username}}" name='upUsername' bindinput='update_username'></input>
       </view>
-      <view class="line_input">
-        <input class="ups" value="{{photoCamboOrder.username}}" name='upUsername' bindinput='update_username'></input>
+      <view class="inline">
+        手机号：
+        <input value="{{photoCamboOrder.telephone}}" name='upTelephone' bindinput='update_telephone'></input>
       </view>
-    </view>
-    <view class="inline">
-      <view class="line_text">手机号：</view>
-      <view class="line_input">
-        <input class="ups" value="{{photoCamboOrder.telephone}}" name='upTelephone' bindinput='update_telephone'></input>
-      </view>
-    </view>
-    <view class="inline">
-      <view class="line_text">
+      <view class="inline">
         <text decode="{{true}}">套&emsp;餐：</text>
+        <input value="{{photoCamboOrder.comboMeal}}" disabled='disabled'></input>
       </view>
-      <view class="line_input">
-        <input class="ups" value="{{photoCamboOrder.comboMeal}}" disabled='disabled'></input>
-      </view>
-    </view>
   </view>
+
 
   <view class="bottom">
     <view class="order-btn btn-pay" bindtap='orderPay' hidden='{{btn_pay}}'>

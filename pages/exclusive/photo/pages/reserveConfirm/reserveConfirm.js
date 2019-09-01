@@ -1,6 +1,8 @@
-// pages/orderConfirm/orderConfirm.js
-//  成功传输订单的个数  
+import WxValidate from '../../utils/WxValidate.js'
+
+
 const app = getApp()
+//  成功传输订单的个数  
 var successnum = 0;
 var res1, res2;
 Page({
@@ -16,15 +18,22 @@ Page({
     //布尔类型
     showhidden: false,
     updatehidden: true,
-    btn_modify: false,  // “修改”按钮，默认为false即显示
-    btn_confirm: true,  // “确认修改”按钮，默认为true即隐藏
-    btn_pay: false,  // “支付”按钮，默认为false即显示
+    btn_modify: false, // “修改”按钮，默认为false即显示
+    btn_confirm: true, // “确认修改”按钮，默认为true即隐藏
+    btn_pay: false, // “支付”按钮，默认为false即显示
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    //用于判断input中的数据是否变更
+    var flag_n = false;
+    var flag_p = false;
+    //用于存放修改前的用户名和手机号码
+    var name;
+    var telephone;
+
     var that = this;
     var openid;
     let photoCamboOrder = JSON.parse(options.comboPhoto);
@@ -37,7 +46,7 @@ Page({
     photoCamboOrder.id = random;
     orderList.push(photoCamboOrder);
     // photoCamboOrder.photo_openid = "";
-    
+
     console.log("**orderList**", orderList);
 
     //获取用户的openid
@@ -50,13 +59,42 @@ Page({
       photoCamboOrder: photoCamboOrder,
       openid: openid,
       orderList: orderList,
+      name: photoCamboOrder.username,
+      telephone: photoCamboOrder.telephone,
     })
+    // 执行表单验证方法
+    this.initValidate();
+  },
+
+  // 验证表单字段
+  initValidate: function() {
+    const rules = {
+      upUsername: {
+        required: true,
+        maxlength: 10
+      },
+      upTelephone: {
+        required: true,
+        tel: true
+      }
+    };
+    const message = {
+      upUsername: {
+        required: '请填写名字',
+        maxlength: '名字长度不超过10个字！'
+      },
+      upTelephone: {
+        required: '请填写联系电话',
+        tel: '请填写正确的联系电话'
+      }
+    };
+    this.WxValidate = new WxValidate(rules, message);
   },
 
   // 点击“修改”按钮，从“信息显示”到“信息修改”
-  tomodify: function () {
+  tomodify: function() {
     console.log("==before--showhidden==", this.data.showhidden);
-    console.log("==before--updatehidden==", this.data.updatehidden);    
+    console.log("==before--updatehidden==", this.data.updatehidden);
     var that = this;
     that.setData({
       btn_modify: true,
@@ -69,36 +107,71 @@ Page({
     console.log("==updatehidden==", that.data.updatehidden);
   },
 
-  // 点击“确认修改”按钮，从“信息修改”到“信息显示”
-  toconfirm: function () {
-    this.setData({
-      btn_modify: false,
-      btn_confirm: true,
-      btn_pay: false,
-      showhidden: false,
-      updatehidden: true,
+  // 点击“确认修改”按钮，通过表单验证后，从“信息修改”到“信息显示”
+  toconfirm: function() {
+    var msg = [];
+    if (this.data.flag_n) {
+      msg.upUsername = this.data.upUsername;
+    } else {
+      msg.upUsername = this.data.name;
+    }
+    if (this.data.flag_p) {
+      msg.upTelephone = this.data.upTelephone;
+    } else {
+      msg.upTelephone = this.data.telephone;
+    }
+    console.log("===form===", msg);
+    console.log(typeof msg);
+    //验证表单
+    if (!this.WxValidate.checkForm(msg)) {
+      const error = this.WxValidate.errorList[0];
+      this.showModal(error);
+      return false;
+    } else {
+      var n = "photoCamboOrder.username";
+      var p = "photoCamboOrder.telephone";
+      this.setData({
+        [n]: this.data.upUsername,
+        [p]: this.data.upTelephone,
+        btn_modify: false,
+        btn_confirm: true,
+        btn_pay: false,
+        showhidden: false,
+        updatehidden: true,
+        flag_n: false,
+        flag_p: false,
+      })
+    }
+  },
+
+  /* 表单校验报错 */
+  showModal(error) {
+    wx.showModal({
+      content: error.msg
     })
   },
 
-  /* 修改订单数据 */
-  // 实时修改名字
-  update_username: function (e) {
+  /* 获取订单数据 */
+  // 获取修改后的名字，只有数据修改时才执行此方法
+  update_username: function(e) {
     var that = this;
-    var s = "photoCamboOrder.username"
+    var upUsername = e.detail.value;
+    console.log("===upUsername***", upUsername);
     that.setData({
-      [s]: e.detail.value
-    });
-    console.log(that.data.photoCamboOrder)
+      upUsername: upUsername,
+      flag_n: true,
+    })
   },
 
-  // 实时修改电话号码
-  update_telephone: function (e) {
+  // 获取修改后的电话号码，只有数据修改时才执行此方法
+  update_telephone: function(e) {
     var that = this;
-    var s = "photoCamboOrder.telephone"
+    var upTelephone = e.detail.value;
+    console.log("===upTelephone***", upTelephone);
     that.setData({
-      [s]: e.detail.value
-    });
-    console.log(that.data.photoCamboOrder)
+      upTelephone: upTelephone,
+      flag_p: true,
+    })
   },
 
   // 支付
@@ -129,7 +202,7 @@ Page({
           sign: ""
         },
         success: function(res) {
-          console.log("======"+res.data);
+          console.log("======" + res.data);
 
           that.setData({
             res1: res.data
