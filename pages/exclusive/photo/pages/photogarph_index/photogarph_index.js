@@ -67,38 +67,40 @@ Page({
           animation: null
         });
 
+        photographDetail.push({
+          id: 2,
+          photographId: photographs[1].id,
+          zIndex: 4,
+          opacity: 1,
+          left: 0,
+          up: -13,
+          charge: photographs[1].charge,
+          image: getApp().globalData.urlb + "" + photographs[1].cameramanPhoto,
+          detail: photographs[1].detail,
+          animation: null
+        }
+        );
+
         // 遍历获取到摄影师数组
-        for (var i = 1; i < photographs.length-1; i++) {
+        for (var i = 2; i < photographs.length; i++) {
+
 
           photographDetail.push({
-            id: 2,
+            id: 3,
             photographId: photographs[i].id,
-            zIndex: 4,
-            opacity: 1,
-            left: 0,
-            up: -13, 
+            zIndex: 2,
+            opacity: 0.4,
+            left: 26,
+            up: 0,
             charge: photographs[i].charge,
             image: getApp().globalData.urlb + "" + photographs[i].cameramanPhoto,
             detail: photographs[i].detail,
             animation: null
-          }
-          );
+          });
+
         }
 
 
-        photographDetail.push({
-          id: 3,
-          photographId: photographs[photographs.length - 1].id,
-          zIndex: 2,
-          opacity: 0.4,
-          left: 26,
-          up: 0,
-          charge: photographs[photographs.length - 1].charge,
-          image: getApp().globalData.urlb + "" + photographs[photographs.length - 1].cameramanPhoto,
-          detail: photographs[photographs.length - 1].detail,
-          animation: null
-        });
-     
       
 
         that.setData({
@@ -108,6 +110,7 @@ Page({
         that.move();
       }
     })
+
     //请求摄影师套餐
     wx.request({
       url: 'https://xcx.gaoxiao114.cn/photoCambo/list',
@@ -238,6 +241,7 @@ Page({
     let id = e.currentTarget.id;
     var that = this;
 
+
     // 请求摄影师的数据
     wx.request({
       url: getApp().globalData.url + "/photoCameraman/selectCameramanByLevel",
@@ -264,37 +268,39 @@ Page({
           animation: null
         });
 
+        photographDetail.push({
+          id: 2,
+          photographId: photographs[1].id,
+          zIndex: 4,
+          opacity: 1,
+          left: 0,
+          up: -13,
+          charge: photographs[1].charge,
+          image: getApp().globalData.urlb + "" + photographs[1].cameramanPhoto,
+          detail: photographs[1].detail,
+          animation: null
+        }
+        );
+
         // 遍历获取到摄影师数组
-        for (var i = 1; i < photographs.length - 1; i++) {
+        for (var i = 2; i < photographs.length; i++) {
+
 
           photographDetail.push({
-            id: 2,
+            id: 3,
             photographId: photographs[i].id,
-            zIndex: 4,
-            opacity: 1,
-            left: 0,
-            up: -13,
+            zIndex: 2,
+            opacity: 0.4,
+            left: 26,
+            up: 0,
             charge: photographs[i].charge,
             image: getApp().globalData.urlb + "" + photographs[i].cameramanPhoto,
             detail: photographs[i].detail,
             animation: null
-          }
-          );
+          });
+
         }
 
-
-        photographDetail.push({
-          id: 3,
-          photographId: photographs[photographs.length - 1].id,
-          zIndex: 2,
-          opacity: 0.4,
-          left: 26,
-          up: 0,
-          charge: photographs[photographs.length - 1].charge,
-          image: getApp().globalData.urlb + "" + photographs[photographs.length - 1].cameramanPhoto,
-          detail: photographs[photographs.length - 1].detail,
-          animation: null
-        });
 
 
 
@@ -305,6 +311,7 @@ Page({
         that.move();
       }
     })
+
 
     if (id) {
       this.setData({
