@@ -180,6 +180,7 @@ Component({
       order.photoOrderTime = "";
       order.photoPrice = this.data.phoneCameramanCombos[this.data.index].comeramanComboPrice;
       order.photoTotalprice = 100;
+      order.photoCameraman = this.data.phoneCameramanCombos[this.data.index].cameramanName;
       console.log("添加后的order信息：");
       console.log(order);
       orderMsg = {

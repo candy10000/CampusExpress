@@ -89,6 +89,7 @@ p#left {
 }
 
 p#right {
+    margin: 10px;
   word-break: break-word;
   height: auto;
   width: 70%;

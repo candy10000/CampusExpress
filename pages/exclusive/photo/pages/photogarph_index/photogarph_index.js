@@ -53,19 +53,22 @@ Page({
 
         var photographs = res.data;
         var photographDetail = [];
+  
         photographDetail.push({
           id: 1,
+          photographId: photographs[0].id,
           zIndex: 2,
           opacity: 0.4,
           left: -26,
-          up: 0,
-          charge: 100,
-          image: "../images/cat1.jpg",
+          up: -0,
+          charge: photographs[0].charge,
+          image: getApp().globalData.urlb + "" + photographs[0].cameramanPhoto,
+          detail: photographs[0].detail,
           animation: null
         });
 
         // 遍历获取到摄影师数组
-        for (var i = 0; i < photographs.length; i++) {
+        for (var i = 1; i < photographs.length-1; i++) {
 
           photographDetail.push({
             id: 2,
@@ -82,16 +85,21 @@ Page({
           );
         }
 
+
         photographDetail.push({
           id: 3,
+          photographId: photographs[photographs.length - 1].id,
           zIndex: 2,
           opacity: 0.4,
           left: 26,
           up: 0,
-          charge: 300,
-          image: "../images/cat.jpg",
+          charge: photographs[photographs.length - 1].charge,
+          image: getApp().globalData.urlb + "" + photographs[photographs.length - 1].cameramanPhoto,
+          detail: photographs[photographs.length - 1].detail,
           animation: null
         });
+     
+      
 
         that.setData({
           datas: photographDetail
@@ -230,7 +238,7 @@ Page({
     let id = e.currentTarget.id;
     var that = this;
 
-    //根据id请求什么水平的摄影师
+    // 请求摄影师的数据
     wx.request({
       url: getApp().globalData.url + "/photoCameraman/selectCameramanByLevel",
       data: {
@@ -245,17 +253,19 @@ Page({
 
         photographDetail.push({
           id: 1,
+          photographId: photographs[0].id,
           zIndex: 2,
-          opacity: 0.6,
+          opacity: 0.4,
           left: -26,
-          up: 0,
-          charge: 100,
-          image: "../images/cat.jpg",
+          up: -0,
+          charge: photographs[0].charge,
+          image: getApp().globalData.urlb + "" + photographs[0].cameramanPhoto,
+          detail: photographs[0].detail,
           animation: null
         });
 
         // 遍历获取到摄影师数组
-        for (var i = 0; i < photographs.length; i++) {
+        for (var i = 1; i < photographs.length - 1; i++) {
 
           photographDetail.push({
             id: 2,
@@ -268,24 +278,29 @@ Page({
             image: getApp().globalData.urlb + "" + photographs[i].cameramanPhoto,
             detail: photographs[i].detail,
             animation: null
-          });
+          }
+          );
         }
+
 
         photographDetail.push({
           id: 3,
+          photographId: photographs[photographs.length - 1].id,
           zIndex: 2,
-          opacity: 0.6,
+          opacity: 0.4,
           left: 26,
           up: 0,
-          charge: 300,
-          image: "../images/cat1.jpg",
+          charge: photographs[photographs.length - 1].charge,
+          image: getApp().globalData.urlb + "" + photographs[photographs.length - 1].cameramanPhoto,
+          detail: photographs[photographs.length - 1].detail,
           animation: null
         });
+
+
 
         that.setData({
           datas: photographDetail
         });
-        // 重新布局小卡片的布局
         that.__set__();
         that.move();
       }
